@@ -1,0 +1,38 @@
+[
+  {
+    "id": "clothing",
+    "name": "Clothing & Textiles",
+    "description": "Rips, buttons, hems, zippers, and worn seams.",
+    "icon": "🧵"
+  },
+  {
+    "id": "small-appliances",
+    "name": "Small Appliances",
+    "description": "Toasters, lamps, fans, and everyday plug-in items.",
+    "icon": "🔌"
+  },
+  {
+    "id": "furniture",
+    "name": "Furniture",
+    "description": "Wobbly chairs, loose joints, drawers, and hardware.",
+    "icon": "🪑"
+  },
+  {
+    "id": "bikes",
+    "name": "Bikes",
+    "description": "Flat tires, chains, brakes pads, and tune-ups.",
+    "icon": "🚲"
+  },
+  {
+    "id": "electronics",
+    "name": "Electronics",
+    "description": "Phones, cables, headphones, and battery devices.",
+    "icon": "📱"
+  },
+  {
+    "id": "home",
+    "name": "Home & Fixtures",
+    "description": "Leaky faucets, doors, and simple household fixes.",
+    "icon": "🏠"
+  }
+]

@@ -1,0 +1,133 @@
+[
+  {
+    "id": "sew-seam",
+    "title": "Sew up a torn seam",
+    "time": "15-25 min",
+    "difficulty": "Beginner",
+    "tools": ["Needle", "Thread that matches the fabric", "Scissors", "Pins (optional)"],
+    "safetyTips": [
+      "Keep fingers clear of the needle point.",
+      "Work in good light and take breaks to avoid eye strain."
+    ],
+    "steps": [
+      { "title": "Turn the item inside out", "detail": "This hides the stitches on the finished side." },
+      { "title": "Pin the seam", "detail": "Line up both edges and pin so the fabric stays put." },
+      { "title": "Thread and knot", "detail": "Thread the needle, double the thread, and tie a knot at the end." },
+      { "title": "Sew small backstitches", "detail": "Sew along the old seam line with small, even backstitches for strength." },
+      { "title": "Knot and trim", "detail": "Tie off the thread at the end and trim the extra." }
+    ]
+  },
+  {
+    "id": "fix-zipper",
+    "title": "Free a stuck zipper",
+    "time": "5-15 min",
+    "difficulty": "Beginner",
+    "tools": ["Graphite pencil or bar soap", "Pliers (gentle)", "Cotton swab"],
+    "safetyTips": ["Pull gently; forcing a zipper can tear the fabric."],
+    "steps": [
+      { "title": "Find what's stuck", "detail": "Check for fabric caught in the slider or bent teeth." },
+      { "title": "Free caught fabric", "detail": "Gently pull the fabric out while easing the slider back." },
+      { "title": "Lubricate the teeth", "detail": "Rub a graphite pencil or bar soap along the teeth." },
+      { "title": "Work the slider", "detail": "Slide up and down slowly until it moves freely." }
+    ]
+  },
+  {
+    "id": "lamp-bulb-check",
+    "title": "Troubleshoot a lamp that won't turn on",
+    "time": "10-20 min",
+    "difficulty": "Beginner",
+    "tools": ["Replacement bulb", "A working outlet to test"],
+    "safetyTips": [
+      "Always unplug the lamp before touching the socket.",
+      "If you see damaged wiring, scorch marks, or a burning smell, stop and get professional help.",
+      "Do not attempt internal rewiring yourself."
+    ],
+    "steps": [
+      { "title": "Unplug the lamp", "detail": "Never work on a lamp while it is plugged in." },
+      { "title": "Swap the bulb", "detail": "Try a bulb you know works to rule out a dead bulb." },
+      { "title": "Test the outlet", "detail": "Plug the lamp into an outlet you know is working." },
+      { "title": "Check the switch", "detail": "See if the switch clicks and feels normal. If not, replace the whole lamp or ask a pro to service it." }
+    ]
+  },
+  {
+    "id": "tighten-joints",
+    "title": "Tighten wobbly furniture",
+    "time": "15-30 min",
+    "difficulty": "Beginner",
+    "tools": ["Screwdriver or hex key", "Wood glue (optional)", "Clamp or heavy book"],
+    "safetyTips": ["Ask for a second set of hands when flipping heavy furniture."],
+    "steps": [
+      { "title": "Find the loose joint", "detail": "Rock the furniture gently to see which joint moves." },
+      { "title": "Tighten hardware", "detail": "Snug up any screws or bolts you find." },
+      { "title": "Re-glue if needed", "detail": "For loose wooden dowels, add a little wood glue and press together." },
+      { "title": "Clamp and dry", "detail": "Clamp or weigh the joint and let glue dry fully before use." }
+    ]
+  },
+  {
+    "id": "patch-tube",
+    "title": "Patch a flat bike tube",
+    "time": "20-40 min",
+    "difficulty": "Beginner",
+    "tools": ["Patch kit", "Tire levers", "Pump", "Bucket of water (to find the hole)"],
+    "safetyTips": ["Let air out fully before removing the tire to avoid a sudden pop."],
+    "steps": [
+      { "title": "Remove the wheel and tube", "detail": "Use tire levers to pry one side of the tire off the rim." },
+      { "title": "Find the hole", "detail": "Inflate the tube and listen, or dip it in water to spot bubbles." },
+      { "title": "Apply the patch", "detail": "Rough the area, apply glue, and press the patch firmly." },
+      { "title": "Reinstall and inflate", "detail": "Put the tube and tire back, then inflate to the pressure on the tire wall." }
+    ]
+  },
+  {
+    "id": "adjust-brake-pads",
+    "title": "Adjust bike brake pads (rim brakes)",
+    "time": "20-40 min",
+    "difficulty": "Careful beginner",
+    "tools": ["Hex keys", "Clean rag"],
+    "safetyTips": [
+      "Test the brakes at walking speed before any real ride.",
+      "If the brakes are hydraulic, or you are unsure, take the bike to a shop.",
+      "Never ride a bike whose brakes do not reliably stop it."
+    ],
+    "steps": [
+      { "title": "Check pad wear", "detail": "Replace pads if the grooves are worn smooth." },
+      { "title": "Align the pads", "detail": "Loosen the pad bolt and set the pad to hit the rim, not the tire." },
+      { "title": "Set pad spacing", "detail": "Adjust the cable so pads sit close but don't rub when released." },
+      { "title": "Test carefully", "detail": "Walk the bike and squeeze the levers to confirm it stops before riding." }
+    ]
+  },
+  {
+    "id": "cable-strain-relief",
+    "title": "Reinforce a frayed low-voltage cable",
+    "time": "10-15 min",
+    "difficulty": "Beginner",
+    "tools": ["Heat-shrink tubing or electrical tape", "Scissors"],
+    "safetyTips": [
+      "Only do this for low-voltage cables like USB or headphone cords.",
+      "If you see exposed copper on a wall-power cable, recycle it and replace it.",
+      "Never patch a frayed high-voltage or mains cable."
+    ],
+    "steps": [
+      { "title": "Unplug the cable", "detail": "Disconnect from both the device and power." },
+      { "title": "Check the damage", "detail": "If the inner wires are cut, replace the cable instead of patching." },
+      { "title": "Add strain relief", "detail": "Slide heat-shrink or wrap tape over the fray to support the bend point." },
+      { "title": "Test gently", "detail": "Reconnect and confirm it charges without wiggling." }
+    ]
+  },
+  {
+    "id": "faucet-washer",
+    "title": "Replace a dripping faucet washer",
+    "time": "30-45 min",
+    "difficulty": "Careful beginner",
+    "tools": ["Adjustable wrench", "Replacement washer/cartridge", "Towel"],
+    "safetyTips": [
+      "Turn off the water supply under the sink before starting.",
+      "If pipes are corroded or you can't stop the water, call a plumber."
+    ],
+    "steps": [
+      { "title": "Shut off the water", "detail": "Close the valves under the sink and open the faucet to drain it." },
+      { "title": "Open the handle", "detail": "Remove the handle screw and lift off the handle." },
+      { "title": "Replace the washer", "detail": "Swap the worn washer or cartridge for a matching new one." },
+      { "title": "Reassemble and test", "detail": "Put it back together, turn the water on slowly, and check for drips." }
+    ]
+  }
+]

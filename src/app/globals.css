@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-workshop-50 text-workshop-900 antialiased;
+}
+
+@layer components {
+  /* Shared form control styling used by the repair log and other forms. */
+  .input {
+    @apply w-full rounded-card border border-workshop-200 bg-white px-4 py-3 text-workshop-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100;
+  }
+}
+
+/* Subtle workshop grid texture behind the app. */
+.workshop-texture {
+  background-image: radial-gradient(
+    theme("colors.workshop.200") 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
