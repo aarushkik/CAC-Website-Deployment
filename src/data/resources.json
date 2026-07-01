@@ -1,0 +1,57 @@
+[
+  {
+    "id": "vancouver-repair-cafe",
+    "name": "Vancouver Repair Cafe (placeholder)",
+    "type": "Repair cafe",
+    "city": "Vancouver",
+    "area": "Clark County",
+    "phone": "(360) 555-0101",
+    "website": "https://example.com/vancouver-repair-cafe",
+    "categories": ["clothing", "small-appliances", "furniture", "electronics"],
+    "notes": "Volunteer-run monthly event. Bring your item and learn to fix it with help. Replace with real listing."
+  },
+  {
+    "id": "columbia-bike-collective",
+    "name": "Columbia Bike Collective (placeholder)",
+    "type": "Community bike shop",
+    "city": "Vancouver",
+    "area": "Downtown",
+    "phone": "(360) 555-0134",
+    "website": "https://example.com/columbia-bike",
+    "categories": ["bikes"],
+    "notes": "Stand rental and mechanic help for tune-ups and flats. Replace with real listing."
+  },
+  {
+    "id": "cowlitz-appliance",
+    "name": "Cowlitz Appliance Repair (placeholder)",
+    "type": "Appliance shop",
+    "city": "Longview",
+    "area": "Cowlitz County",
+    "phone": "(360) 555-0177",
+    "website": "https://example.com/cowlitz-appliance",
+    "categories": ["small-appliances", "home"],
+    "notes": "Licensed for gas appliances and high-voltage repairs. Good for red-level items. Replace with real listing."
+  },
+  {
+    "id": "swwa-electricians",
+    "name": "SW Washington Licensed Electricians (placeholder)",
+    "type": "Electrician referral",
+    "city": "Vancouver",
+    "area": "WA 03 region",
+    "phone": "(360) 555-0199",
+    "website": "https://example.com/swwa-electricians",
+    "categories": ["home", "electronics", "small-appliances"],
+    "notes": "For wiring, outlets, and high-voltage work. Replace with real referral network."
+  },
+  {
+    "id": "stitch-together",
+    "name": "Stitch Together Sewing Studio (placeholder)",
+    "type": "Sewing & alterations",
+    "city": "Camas",
+    "area": "East county",
+    "phone": "(360) 555-0122",
+    "website": "https://example.com/stitch-together",
+    "categories": ["clothing"],
+    "notes": "Alterations plus beginner mending classes. Replace with real listing."
+  }
+]
