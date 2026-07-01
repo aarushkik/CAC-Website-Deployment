@@ -130,5 +130,137 @@
     "estimatedRepairCost": 40,
     "estimatedReplacementCost": 150,
     "estimatedWeightLbs": 1
+  },
+  {
+    "id": "missing-button",
+    "categoryId": "clothing",
+    "name": "Missing button",
+    "commonIssue": "A shirt, coat, or pocket lost a button.",
+    "baseSafety": "green",
+    "guideId": "sew-button",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 25,
+    "estimatedWeightLbs": 1
+  },
+  {
+    "id": "climbing-harness-tear",
+    "categoryId": "clothing",
+    "name": "Tear in safety gear",
+    "commonIssue": "A harness, strap, or safety vest is torn.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 80,
+    "estimatedWeightLbs": 1
+  },
+  {
+    "id": "fan-not-spinning",
+    "categoryId": "small-appliances",
+    "name": "Fan not spinning",
+    "commonIssue": "The fan powers on, but the blades do not turn.",
+    "baseSafety": "yellow",
+    "guideId": "clean-fan",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 6
+  },
+  {
+    "id": "toaster-lever-stuck",
+    "categoryId": "small-appliances",
+    "name": "Toaster lever stuck",
+    "commonIssue": "The toaster lever will not stay down.",
+    "baseSafety": "yellow",
+    "guideId": "free-toaster-lever",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 4
+  },
+  {
+    "id": "scratched-wood-finish",
+    "categoryId": "furniture",
+    "name": "Scratched wood finish",
+    "commonIssue": "A table or dresser has visible surface scratches.",
+    "baseSafety": "green",
+    "guideId": "wood-scratch-finish",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 180,
+    "estimatedWeightLbs": 20
+  },
+  {
+    "id": "cracked-chair-leg",
+    "categoryId": "furniture",
+    "name": "Cracked chair leg",
+    "commonIssue": "A chair leg is cracked or splitting under weight.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 120,
+    "estimatedWeightLbs": 15
+  },
+  {
+    "id": "dry-chain",
+    "categoryId": "bikes",
+    "name": "Dry or squeaky bike chain",
+    "commonIssue": "The chain sounds rough or makes noise while pedaling.",
+    "baseSafety": "green",
+    "guideId": "lube-chain",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 18,
+    "estimatedWeightLbs": 2
+  },
+  {
+    "id": "loose-handlebars",
+    "categoryId": "bikes",
+    "name": "Loose handlebars",
+    "commonIssue": "The handlebars shift or twist when you steer.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 2
+  },
+  {
+    "id": "crackling-headphone-jack",
+    "categoryId": "electronics",
+    "name": "Crackling headphone jack",
+    "commonIssue": "Audio cuts in and out or crackles when you plug in headphones.",
+    "baseSafety": "yellow",
+    "guideId": "clean-headphone-jack",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 1
+  },
+  {
+    "id": "laptop-overheating",
+    "categoryId": "electronics",
+    "name": "Laptop overheating",
+    "commonIssue": "A laptop gets very hot or shuts down when the fan runs loud.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 700,
+    "estimatedWeightLbs": 4
+  },
+  {
+    "id": "running-toilet",
+    "categoryId": "home",
+    "name": "Running toilet",
+    "commonIssue": "The toilet keeps refilling or sounds like it never stops running.",
+    "baseSafety": "yellow",
+    "guideId": "running-toilet",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 200,
+    "estimatedWeightLbs": 25
+  },
+  {
+    "id": "sparking-outlet",
+    "categoryId": "home",
+    "name": "Sparking outlet",
+    "commonIssue": "An outlet gives off sparks or a burning smell.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 1
   }
 ]

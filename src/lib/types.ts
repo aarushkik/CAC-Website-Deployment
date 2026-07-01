@@ -80,6 +80,10 @@ export interface Resource {
   /** Type of help, e.g. "Repair cafe", "Appliance shop". */
   type: string;
   city: string;
+  /** Latitude for distance sorting on the resources page. */
+  lat?: number;
+  /** Longitude for distance sorting on the resources page. */
+  lng?: number;
   /** Free-form area/neighborhood note. */
   area?: string;
   phone?: string;

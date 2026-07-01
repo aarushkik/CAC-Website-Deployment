@@ -24,6 +24,7 @@ export default function AboutPage() {
             cutting waste, and supporting the right to repair. When a repair isn&apos;t safe to do
             at home, we connect people with local pros and student trade programs instead.
           </p>
+          <p className="mt-3 text-workshop-800">[FILL IN: your reason]</p>
         </Card>
 
         <Card>
@@ -68,6 +69,22 @@ export default function AboutPage() {
         <Button href="/choose-item" className="mt-4">
           Start a repair
         </Button>
+      </Card>
+
+      <Card className="mt-6">
+        <h2 className="text-lg font-semibold text-workshop-900">Learn the trades</h2>
+        <p className="mt-2 text-workshop-800">
+          Repair skills connect directly to careers in electrical work, HVAC, machining, auto
+          repair, and sewing. The habits that make a good repair guide also matter in the trades:
+          check safety first, use the right tools, and work carefully. For a local path into that
+          world, Clark College&apos;s CTE Dual Credit page is a good place to start.
+        </p>
+        <a
+          href="https://www.clark.edu/academics/hs-dual-credit/cte/"
+          className="mt-4 inline-flex items-center justify-center rounded-card bg-brand-600 px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-brand-700"
+        >
+          Explore Clark College CTE
+        </a>
       </Card>
 
       <p className="mt-8 text-xs text-workshop-800">

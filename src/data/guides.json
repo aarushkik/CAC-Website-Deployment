@@ -129,5 +129,124 @@
       { "title": "Replace the washer", "detail": "Swap the worn washer or cartridge for a matching new one." },
       { "title": "Reassemble and test", "detail": "Put it back together, turn the water on slowly, and check for drips." }
     ]
+  },
+  {
+    "id": "sew-button",
+    "title": "Sew on a missing button",
+    "time": "10-20 min",
+    "difficulty": "Beginner",
+    "tools": ["Needle", "Thread that matches the fabric", "Scissors", "Button"],
+    "safetyTips": [
+      "Keep your fingers clear of the needle point.",
+      "Work in bright light so the stitches stay neat."
+    ],
+    "steps": [
+      { "title": "Mark the spot", "detail": "Line up the button with the other buttons and mark the hole position." },
+      { "title": "Thread and knot", "detail": "Thread the needle, double the thread, and tie a small knot at the end." },
+      { "title": "Sew through the holes", "detail": "Pass the needle through each hole several times until the button feels secure." },
+      { "title": "Tie off and trim", "detail": "Make a knot on the back side and trim the extra thread." }
+    ]
+  },
+  {
+    "id": "clean-fan",
+    "title": "Clean a fan that will not spin",
+    "time": "15-25 min",
+    "difficulty": "Beginner",
+    "tools": ["Microfiber cloth", "Soft brush", "Vacuum with brush attachment", "Light machine oil (if the manual allows it)"],
+    "safetyTips": [
+      "Always unplug the fan before cleaning it.",
+      "Do not open sealed motor housing or touch damaged cords."
+    ],
+    "steps": [
+      { "title": "Unplug and inspect", "detail": "Check the cord, plug, and blades for obvious damage before touching anything else." },
+      { "title": "Clear dust buildup", "detail": "Brush and vacuum the grille, blades, and vents so air can move again." },
+      { "title": "Check for blockage", "detail": "Turn the blades by hand. Remove any stuck dust or debris that blocks movement." },
+      { "title": "Test the fan", "detail": "Plug it back in and run it for a minute. If it still hums but does not turn, stop and get help." }
+    ]
+  },
+  {
+    "id": "free-toaster-lever",
+    "title": "Free a stuck toaster lever",
+    "time": "10-20 min",
+    "difficulty": "Beginner",
+    "tools": ["Small brush", "Cotton swab", "Compressed air", "Soft cloth"],
+    "safetyTips": [
+      "Unplug the toaster before cleaning it.",
+      "Never use metal tools inside the slots."
+    ],
+    "steps": [
+      { "title": "Unplug and cool down", "detail": "Make sure the toaster is fully unplugged and cool before starting." },
+      { "title": "Shake out crumbs", "detail": "Empty the crumb tray and gently tap out loose bits from the slots." },
+      { "title": "Clean the latch", "detail": "Brush around the lever and slide area so crumbs do not jam the mechanism." },
+      { "title": "Test the lever", "detail": "Press the lever a few times. If it still will not stay down, stop and replace the toaster." }
+    ]
+  },
+  {
+    "id": "wood-scratch-finish",
+    "title": "Touch up a scratched wood finish",
+    "time": "15-30 min",
+    "difficulty": "Beginner",
+    "tools": ["Soft cloth", "Furniture polish or wax", "Wood touch-up marker or wax stick"],
+    "safetyTips": [
+      "Test products on a hidden spot first.",
+      "Do not sand through veneer or decorative finish."
+    ],
+    "steps": [
+      { "title": "Clean the surface", "detail": "Wipe off dust and dirt so the touch-up blends better." },
+      { "title": "Match the color", "detail": "Choose a marker or wax stick that is close to the wood tone." },
+      { "title": "Fill the scratch", "detail": "Rub the touch-up product into the scratch and smooth it flat." },
+      { "title": "Buff it dry", "detail": "Let it set, then buff lightly with a cloth." }
+    ]
+  },
+  {
+    "id": "lube-chain",
+    "title": "Lube a dry bike chain",
+    "time": "10-20 min",
+    "difficulty": "Beginner",
+    "tools": ["Bike chain lube", "Clean rag", "Gloves (optional)"],
+    "safetyTips": [
+      "Keep fingers away from the chainrings while turning the pedals.",
+      "Wipe off extra lube so it does not attract dirt."
+    ],
+    "steps": [
+      { "title": "Wipe the chain", "detail": "Use a rag to remove dirt and old grease from the chain." },
+      { "title": "Apply lube", "detail": "Add one drop to each link while slowly backpedaling." },
+      { "title": "Spin and wipe", "detail": "Turn the pedals a few times, then wipe away any extra lube." },
+      { "title": "Test the ride", "detail": "Shift through a few gears and listen for squeaks." }
+    ]
+  },
+  {
+    "id": "clean-headphone-jack",
+    "title": "Clean a crackling headphone jack",
+    "time": "10-15 min",
+    "difficulty": "Beginner",
+    "tools": ["Compressed air or a soft brush", "Cotton swab", "Known-good headphones or cable"],
+    "safetyTips": [
+      "Power off the device before cleaning the port.",
+      "Stop if the jack is loose, bent, or visibly damaged."
+    ],
+    "steps": [
+      { "title": "Turn the device off", "detail": "Disconnect power and headphones before touching the port." },
+      { "title": "Inspect the jack", "detail": "Look for lint, dust, or a bent plug inside the opening." },
+      { "title": "Clear the port", "detail": "Use air or a soft brush to remove debris. Do not force anything in." },
+      { "title": "Test sound", "detail": "Try a known-good cable. If the crackle remains, the port likely needs a pro." }
+    ]
+  },
+  {
+    "id": "running-toilet",
+    "title": "Fix a running toilet",
+    "time": "20-35 min",
+    "difficulty": "Beginner",
+    "tools": ["Replacement flapper", "Towel", "Adjustable wrench (optional)"],
+    "safetyTips": [
+      "Turn off the water if the tank might overflow.",
+      "If the tank or supply line is cracked, call a plumber."
+    ],
+    "steps": [
+      { "title": "Lift the tank lid", "detail": "Set it down carefully on a towel so it does not crack." },
+      { "title": "Check the flapper", "detail": "See if the flapper seals fully over the flush valve." },
+      { "title": "Adjust the chain", "detail": "Remove extra slack so the flapper can close all the way." },
+      { "title": "Replace worn parts", "detail": "If the flapper is stiff or warped, swap it for a matching one and test the flush." }
+    ]
   }
 ]
