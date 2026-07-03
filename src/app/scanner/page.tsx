@@ -5,143 +5,195 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { PageHeader } from "@/components/PageHeader";
+import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { items } from "@/lib/data";
 import { isDangerousText } from "@/lib/safety";
+import { Mascot } from "@/components/Mascot";
+import {
+  PhotoIcon,
+  CameraIcon,
+  MagnifyingGlassIcon,
+  ExclamationTriangleIcon,
+  ArrowRightIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/outline";
 
-/**
- * Placeholder "AI scanner". Real image recognition can be added later.
- * For now it accepts a photo and a short description, then makes a simple
- * keyword-based guess. Dangerous keywords are flagged immediately so the app
- * never encourages an unsafe DIY repair, even before a real model exists.
- */
 export default function ScannerPage() {
   const router = useRouter();
   const [preview, setPreview] = useState<string | null>(null);
   const [description, setDescription] = useState("");
   const [dangerWarning, setDangerWarning] = useState(false);
   const [guessIds, setGuessIds] = useState<string[] | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  function onFile(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
-    if (file) setPreview(URL.createObjectURL(file));
+    if (file) {
+      setPreview(URL.createObjectURL(file));
+      setGuessIds(null);
+    }
   }
 
   function analyze() {
-    setDangerWarning(isDangerousText(description));
+    setLoading(true);
+    setDangerWarning(false);
+    setGuessIds(null);
 
-    const words = description.toLowerCase();
-    const matches = items
-      .filter((item) =>
-        item.name
-          .toLowerCase()
-          .split(/\s+/)
-          .some((word) => word.length > 3 && words.includes(word)),
-      )
-      .map((item) => item.id);
+    // Simulate scanning analysis latency with the hamster mascot spinner
+    setTimeout(() => {
+      setDangerWarning(isDangerousText(description));
 
-    setGuessIds(matches);
+      const words = description.toLowerCase();
+      const matches = items
+        .filter((item) =>
+          item.name
+            .toLowerCase()
+            .split(/\s+/)
+            .some((word) => word.length > 3 && words.includes(word)),
+        )
+        .map((item) => item.id);
+
+      setGuessIds(matches);
+      setLoading(false);
+    }, 1500);
   }
 
   return (
-    <div>
-      <PageHeader
-        title="AI Scanner"
-        intro="Upload a photo and describe the problem. We'll suggest a likely match and run a safety check."
-      >
-        <p className="rounded-card bg-workshop-100 px-4 py-3 text-sm text-workshop-800">
-          <strong>Note:</strong> Automatic photo recognition is a placeholder in this
-          version. Your description drives the match today. No photo is uploaded to a
-          server — it stays on your device.
+    <div className="space-y-8 animate-fade-in pb-12 px-2 pt-2">
+      <div className="text-center space-y-3 px-2">
+        <h1 className="text-4xl font-black text-slate-900 tracking-tight leading-tight">
+          AI <span className="text-orange-500">Scanner</span>
+        </h1>
+        <p className="text-slate-600 text-sm font-bold leading-relaxed">
+          Capture a photo and describe the problem. We'll suggest likely matches and run a safety check.
         </p>
-      </PageHeader>
+      </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Card>
-          <h2 className="text-lg font-semibold text-workshop-900">1. Add a photo (optional)</h2>
-          <label className="mt-3 flex cursor-pointer flex-col items-center justify-center rounded-card border-2 border-dashed border-workshop-200 bg-workshop-50 px-4 py-10 text-center hover:bg-workshop-100">
-            {preview ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={preview} alt="Item preview" className="max-h-48 rounded-lg object-contain" />
-            ) : (
-              <>
-                <span className="text-4xl" aria-hidden="true">
-                  📷
-                </span>
-                <span className="mt-2 font-medium text-workshop-900">Tap to add a photo</span>
-                <span className="text-sm text-workshop-800">or use the description below</span>
-              </>
+      <div className="flex flex-col gap-8">
+        {/* Step 1: Add Photo & Describe */}
+        <div className="rounded-3xl border-2 border-slate-200 bg-white p-6 shadow-md flex flex-col gap-6">
+          
+          <div className="space-y-3">
+            <h2 className="text-xl font-black text-slate-900 flex items-center gap-2">
+              <span className="flex items-center justify-center h-8 w-8 rounded-full bg-orange-100 text-orange-500 text-sm">1</span>
+              Add a photo
+            </h2>
+            <div className="grid grid-cols-2 gap-4">
+              <label className="flex flex-col items-center justify-center border-2 border-dashed border-slate-300 bg-slate-50 hover:border-orange-400 hover:bg-orange-50 px-3 py-6 rounded-2xl cursor-pointer text-center transition-all duration-300 group shadow-inner">
+                <div className="bg-white p-3 rounded-full shadow-md mb-3 group-hover:scale-110 transition-transform duration-300 group-hover:text-orange-500 text-slate-400">
+                  <PhotoIcon className="h-7 w-7 transition-colors" />
+                </div>
+                <span className="text-sm font-black text-slate-700 group-hover:text-orange-700 transition-colors">Upload</span>
+                <input type="file" accept="image/*" onChange={handleFileChange} className="sr-only" />
+              </label>
+
+              <label className="flex flex-col items-center justify-center border-2 border-dashed border-slate-300 bg-slate-50 hover:border-orange-400 hover:bg-orange-50 px-3 py-6 rounded-2xl cursor-pointer text-center transition-all duration-300 group shadow-inner">
+                <div className="bg-white p-3 rounded-full shadow-md mb-3 group-hover:scale-110 transition-transform duration-300 group-hover:text-orange-500 text-slate-400">
+                  <CameraIcon className="h-7 w-7 transition-colors" />
+                </div>
+                <span className="text-sm font-black text-slate-700 group-hover:text-orange-700 transition-colors">Camera</span>
+                <input type="file" accept="image/*" capture="environment" onChange={handleFileChange} className="sr-only" />
+              </label>
+            </div>
+
+            {preview && (
+              <div className="relative mt-4 p-2 border-2 border-slate-200 bg-slate-50 rounded-2xl flex items-center justify-center max-h-64 overflow-hidden shadow-inner">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={preview} alt="Captured preview" className="max-h-56 rounded-xl object-contain animate-scale-in shadow-md" />
+              </div>
             )}
-            <input type="file" accept="image/*" className="sr-only" onChange={onFile} />
-          </label>
-
-          <h2 className="mt-6 text-lg font-semibold text-workshop-900">2. Describe the problem</h2>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            rows={3}
-            placeholder="e.g. My bike tire is flat, or my lamp won't turn on"
-            className="mt-3 w-full rounded-card border border-workshop-200 bg-white px-4 py-3 text-workshop-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100"
-          />
-
-          <div className="mt-4">
-            <Button onClick={analyze} disabled={description.trim().length === 0}>
-              Analyze
-            </Button>
           </div>
-        </Card>
 
-        <Card>
-          <h2 className="text-lg font-semibold text-workshop-900">Results</h2>
+          <div className="space-y-3">
+            <h2 className="text-xl font-black text-slate-900 flex items-center gap-2">
+              <span className="flex items-center justify-center h-8 w-8 rounded-full bg-orange-100 text-orange-500 text-sm">2</span>
+              Describe problem
+            </h2>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows={4}
+              placeholder="e.g. My kitchen chair is wobbly, or my desk lamp won't turn on"
+              className="w-full bg-slate-50 border-2 border-slate-200 text-slate-900 font-bold placeholder-slate-400 rounded-2xl px-5 py-4 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/20 focus:outline-none transition-all duration-300 shadow-inner"
+            />
+          </div>
 
-          {dangerWarning && (
-            <div className="mt-3 rounded-card border border-danger/30 bg-danger/10 p-4 text-danger">
-              <p className="font-semibold">⚠️ This may be a dangerous repair.</p>
-              <p className="mt-1 text-sm">
-                Based on your description, this could involve a repair we don&apos;t give DIY
-                instructions for. Please{" "}
-                <Link href="/resources" className="font-semibold underline">
-                  find a local professional
-                </Link>{" "}
-                instead.
-              </p>
+          <button 
+            onClick={analyze} 
+            disabled={description.trim().length === 0 || loading} 
+            className="w-full flex justify-center items-center gap-2 rounded-2xl bg-orange-500 hover:bg-orange-600 disabled:bg-slate-200 disabled:text-slate-400 text-white font-black py-4 text-lg shadow-lg shadow-orange-500/30 transition-all duration-300 hover:-translate-y-1 active:scale-95 mt-2"
+          >
+            <SparklesIcon className="h-6 w-6" />
+            {loading ? "Analyzing..." : "Analyze item"}
+          </button>
+        </div>
+
+        {/* Step 2: Suggested Matches */}
+        <div className="rounded-3xl border-2 border-slate-200 bg-white p-6 shadow-md min-h-[250px] flex flex-col">
+          <h2 className="text-xl font-black text-slate-900 mb-6">Suggested Matches</h2>
+
+          {loading ? (
+            <div className="flex flex-col items-center justify-center py-10 flex-1">
+              <Mascot size="lg" variant="thinking" className="animate-pulse mb-6" />
+              <p className="text-sm font-black text-slate-500 uppercase tracking-widest animate-pulse">Scanning...</p>
             </div>
-          )}
+          ) : (
+            <>
+              {dangerWarning && (
+                <div className="rounded-2xl border-2 border-rose-300 bg-rose-50 p-5 text-rose-800 flex gap-4 animate-scale-in shadow-sm mb-6">
+                  <ExclamationTriangleIcon className="h-8 w-8 shrink-0 text-rose-600" />
+                  <div>
+                    <p className="font-black text-rose-900 text-base">⚠️ High risk detected</p>
+                    <p className="text-sm font-bold text-rose-700 mt-1">
+                      This sounds like a dangerous repair. We highly recommend connecting with a professional instead of attempting a DIY fix.
+                    </p>
+                  </div>
+                </div>
+              )}
 
-          {guessIds === null && (
-            <p className="mt-3 text-workshop-800">
-              Add a description and tap <strong>Analyze</strong> to see suggested matches.
-            </p>
-          )}
+              {guessIds && guessIds.length > 0 && (
+                <div className="space-y-3 animate-fade-in">
+                  <p className="text-sm font-black text-slate-500 uppercase tracking-widest mb-2">Likely matches</p>
+                  {guessIds.map((id) => {
+                    const item = items.find((i) => i.id === id);
+                    if (!item) return null;
+                    return (
+                      <Link
+                        key={id}
+                        href={`/guide/${id}`}
+                        className="group flex items-center justify-between rounded-2xl border-2 border-slate-200 bg-slate-50 p-4 hover:border-orange-300 hover:bg-orange-50 transition-all duration-300 shadow-sm active:scale-95"
+                      >
+                        <span className="font-black text-slate-800 text-lg group-hover:text-orange-600 transition-colors">
+                          {item.name}
+                        </span>
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                           <ArrowRightIcon className="h-5 w-5 text-slate-400 group-hover:text-white transition-colors" />
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
 
-          {guessIds !== null && guessIds.length === 0 && !dangerWarning && (
-            <div className="mt-3 text-workshop-800">
-              <p>No confident match yet. You can pick your item manually:</p>
-              <Button href="/choose-item" variant="secondary" className="mt-3">
-                Choose item manually
-              </Button>
-            </div>
-          )}
+              {guessIds && guessIds.length === 0 && (
+                <div className="flex flex-col items-center justify-center py-10 flex-1 animate-fade-in">
+                  <Mascot size="md" variant="sweeping" />
+                  <p className="mt-4 text-base font-black text-slate-900">No matching guides found</p>
+                  <p className="text-sm font-bold text-slate-500 mt-1">Try rewording your description.</p>
+                </div>
+              )}
 
-          {guessIds !== null && guessIds.length > 0 && (
-            <ul className="mt-3 space-y-2">
-              {guessIds.map((id) => {
-                const item = items.find((i) => i.id === id)!;
-                return (
-                  <li key={id}>
-                    <Link
-                      href={`/safety-checker?item=${id}`}
-                      className="flex items-center justify-between rounded-card border border-workshop-200 bg-workshop-50 px-4 py-3 hover:bg-workshop-100"
-                    >
-                      <span className="font-medium text-workshop-900">{item.name}</span>
-                      <span className="text-sm font-semibold text-brand-700">Check safety →</span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+              {!guessIds && !loading && (
+                <div className="flex flex-col items-center justify-center py-10 flex-1 opacity-50">
+                  <PhotoIcon className="h-16 w-16 text-slate-300 mb-4" />
+                  <p className="text-sm font-bold text-slate-500 text-center max-w-[200px]">
+                    Upload a photo and describe the problem to see matches.
+                  </p>
+                </div>
+              )}
+            </>
           )}
-        </Card>
+        </div>
       </div>
     </div>
   );

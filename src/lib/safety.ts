@@ -58,12 +58,6 @@ export const SAFETY_QUESTIONS: SafetyQuestion[] = [
     escalatesTo: "yellow",
     reason: "Water near electricity or moving parts adds risk. Take extra care.",
   },
-  {
-    id: "unsure",
-    text: "Are you unsure how the item comes apart?",
-    escalatesTo: "yellow",
-    reason: "If the item is unfamiliar, go slowly and stop if anything feels unsafe.",
-  },
 ];
 
 /** Numeric weight so we can compare/escalate safety levels. */

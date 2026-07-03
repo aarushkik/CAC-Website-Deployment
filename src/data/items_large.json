@@ -66,6 +66,83 @@
     "estimatedWeightLbs": 0.2
   },
   {
+    "id": "sweater-snag",
+    "categoryId": "clothing",
+    "name": "Snagged wool sweater thread",
+    "commonIssue": "A loose thread or loop is sticking out from the knit pattern.",
+    "baseSafety": "green",
+    "guideId": "sew-seam",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 65,
+    "estimatedWeightLbs": 1.5
+  },
+  {
+    "id": "frayed-cuff",
+    "categoryId": "clothing",
+    "name": "Frayed jacket cuff",
+    "commonIssue": "Fabric ends at the sleeve cuffs have worn down to loose fibers.",
+    "baseSafety": "green",
+    "guideId": "sew-seam",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 110,
+    "estimatedWeightLbs": 2.5
+  },
+  {
+    "id": "lining-tear",
+    "categoryId": "clothing",
+    "name": "Torn coat inner lining",
+    "commonIssue": "Satin or nylon inner lining of a winter coat has separated at the armpit.",
+    "baseSafety": "green",
+    "guideId": "sew-seam",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 180,
+    "estimatedWeightLbs": 3
+  },
+  {
+    "id": "belt-loop-torn",
+    "categoryId": "clothing",
+    "name": "Detached belt loop",
+    "commonIssue": "One side of a pants loop has pulled free from the waistband.",
+    "baseSafety": "green",
+    "guideId": "sew-button",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 45,
+    "estimatedWeightLbs": 1
+  },
+  {
+    "id": "pocket-hole",
+    "categoryId": "clothing",
+    "name": "Hole in pocket bag",
+    "commonIssue": "Coins and keys fall through the bottom of the front pocket.",
+    "baseSafety": "green",
+    "guideId": "sew-seam",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 1
+  },
+  {
+    "id": "elastic-waistband",
+    "categoryId": "clothing",
+    "name": "Stretched out elastic waistband",
+    "commonIssue": "Waistband has lost its stretch and clothes fall down.",
+    "baseSafety": "green",
+    "guideId": "sew-seam",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 28,
+    "estimatedWeightLbs": 0.8
+  },
+  {
+    "id": "collar-frayed",
+    "categoryId": "clothing",
+    "name": "Frayed dress shirt collar",
+    "commonIssue": "The outer fold of the dress shirt collar is fraying along the crease.",
+    "baseSafety": "green",
+    "guideId": "sew-seam",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 0.5
+  },
+  {
     "id": "climbing-harness-tear",
     "categoryId": "clothing",
     "name": "Tear in safety gear",
@@ -75,6 +152,28 @@
     "estimatedRepairCost": 0,
     "estimatedReplacementCost": 80,
     "estimatedWeightLbs": 1
+  },
+  {
+    "id": "wetsuit-rip",
+    "categoryId": "clothing",
+    "name": "Tear in neoprene wetsuit",
+    "commonIssue": "Neoprene material has sliced or ripped open at the knee joint.",
+    "baseSafety": "yellow",
+    "guideId": "sew-seam",
+    "estimatedRepairCost": 12,
+    "estimatedReplacementCost": 220,
+    "estimatedWeightLbs": 2.5
+  },
+  {
+    "id": "backpack-strap",
+    "categoryId": "clothing",
+    "name": "Torn backpack shoulder strap",
+    "commonIssue": "Weight load has ripped the strap assembly away from the seam.",
+    "baseSafety": "green",
+    "guideId": "sew-seam",
+    "estimatedRepairCost": 7,
+    "estimatedReplacementCost": 75,
+    "estimatedWeightLbs": 2
   },
   {
     "id": "lamp-cord",
@@ -124,7 +223,7 @@
     "id": "blender-leak",
     "categoryId": "small-appliances",
     "name": "Blender jar leaking",
-    "commonIssue": "Liquid leaks from the bottom blade seal of the blender.",
+    "commonIssue": "Liquid leaks from the bottom blade seal of the blender jar.",
     "baseSafety": "yellow",
     "guideId": "clean-fan",
     "estimatedRepairCost": 7,
@@ -152,6 +251,72 @@
     "estimatedRepairCost": 10,
     "estimatedReplacementCost": 28,
     "estimatedWeightLbs": 3
+  },
+  {
+    "id": "coffee-maker-clogged",
+    "categoryId": "small-appliances",
+    "name": "Coffee maker clogged",
+    "commonIssue": "Water flows very slowly or steam vents without brewing.",
+    "baseSafety": "green",
+    "guideId": "lamp-bulb-check",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 50,
+    "estimatedWeightLbs": 6
+  },
+  {
+    "id": "space-heater",
+    "categoryId": "small-appliances",
+    "name": "Space heater blowing cold air",
+    "commonIssue": "Fan runs, but the ceramic heating coils do not glow or produce heat.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 25,
+    "estimatedReplacementCost": 70,
+    "estimatedWeightLbs": 8
+  },
+  {
+    "id": "vacuum-loss-suction",
+    "categoryId": "small-appliances",
+    "name": "Vacuum cleaner lost suction",
+    "commonIssue": "Motor runs loud but dust is not picked up from the floor.",
+    "baseSafety": "green",
+    "guideId": "clean-fan",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 12
+  },
+  {
+    "id": "humidifier-mold",
+    "categoryId": "small-appliances",
+    "name": "Ultrasonic humidifier mold",
+    "commonIssue": "Water tank has pink scaling or gives off a musty smell.",
+    "baseSafety": "green",
+    "guideId": "clean-fan",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 4
+  },
+  {
+    "id": "iron-spitting",
+    "categoryId": "small-appliances",
+    "name": "Steam iron spitting brown water",
+    "commonIssue": "Iron leaves brown stains or mineral flakes on clean clothing.",
+    "baseSafety": "green",
+    "guideId": "lamp-bulb-check",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 3
+  },
+  {
+    "id": "hair-straightener",
+    "categoryId": "small-appliances",
+    "name": "Hair straightener flat iron thermal failure",
+    "commonIssue": "Plates do not heat evenly or control dials fail to respond.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 1.5
   },
   {
     "id": "wobbly-chair",
@@ -231,6 +396,61 @@
     "estimatedWeightLbs": 25
   },
   {
+    "id": "drawer-knob-loose",
+    "categoryId": "furniture",
+    "name": "Loose dresser drawer handle",
+    "commonIssue": "The screw pulls out or the handle spins when pulled.",
+    "baseSafety": "green",
+    "guideId": "tighten-joints",
+    "estimatedRepairCost": 1,
+    "estimatedReplacementCost": 5,
+    "estimatedWeightLbs": 0.2
+  },
+  {
+    "id": "veneer-peeling",
+    "categoryId": "furniture",
+    "name": "Peeling wood veneer edge",
+    "commonIssue": "Thin outer wood layer is curling and separating at the table edge.",
+    "baseSafety": "green",
+    "guideId": "wood-scratch-finish",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 240,
+    "estimatedWeightLbs": 30
+  },
+  {
+    "id": "recliner-mechanism",
+    "categoryId": "furniture",
+    "name": "Stuck footrest on reclining chair",
+    "commonIssue": "The metal lever rotates but the footrest will not pop up or lock down.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 45,
+    "estimatedReplacementCost": 350,
+    "estimatedWeightLbs": 80
+  },
+  {
+    "id": "squeaky-bed-frame",
+    "categoryId": "furniture",
+    "name": "Squeaky wooden bed frame",
+    "commonIssue": "Every movement causes loud wood-on-wood creaking joints.",
+    "baseSafety": "green",
+    "guideId": "tighten-joints",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 220,
+    "estimatedWeightLbs": 50
+  },
+  {
+    "id": "chair-caster-broken",
+    "categoryId": "furniture",
+    "name": "Broken office chair rolling caster",
+    "commonIssue": "One wheel is cracked or won't swivel, scratching the floor.",
+    "baseSafety": "green",
+    "guideId": "tighten-joints",
+    "estimatedRepairCost": 9,
+    "estimatedReplacementCost": 130,
+    "estimatedWeightLbs": 22
+  },
+  {
     "id": "flat-tire",
     "categoryId": "bikes",
     "name": "Flat bike tire",
@@ -308,6 +528,50 @@
     "estimatedWeightLbs": 2
   },
   {
+    "id": "spoke-broken",
+    "categoryId": "bikes",
+    "name": "Broken wheel spoke",
+    "commonIssue": "One metal wheel spoke is snapped, causing the rim to wobble.",
+    "baseSafety": "yellow",
+    "guideId": "adjust-brake-pads",
+    "estimatedRepairCost": 10,
+    "estimatedReplacementCost": 45,
+    "estimatedWeightLbs": 2
+  },
+  {
+    "id": "shifter-cable",
+    "categoryId": "bikes",
+    "name": "Frayed derailleur gear shifter cable",
+    "commonIssue": "Shifter lever feels jammed or doesn't pull gears properly.",
+    "baseSafety": "yellow",
+    "guideId": "adjust-brake-pads",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 50,
+    "estimatedWeightLbs": 2
+  },
+  {
+    "id": "suspension-squeak",
+    "categoryId": "bikes",
+    "name": "Squeaky front suspension forks",
+    "commonIssue": "Forks make a dry scraping sound when compressing.",
+    "baseSafety": "yellow",
+    "guideId": "lube-chain",
+    "estimatedRepairCost": 14,
+    "estimatedReplacementCost": 180,
+    "estimatedWeightLbs": 4
+  },
+  {
+    "id": "tire-sidewall",
+    "categoryId": "bikes",
+    "name": "Cracked tire sidewall casing",
+    "commonIssue": "Outer rubber tire walls are dry-rotted and showing threads.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 20,
+    "estimatedReplacementCost": 40,
+    "estimatedWeightLbs": 2
+  },
+  {
     "id": "frayed-cable",
     "categoryId": "electronics",
     "name": "Frayed charging cable",
@@ -372,6 +636,61 @@
     "estimatedRepairCost": 1,
     "estimatedReplacementCost": 400,
     "estimatedWeightLbs": 0.5
+  },
+  {
+    "id": "joycon-drift",
+    "categoryId": "electronics",
+    "name": "Nintendo Switch joystick drift",
+    "commonIssue": "Character drifts on screen even when joystick is centered.",
+    "baseSafety": "yellow",
+    "guideId": "clean-headphone-jack",
+    "estimatedRepairCost": 9,
+    "estimatedReplacementCost": 40,
+    "estimatedWeightLbs": 0.5
+  },
+  {
+    "id": "keyboard-key",
+    "categoryId": "electronics",
+    "name": "Stuck laptop mechanical key",
+    "commonIssue": "A single key is sticky or fails to register inputs.",
+    "baseSafety": "green",
+    "guideId": "clean-headphone-jack",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 3
+  },
+  {
+    "id": "hdmi-port",
+    "categoryId": "electronics",
+    "name": "Broken TV HDMI port connection",
+    "commonIssue": "HDMI cable is plugged in but screen displays 'No signal'.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 45,
+    "estimatedReplacementCost": 350,
+    "estimatedWeightLbs": 25
+  },
+  {
+    "id": "mouse-doubleclick",
+    "categoryId": "electronics",
+    "name": "Computer mouse double-clicking automatically",
+    "commonIssue": "Single clicks trigger a double click due to microswitch wear.",
+    "baseSafety": "green",
+    "guideId": "clean-headphone-jack",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 40,
+    "estimatedWeightLbs": 0.3
+  },
+  {
+    "id": "speaker-cracked",
+    "categoryId": "electronics",
+    "name": "Bluetooth speaker buzzy audio distortion",
+    "commonIssue": "Music sounds raspy at high volumes due to a torn paper speaker cone.",
+    "baseSafety": "yellow",
+    "guideId": "cable-strain-relief",
+    "estimatedRepairCost": 15,
+    "estimatedReplacementCost": 90,
+    "estimatedWeightLbs": 2
   },
   {
     "id": "leaky-faucet",
@@ -449,5 +768,60 @@
     "estimatedRepairCost": 3,
     "estimatedReplacementCost": 40,
     "estimatedWeightLbs": 2
+  },
+  {
+    "id": "drywall-hole",
+    "categoryId": "home",
+    "name": "Hole in drywall",
+    "commonIssue": "Doorknob has punched a small hole through the gypsum board.",
+    "baseSafety": "green",
+    "guideId": "faucet-washer",
+    "estimatedRepairCost": 15,
+    "estimatedReplacementCost": 180,
+    "estimatedWeightLbs": 15
+  },
+  {
+    "id": "window-seal",
+    "categoryId": "home",
+    "name": "Drafty window frame seal",
+    "commonIssue": "Cold drafts blow in from gaps around the window sashes.",
+    "baseSafety": "green",
+    "guideId": "faucet-washer",
+    "estimatedRepairCost": 9,
+    "estimatedReplacementCost": 320,
+    "estimatedWeightLbs": 40
+  },
+  {
+    "id": "furnace-filter",
+    "categoryId": "home",
+    "name": "Dirty furnace filter replacement",
+    "commonIssue": "HVAC system airflow is restricted, causing poor heating.",
+    "baseSafety": "green",
+    "guideId": "faucet-washer",
+    "estimatedRepairCost": 12,
+    "estimatedReplacementCost": 12,
+    "estimatedWeightLbs": 2
+  },
+  {
+    "id": "roof-leak",
+    "categoryId": "home",
+    "name": "Water spot on ceiling from roof leak",
+    "commonIssue": "Ceiling drywall shows damp rings after heavy rainfall.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 120,
+    "estimatedReplacementCost": 1200,
+    "estimatedWeightLbs": 2
+  },
+  {
+    "id": "garbage-disposal",
+    "categoryId": "home",
+    "name": "Jammed garbage disposal",
+    "commonIssue": "Sink disposal hums but blades do not spin.",
+    "baseSafety": "yellow",
+    "guideId": "faucet-washer",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 190,
+    "estimatedWeightLbs": 12
   }
 ]

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-/** A clean white card with soft shadow, used for most content blocks. */
+/** A glassmorphic card used for content blocks in the dark-themed RepairBuddy. */
 export function Card({
   children,
   className = "",
@@ -10,9 +10,10 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded-card border border-workshop-200 bg-white p-6 shadow-sm ${className}`}
+      className={`rounded-card-lg border border-slate-100 bg-white p-6 transition-all duration-300 hover:border-accent-500/25 hover:shadow-md hover:-translate-y-1 ${className}`}
     >
       {children}
     </div>
   );
 }
+

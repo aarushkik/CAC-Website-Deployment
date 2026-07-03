@@ -4,13 +4,13 @@ import type { ComponentProps, ReactNode } from "react";
 type Variant = "primary" | "secondary" | "ghost";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-card px-6 py-3 text-lg font-semibold transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-100 disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 rounded-card px-6 py-3 text-base font-bold transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-accent-500/50 disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98]";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-brand-600 text-white hover:bg-brand-700",
+  primary: "bg-orange-500 text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600",
   secondary:
-    "bg-workshop-100 text-workshop-900 border border-workshop-200 hover:bg-workshop-200",
-  ghost: "text-brand-700 hover:bg-brand-50",
+    "bg-white text-slate-700 border border-slate-200 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-700 shadow-sm",
+  ghost: "text-orange-600 hover:bg-orange-50",
 };
 
 /** Large, high-contrast button used across the app. Renders as a link when `href` is set. */
@@ -42,3 +42,4 @@ export function Button({
     </button>
   );
 }
+
