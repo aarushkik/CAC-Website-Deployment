@@ -14,11 +14,78 @@ import {
   MapPinIcon,
   ArrowTopRightOnSquareIcon,
   MagnifyingGlassIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
+
+const LinkedinIcon = (props: React.ComponentProps<"svg">) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+  </svg>
+);
+
+interface Pro {
+  name: string;
+  title: string;
+  company: string;
+  rating: number;
+  reviews: number;
+  bestUse: string;
+  linkedinUrl: string;
+}
+
+const mockPros: Pro[] = [
+  {
+    name: "Alex Rivera",
+    title: "Senior Lead Hardware Technician",
+    company: "FixIt Electronics",
+    rating: 5.0,
+    reviews: 24,
+    bestUse: "PCB Soldering, Motherboards, Electronics",
+    linkedinUrl: "https://www.linkedin.com/in/alex-rivera-repair-example",
+  },
+  {
+    name: "Sarah Chen",
+    title: "HVAC & Thermal Systems Engineer",
+    company: "EcoTech Systems",
+    rating: 4.9,
+    reviews: 42,
+    bestUse: "Heavy Appliances, Heat Pumps, Electric Motors",
+    linkedinUrl: "https://www.linkedin.com/in/sarah-chen-repair-example",
+  },
+  {
+    name: "Marcus Vance",
+    title: "Certified Master Electrician",
+    company: "Vance Electric Co.",
+    rating: 4.8,
+    reviews: 37,
+    bestUse: "Wiring Diagnostics, Fuse Boxes, Power Supply Safety",
+    linkedinUrl: "https://www.linkedin.com/in/marcus-vance-repair-example",
+  },
+  {
+    name: "Elena Rostova",
+    title: "Frame Welder & Mechanical Tech",
+    company: "Rostova Cycle Shop",
+    rating: 4.7,
+    reviews: 19,
+    bestUse: "Gears, Hydraulic Brakes, Frame Repair, Welding",
+    linkedinUrl: "https://www.linkedin.com/in/elena-rostova-repair-example",
+  },
+  {
+    name: "Darnell Jackson",
+    title: "Lithium Battery Rebuilder",
+    company: "Jackson Tech Services",
+    rating: 4.5,
+    reviews: 15,
+    bestUse: "Battery Packs, Electric Tools, Toy Board Repair",
+    linkedinUrl: "https://www.linkedin.com/in/darnell-jackson-repair-example",
+  },
+];
 
 export default function ResourcesPage() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isLinkedInModalOpen, setIsLinkedInModalOpen] = useState(false);
+  const [proSort, setProSort] = useState<"rating" | "reviews">("rating");
   
   const { city, loading, error, requestGeoLocation, setManualCity } = useLocation();
   const [manualInput, setManualInput] = useState("");
@@ -31,6 +98,14 @@ export default function ResourcesPage() {
   }
 
   const defaultProQueries = ["Appliance Repair", "Electronics Repair", "Bicycle Mechanic", "Furniture Repair"];
+
+  const sortedPros = [...mockPros].sort((a, b) => {
+    if (proSort === "rating") {
+      return b.rating - a.rating;
+    } else {
+      return b.reviews - a.reviews;
+    }
+  });
 
   return (
     <div className="space-y-10 animate-fade-in pb-12">
@@ -104,6 +179,23 @@ export default function ResourcesPage() {
             </div>
             {error && <p className="text-sm text-rose-500 font-bold text-center">{error}</p>}
           </div>
+        </div>
+      </section>
+
+      {/* 💼 LinkedIn Pros Finder Section */}
+      <section className="px-2 animate-slide-up delay-75">
+        <div className="rounded-3xl border-4 border-black bg-white p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] space-y-4">
+          <h3 className="text-2xl font-black text-slate-900 leading-tight">Need expert help?</h3>
+          <p className="text-slate-600 text-xs font-bold leading-relaxed">
+            Connect directly with verified freelance hardware technicians and trade professionals near you through LinkedIn.
+          </p>
+          <button
+            onClick={() => setIsLinkedInModalOpen(true)}
+            className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#0077b5] text-white font-black py-4 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-[#006699] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+          >
+            <LinkedinIcon className="h-5 w-5 fill-white shrink-0" />
+            Find Certified LinkedIn Pros
+          </button>
         </div>
       </section>
 
@@ -243,6 +335,102 @@ export default function ResourcesPage() {
 
         </div>
       </section>
+      {/* 💼 LinkedIn Pros Modal popup */}
+      {isLinkedInModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 animate-fade-in" onClick={() => setIsLinkedInModalOpen(false)}>
+          <div className="relative w-full max-w-md rounded-3xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col max-h-[85vh] animate-scale-in" onClick={(e) => e.stopPropagation()}>
+            {/* Close button */}
+            <button
+              onClick={() => setIsLinkedInModalOpen(false)}
+              className="absolute top-4 right-4 rounded-xl border-2 border-black bg-white p-1.5 hover:bg-slate-100 transition-colors z-10"
+            >
+              <XMarkIcon className="h-5 w-5 text-black stroke-[2.5px]" />
+            </button>
+
+            {/* Header */}
+            <div className="space-y-1 mb-4 pr-8">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#0077b5] flex items-center gap-1">
+                <LinkedinIcon className="h-4.5 w-4.5 fill-[#0077b5]" /> Verified Accounts
+              </span>
+              <h3 className="text-2xl font-black text-slate-900">LinkedIn Repair Pros</h3>
+              <p className="text-xs text-slate-500 font-bold">
+                Hire certified trade freelancers sorted best to worst.
+              </p>
+            </div>
+
+            {/* Sorting Filter Controls */}
+            <div className="flex items-center gap-2 mb-4 bg-slate-50 border-2 border-black rounded-2xl p-2 justify-between">
+              <span className="text-xs font-black text-slate-700 pl-1">Sort order:</span>
+              <div className="flex gap-1.5">
+                <button
+                  onClick={() => setProSort("rating")}
+                  className={`px-3 py-1.5 rounded-xl text-[10px] font-black border-2 border-black transition-all ${
+                    proSort === "rating"
+                      ? "bg-orange-500 text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                      : "bg-white text-slate-700 shadow-none hover:bg-slate-100"
+                  }`}
+                >
+                  Best Rating
+                </button>
+                <button
+                  onClick={() => setProSort("reviews")}
+                  className={`px-3 py-1.5 rounded-xl text-[10px] font-black border-2 border-black transition-all ${
+                    proSort === "reviews"
+                      ? "bg-orange-500 text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                      : "bg-white text-slate-700 shadow-none hover:bg-slate-100"
+                  }`}
+                >
+                  Most Reviews
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable Pro list */}
+            <div className="flex-1 overflow-y-auto pr-1 space-y-4">
+              {sortedPros.map((pro, index) => (
+                <div
+                  key={pro.name}
+                  className="rounded-2xl border-4 border-black bg-white p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] space-y-3 relative overflow-hidden group hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all duration-200"
+                >
+                  {/* Ranking Medal/Badge */}
+                  <span className="absolute top-3 right-3 text-[9px] font-black uppercase tracking-widest bg-orange-100 border border-black rounded-lg px-2 py-0.5">
+                    #{index + 1}
+                  </span>
+
+                  <div className="space-y-1">
+                    <h4 className="font-black text-slate-900 text-base">{pro.name}</h4>
+                    <p className="text-[10px] text-slate-500 font-extrabold">{pro.title}</p>
+                    <p className="text-[10px] text-[#0077b5] font-black uppercase tracking-wider">{pro.company}</p>
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-0.5">
+                    <div className="flex items-center text-amber-500 text-xs font-black">
+                      ★ {pro.rating.toFixed(1)}
+                    </div>
+                    <span className="text-[10px] text-slate-400 font-extrabold">({pro.reviews} reviews)</span>
+                  </div>
+
+                  <div className="p-2.5 rounded-xl bg-slate-50 border-2 border-black space-y-0.5">
+                    <span className="block text-[8px] font-black text-slate-400 uppercase tracking-widest">Best Use Case</span>
+                    <span className="text-[10px] text-slate-800 font-black">{pro.bestUse}</span>
+                  </div>
+
+                  <a
+                    href={pro.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-[#0077b5] text-white font-black py-2.5 border-2 border-black text-xs shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none hover:bg-[#006699] transition-all"
+                  >
+                    <LinkedinIcon className="h-4 w-4 fill-white" />
+                    View LinkedIn Profile
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
