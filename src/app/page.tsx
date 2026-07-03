@@ -27,43 +27,53 @@ const categoryIcons: Record<string, any> = {
   home: HomeIcon,
 };
 
+const categoryColors: Record<string, { bg: string; text: string; border: string; hover: string }> = {
+  clothing: { bg: "bg-orange-50", text: "text-orange-500", border: "border-slate-200", hover: "card-hover-orange" },
+  "small-appliances": { bg: "bg-orange-50", text: "text-orange-500", border: "border-slate-200", hover: "card-hover-orange" },
+  furniture: { bg: "bg-orange-50", text: "text-orange-500", border: "border-slate-200", hover: "card-hover-orange" },
+  bikes: { bg: "bg-orange-50", text: "text-orange-500", border: "border-slate-200", hover: "card-hover-orange" },
+  electronics: { bg: "bg-orange-50", text: "text-orange-500", border: "border-slate-200", hover: "card-hover-orange" },
+  home: { bg: "bg-orange-50", text: "text-orange-500", border: "border-slate-200", hover: "card-hover-orange" },
+};
+
 export default function HomePage() {
   return (
-    <div className="space-y-16 py-4">
+    <div className="space-y-14 py-2 pb-12">
       
-      <section className="relative overflow-hidden rounded-3xl border border-orange-100 bg-orange-50/50 p-6 sm:p-10 shadow-sm animate-scale-in flex flex-col md:flex-row items-center gap-10">
-        <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" />
-        <div className="absolute -left-32 -top-32 h-80 w-80 rounded-full bg-orange-400/5 blur-[100px] pointer-events-none" />
-        <div className="absolute -right-32 -bottom-32 h-80 w-80 rounded-full bg-orange-500/5 blur-[100px] pointer-events-none" />
+      {/* 🚀 Hero Section with Gradient Mesh */}
+      <section className="relative overflow-hidden rounded-3xl border-2 border-orange-200 p-6 shadow-lg animate-scale-in flex flex-col items-center">
+        <div className="absolute inset-0 gradient-mesh-hero pointer-events-none" />
+        <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
 
         {/* Text Content */}
-        <div className="relative z-10 flex flex-col items-start text-left max-w-xl space-y-6">
-          <p className="inline-flex items-center gap-1.5 rounded-full bg-orange-100 border border-orange-200 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-orange-700 shadow-sm">
-            <SparklesIcon className="h-3.5 w-3.5" />
+        <div className="relative z-10 flex flex-col items-center text-center space-y-5">
+          <p className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-orange-100 to-amber-100 border border-orange-200 px-4 py-1.5 text-[11px] font-black uppercase tracking-wider text-orange-700 shadow-sm animate-pop-in">
+            <SparklesIcon className="h-3.5 w-3.5 animate-spin" style={{ animationDuration: '3s' }} />
             Your Community Repair Assistant
           </p>
           
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.1]">
-            Fix it yourself, safely — or find someone local who can.
+          <h1 className="text-3xl font-black tracking-tight text-slate-900 leading-[1.15] animate-pop-in delay-75">
+            Fix it yourself, safely — or find someone <span className="text-gradient">local who can.</span>
           </h1>
           
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium max-w-lg">
+          <p className="text-sm text-slate-600 leading-relaxed font-bold max-w-sm animate-pop-in delay-150">
             RepairBuddy helps you repair everyday items, save money, and reduce waste. We check every repair for safety first.
           </p>
 
-          <div className="pt-2 flex flex-col gap-4 w-full mt-2">
-            <Button href="/choose-item" className="w-full flex items-center justify-center py-4 shadow-xl shadow-orange-500/20 text-lg transition-all duration-300 ease-out hover:-translate-y-1 active:scale-95 active:shadow-sm">Start a repair</Button>
-            <Button href="/scanner" variant="secondary" className="w-full flex items-center justify-center py-4 bg-white border-2 border-slate-200 text-slate-800 hover:bg-orange-50 hover:border-orange-300 hover:text-orange-700 transition-all duration-300 ease-out group shadow-sm text-lg active:scale-95 hover:-translate-y-1">
-              <CameraIcon className="h-6 w-6 text-orange-500 mr-2 group-hover:scale-110 transition-transform" />
+          <div className="flex flex-col gap-4 w-full mt-3 animate-pop-in delay-250">
+            <Button href="/choose-item" className="w-full py-4 text-lg shadow-xl">
+              Start a repair
+            </Button>
+            <Button href="/scanner" variant="secondary" className="w-full py-4 text-lg group">
+              <CameraIcon className="h-6 w-6 text-orange-500 mr-2 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300" />
               Scan an item
             </Button>
           </div>
         </div>
 
-        {/* Real Non-AI Photograph */}
-        <div className="relative z-10 w-full flex justify-center mt-6">
-          <div className="relative w-full aspect-square sm:max-w-md lg:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition-all duration-500 hover:scale-105">
-            {/* Using a high-quality generated photograph representing repair/fixing */}
+        {/* Hero Photo */}
+        <div className="relative z-10 w-full flex justify-center mt-8 animate-pop-in delay-350">
+          <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white rotate-1 hover:rotate-0 transition-all duration-500 hover:scale-[1.03] hover:shadow-orange-500/20">
             <img 
               src="/images/hero.png" 
               alt="Person performing electronics repair safely" 
@@ -73,98 +83,104 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 🗺️ How it Works — Image Cards */}
-      <section className="space-y-8 animate-slide-up delay-100 px-2">
+      {/* 🗺️ How it Works — Vibrant Image Cards */}
+      <section className="space-y-8 px-1">
         <div className="text-center space-y-2">
-          <h2 className="text-3xl font-black tracking-tight text-slate-900">How it works</h2>
-          <p className="text-slate-600 text-sm font-bold">RepairBuddy takes you from a broken item to a safe fix in four stages.</p>
+          <h2 className="text-3xl font-black tracking-tight text-slate-900">How it <span className="text-gradient">works</span></h2>
+          <p className="text-slate-600 text-sm font-bold">From broken item to safe fix in four stages.</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-5">
           
           {/* Step 1 */}
-          <div className="group rounded-3xl border border-slate-100 bg-white shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-orange-200">
-            <div className="h-40 w-full bg-slate-200 relative overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=800" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Camera lens for scanning" />
+          <div className="group rounded-3xl border-2 border-orange-200 bg-white shadow-md overflow-hidden card-hover-orange opacity-0 animate-slide-up delay-100" style={{ animationFillMode: 'forwards' }}>
+            <div className="h-36 w-full bg-orange-100 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=800" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Camera lens for scanning" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <span className="absolute bottom-3 left-4 text-xs font-black text-white/90 uppercase tracking-widest bg-orange-500/80 rounded-full px-3 py-1">Step 1</span>
             </div>
-            <div className="p-6">
-              <span className="text-xs font-black text-orange-500 uppercase tracking-widest block mb-2">Step 1</span>
+            <div className="p-5">
               <h3 className="font-black text-slate-900 text-xl mb-2">Choose or Scan Item</h3>
-              <p className="text-sm text-slate-600 font-bold leading-relaxed">Select a category or snap a photo to automatically locate your item in our database.</p>
+              <p className="text-sm text-slate-600 font-bold leading-relaxed">Select a category or snap a photo to automatically locate your item.</p>
             </div>
           </div>
 
           {/* Step 2 */}
-          <div className="group rounded-3xl border border-slate-100 bg-white shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-orange-200">
-            <div className="h-40 w-full bg-slate-200 relative overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?auto=format&fit=crop&q=80&w=800" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Safety equipment" />
+          <div className="group rounded-3xl border-2 border-orange-200 bg-white shadow-md overflow-hidden card-hover-orange opacity-0 animate-slide-up delay-200" style={{ animationFillMode: 'forwards' }}>
+            <div className="h-36 w-full bg-orange-100 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?auto=format&fit=crop&q=80&w=800" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Safety equipment" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <span className="absolute bottom-3 left-4 text-xs font-black text-white/90 uppercase tracking-widest bg-orange-500/80 rounded-full px-3 py-1">Step 2</span>
             </div>
-            <div className="p-6">
-              <span className="text-xs font-black text-orange-500 uppercase tracking-widest block mb-2">Step 2</span>
+            <div className="p-5">
               <h3 className="font-black text-slate-900 text-xl mb-2">Run Safety Check</h3>
-              <p className="text-sm text-slate-600 font-bold leading-relaxed">Answer key checklist safety questions regarding chemical, electrical, or structural hazards.</p>
+              <p className="text-sm text-slate-600 font-bold leading-relaxed">Answer key safety questions about chemical, electrical, or structural hazards.</p>
             </div>
           </div>
 
           {/* Step 3 */}
-          <div className="group rounded-3xl border border-slate-100 bg-white shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-orange-200">
-            <div className="h-40 w-full bg-slate-200 relative overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Result checking" />
+          <div className="group rounded-3xl border-2 border-orange-200 bg-white shadow-md overflow-hidden card-hover-orange opacity-0 animate-slide-up delay-300" style={{ animationFillMode: 'forwards' }}>
+            <div className="h-36 w-full bg-orange-100 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Result checking" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <span className="absolute bottom-3 left-4 text-xs font-black text-white/90 uppercase tracking-widest bg-orange-500/80 rounded-full px-3 py-1">Step 3</span>
             </div>
-            <div className="p-6">
-              <span className="text-xs font-black text-orange-500 uppercase tracking-widest block mb-2">Step 3</span>
+            <div className="p-5">
               <h3 className="font-black text-slate-900 text-xl mb-2">Get Safety Result</h3>
-              <p className="text-sm text-slate-600 font-bold leading-relaxed">Receive a clear safety badge rating (green, yellow, or red) with comprehensive safety guidelines.</p>
+              <p className="text-sm text-slate-600 font-bold leading-relaxed">Receive a clear safety badge rating (green, yellow, or red) with comprehensive guidelines.</p>
             </div>
           </div>
 
           {/* Step 4 */}
-          <div className="group rounded-3xl border border-slate-100 bg-white shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-orange-200">
-            <div className="h-40 w-full bg-slate-200 relative overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=800" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Repairing" />
+          <div className="group rounded-3xl border-2 border-orange-200 bg-white shadow-md overflow-hidden card-hover-orange opacity-0 animate-slide-up delay-400" style={{ animationFillMode: 'forwards' }}>
+            <div className="h-36 w-full bg-orange-100 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=800" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Repairing" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <span className="absolute bottom-3 left-4 text-xs font-black text-white/90 uppercase tracking-widest bg-orange-500/80 rounded-full px-3 py-1">Step 4</span>
             </div>
-            <div className="p-6">
-              <span className="text-xs font-black text-orange-500 uppercase tracking-widest block mb-2">Step 4</span>
+            <div className="p-5">
               <h3 className="font-black text-slate-900 text-xl mb-2">Repair or Request Help</h3>
-              <p className="text-sm text-slate-600 font-bold leading-relaxed">Walk through detailed DIY guides or request certified professional support if needed.</p>
+              <p className="text-sm text-slate-600 font-bold leading-relaxed">Walk through detailed DIY guides or request certified professional support.</p>
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* 🍱 Unified Consistent Categories Grid */}
-      <section className="space-y-6 animate-slide-up delay-200">
+      {/* 🍱 Category Grid — Each Category Has a Unique Vivid Color */}
+      <section className="space-y-6 px-1">
         <div className="flex items-end justify-between">
-          <div className="space-y-0.5">
-            <h2 className="text-2xl font-black tracking-tight text-slate-800">What are you fixing?</h2>
-            <p className="text-slate-500 text-xs font-semibold">Select a category to browse local database items.</p>
+          <div className="space-y-1">
+            <h2 className="text-2xl font-black tracking-tight text-slate-900">What are you <span className="text-gradient">fixing?</span></h2>
+            <p className="text-slate-600 text-xs font-bold">Select a category to browse items.</p>
           </div>
-          <Link href="/choose-item" className="text-xs font-bold text-accent-600 hover:text-accent-500 underline transition-colors flex items-center gap-0.5">
-            Browse all <ArrowRightIcon className="h-3.5 w-3.5" />
+          <Link href="/choose-item" className="inline-flex items-center gap-1 text-sm font-black text-white bg-gradient-to-r from-orange-500 to-amber-500 rounded-full px-4 py-2 shadow-md shadow-orange-500/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+            Browse all <ArrowRightIcon className="h-4 w-4" />
           </Link>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {categories.map((category) => {
+        <div className="grid grid-cols-2 gap-4">
+          {categories.map((category, i) => {
             const Icon = categoryIcons[category.id] || BoltIcon;
+            const colors = categoryColors[category.id] || categoryColors["home"];
             return (
               <Link
                 key={category.id}
                 href={`/choose-item?category=${category.id}`}
-                className="group rounded-2xl border border-slate-100 bg-white p-5 hover:border-accent-500/20 hover:shadow-sm transition-all duration-300 flex flex-col justify-between min-h-[170px]"
+                className={`group rounded-2xl border-2 ${colors.border} bg-white p-5 ${colors.hover} flex flex-col justify-between min-h-[160px] opacity-0 animate-pop-in`}
+                style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'forwards' }}
               >
                 <div>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-50 text-accent-500 border border-accent-100">
-                    <Icon className="h-5 w-5" />
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${colors.bg} ${colors.text} shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300`}>
+                    <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-4 text-base font-extrabold text-slate-800 group-hover:text-accent-600 transition-colors">
+                  <h3 className="mt-3 text-base font-black text-slate-900 group-hover:text-orange-600 transition-colors">
                     {category.name}
                   </h3>
-                  <p className="mt-1 text-xs text-slate-500 leading-relaxed font-semibold">{category.description}</p>
+                  <p className="mt-1 text-[11px] text-slate-500 leading-relaxed font-bold">{category.description}</p>
                 </div>
-                <span className="text-[10px] font-black text-accent-500 mt-4 inline-flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
-                  Explore category →
+                <span className={`text-[10px] font-black ${colors.text} mt-3 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-300`}>
+                  Explore →
                 </span>
               </Link>
             );
@@ -172,51 +188,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 📊 Values Billboard Showcase (Light Mode Asymmetrical) */}
-      <section className="space-y-6 animate-slide-up delay-300">
-        <div className="text-center max-w-xl mx-auto space-y-1.5">
-          <h2 className="text-2xl font-black tracking-tight text-slate-800">Why repair?</h2>
-          <p className="text-slate-500 text-xs sm:text-sm font-semibold font-semibold">Every fix yields positive environmental and economic impact.</p>
+      {/* 📊 Why Repair — Bold Colored Cards */}
+      <section className="space-y-6 px-1">
+        <div className="text-center space-y-2">
+          <h2 className="text-2xl font-black tracking-tight text-slate-900">Why <span className="text-gradient">repair?</span></h2>
+          <p className="text-slate-600 text-xs font-bold">Every fix yields positive impact.</p>
         </div>
 
-        <div className="grid gap-4">
-          {/* Card 1: Save Money */}
-          <div className="rounded-2xl border border-emerald-100 bg-emerald-50/20 p-5 flex flex-col justify-between transition-all duration-300 hover:border-emerald-200">
-            <div>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600">
-                <CurrencyDollarIcon className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-black text-slate-800 leading-tight">Save money</h3>
-              <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-semibold">
-                Repairs cost a small fraction compared to buying replacement products. Compare expenses using our integrated calculator before making your choice.
-              </p>
+        <div className="grid grid-cols-1 gap-4">
+          {/* Save Money */}
+          <div className="rounded-2xl border-2 border-orange-200 bg-orange-50/20 p-5 card-hover-orange opacity-0 animate-slide-up delay-100" style={{ animationFillMode: 'forwards' }}>
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600 shadow-sm">
+              <CurrencyDollarIcon className="h-6 w-6" />
             </div>
+            <h3 className="text-lg font-black text-slate-900">Save money</h3>
+            <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-bold">
+              Repairs cost a fraction compared to buying replacements. Compare expenses using our integrated calculator.
+            </p>
           </div>
 
-          {/* Card 2: Reduce Waste */}
-          <div className="rounded-2xl border border-orange-100 bg-orange-50/20 p-5 flex flex-col justify-between transition-all duration-300 hover:border-orange-200">
-            <div>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 border border-orange-100 text-orange-600">
-                <GlobeAmericasIcon className="h-5 w-5 animate-pulse" />
-              </div>
-              <h3 className="text-lg font-black text-slate-800 leading-tight">Reduce waste</h3>
-              <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-semibold">
-                Every single item repaired keeps plastic, metal, and electronic waste out of our municipal landfills. Log your completions to track avoided waste weight.
-              </p>
+          {/* Reduce Waste */}
+          <div className="rounded-2xl border-2 border-orange-200 bg-orange-50/20 p-5 card-hover-orange opacity-0 animate-slide-up delay-200" style={{ animationFillMode: 'forwards' }}>
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600 shadow-sm">
+              <GlobeAmericasIcon className="h-6 w-6" />
             </div>
+            <h3 className="text-lg font-black text-slate-900">Reduce waste</h3>
+            <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-bold">
+              Every item repaired keeps plastic, metal, and electronic waste out of our landfills.
+            </p>
           </div>
 
-          {/* Card 3: Support Local */}
-          <div className="rounded-2xl border border-sky-100 bg-sky-50/20 p-5 flex flex-col justify-between transition-all duration-300 hover:border-sky-200">
-            <div>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-sky-50 border border-sky-100 text-sky-600">
-                <UserGroupIcon className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-black text-slate-800 leading-tight">Support local</h3>
-              <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-semibold">
-                If a repair is too advanced or dangerous to complete yourself, we directly link you to local trade freelancers, directories, and repair shops near you.
-              </p>
+          {/* Support Local */}
+          <div className="rounded-2xl border-2 border-orange-200 bg-orange-50/20 p-5 card-hover-orange opacity-0 animate-slide-up delay-300" style={{ animationFillMode: 'forwards' }}>
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600 shadow-sm">
+              <UserGroupIcon className="h-6 w-6" />
             </div>
+            <h3 className="text-lg font-black text-slate-900">Support local</h3>
+            <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-bold">
+              If a repair is too advanced, we link you to local trade freelancers and repair shops near you.
+            </p>
           </div>
         </div>
       </section>

@@ -14,7 +14,7 @@ interface PageTransitionProps {
 export function PageTransition({ children, className = "" }: PageTransitionProps) {
   const pathname = usePathname();
   return (
-    <div key={pathname} className={`animate-page-enter ${className}`}>
+    <div key={pathname} className={`animate-page-shoot-up ${className}`}>
       {children}
     </div>
   );

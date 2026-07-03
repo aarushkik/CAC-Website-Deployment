@@ -65,13 +65,13 @@ export default function ScannerPage() {
           AI <span className="text-orange-500">Scanner</span>
         </h1>
         <p className="text-slate-600 text-sm font-bold leading-relaxed">
-          Capture a photo and describe the problem. We'll suggest likely matches and run a safety check.
+          Capture a photo and describe the problem. We&apos;ll suggest likely matches and run a safety check.
         </p>
       </div>
 
       <div className="flex flex-col gap-8">
         {/* Step 1: Add Photo & Describe */}
-        <div className="rounded-3xl border-2 border-slate-200 bg-white p-6 shadow-md flex flex-col gap-6">
+        <div className={`rounded-3xl border-2 bg-white p-6 shadow-md flex flex-col gap-6 transition-all duration-500 ${loading ? 'border-orange-400 animate-analyze-pulse' : 'border-slate-200'}`}>
           
           <div className="space-y-3">
             <h2 className="text-xl font-black text-slate-900 flex items-center gap-2">
@@ -98,8 +98,9 @@ export default function ScannerPage() {
 
             {preview && (
               <div className="relative mt-4 p-2 border-2 border-slate-200 bg-slate-50 rounded-2xl flex items-center justify-center max-h-64 overflow-hidden shadow-inner">
+                {loading && <div className="scan-line" />}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={preview} alt="Captured preview" className="max-h-56 rounded-xl object-contain animate-scale-in shadow-md" />
+                <img src={preview} alt="Captured preview" className={`max-h-56 rounded-xl object-contain animate-scale-in shadow-md transition-all duration-500 ${loading ? 'brightness-110 saturate-150' : ''}`} />
               </div>
             )}
           </div>
@@ -121,21 +122,29 @@ export default function ScannerPage() {
           <button 
             onClick={analyze} 
             disabled={description.trim().length === 0 || loading} 
-            className="w-full flex justify-center items-center gap-2 rounded-2xl bg-orange-500 hover:bg-orange-600 disabled:bg-slate-200 disabled:text-slate-400 text-white font-black py-4 text-lg shadow-lg shadow-orange-500/30 transition-all duration-300 hover:-translate-y-1 active:scale-95 mt-2"
+            className={`w-full flex justify-center items-center gap-2 rounded-2xl text-white font-black py-4 text-lg shadow-lg transition-all duration-300 hover:-translate-y-1 active:scale-90 mt-2 ${
+              loading 
+                ? 'bg-gradient-animated shadow-orange-500/50 animate-pulse' 
+                : 'bg-gradient-to-r from-orange-500 to-amber-500 shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none'
+            }`}
           >
-            <SparklesIcon className="h-6 w-6" />
+            <SparklesIcon className={`h-6 w-6 ${loading ? 'animate-spin' : ''}`} />
             {loading ? "Analyzing..." : "Analyze item"}
           </button>
         </div>
 
         {/* Step 2: Suggested Matches */}
-        <div className="rounded-3xl border-2 border-slate-200 bg-white p-6 shadow-md min-h-[250px] flex flex-col">
+        <div className={`rounded-3xl border-2 bg-white p-6 shadow-md min-h-[250px] flex flex-col transition-all duration-500 ${loading ? 'border-orange-300 bg-orange-50/30' : 'border-slate-200'}`}>
           <h2 className="text-xl font-black text-slate-900 mb-6">Suggested Matches</h2>
 
           {loading ? (
             <div className="flex flex-col items-center justify-center py-10 flex-1">
-              <Mascot size="lg" variant="thinking" className="animate-pulse mb-6" />
-              <p className="text-sm font-black text-slate-500 uppercase tracking-widest animate-pulse">Scanning...</p>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-amber-400 blur-xl opacity-40 animate-pulse scale-150" />
+                <Mascot size="xl" variant="scanning" className="relative z-10 animate-look-around" />
+              </div>
+              <p className="text-base font-black text-orange-600 uppercase tracking-widest mt-4 animate-pulse">Scanning & Analyzing...</p>
+              <p className="text-xs font-bold text-slate-500 mt-1">Matching against our database</p>
             </div>
           ) : (
             <>

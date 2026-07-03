@@ -50,15 +50,19 @@ function CalculatorContent() {
   const amazonUrl = `https://www.amazon.com/s?k=${encodeURIComponent(itemName)}`;
 
   return (
-    <div className="space-y-12 animate-fade-in max-w-3xl mx-auto pb-12">
-      <PageHeader
-        title="Repair vs Replace Calculator"
-        intro="Enter estimated costs below to see if it makes financial sense to repair your item or buy a new one."
-      />
+    <div className="space-y-10 animate-fade-in pb-12 px-2 pt-2">
+      <div className="text-center space-y-3 px-2">
+        <h1 className="text-3xl font-black text-slate-900 tracking-tight leading-tight">
+          Repair vs <span className="text-gradient">Replace</span>
+        </h1>
+        <p className="text-slate-600 text-sm font-bold leading-relaxed">
+          Enter costs below to see if repairing or replacing makes more sense.
+        </p>
+      </div>
 
       <div className="space-y-8">
         {/* Step 1: Selection & Input */}
-        <Card className="animate-slide-up delay-100 bg-white border border-slate-200 shadow-md p-8 sm:p-10 space-y-10">
+        <div className="rounded-3xl border-2 border-slate-200 bg-white shadow-md p-6 space-y-8 animate-pop-in">
           
           <div className="space-y-4">
             <label className="block">
@@ -73,7 +77,7 @@ function CalculatorContent() {
                 <select
                   value={itemId}
                   onChange={(e) => applyItemDefaults(e.target.value)}
-                  className="w-full appearance-none bg-orange-50 border-2 border-orange-200 text-slate-800 font-bold rounded-full px-6 py-4 cursor-pointer hover:border-orange-300 hover:bg-orange-100 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/20 focus:outline-none transition-all duration-300 shadow-sm"
+                  className="w-full appearance-none bg-gradient-to-r from-orange-50 to-amber-50 border-2 border-orange-200 text-slate-800 font-black rounded-2xl px-6 py-4 cursor-pointer hover:border-orange-400 hover:shadow-md focus:border-orange-500 focus:ring-4 focus:ring-orange-500/20 focus:outline-none transition-all duration-300 shadow-sm"
                 >
                   <option value="">Choose an item from our database…</option>
                   {items.map((item) => (
@@ -111,7 +115,7 @@ function CalculatorContent() {
               />
             </div>
           </div>
-        </Card>
+        </div>
 
         {/* Step 2: Result Box (Bottom Placement) */}
         <div
@@ -127,9 +131,9 @@ function CalculatorContent() {
             <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Recommendation Result</h2>
             
             {!hasNumbers ? (
-              <div className="flex flex-col items-center justify-center py-6 text-center space-y-4">
+              <div className="flex flex-col items-center py-6 text-center space-y-4">
                 <div className="flex flex-col items-center space-y-3 opacity-70">
-                  <Mascot size="sm" variant="thinking" />
+                  <Mascot size="lg" variant="thinking" />
                   <span className="text-xs font-black uppercase tracking-widest text-slate-500 bg-slate-200/50 px-4 py-1.5 rounded-full">Awaiting numbers</span>
                 </div>
                 <p className="text-sm text-slate-600 font-medium max-w-[240px]">
@@ -138,8 +142,8 @@ function CalculatorContent() {
               </div>
             ) : (
               <div className="space-y-4 text-center">
-                <div className={`mx-auto flex h-16 w-16 items-center justify-center rounded-full shadow-inner mb-4 ${recommendRepair ? "bg-emerald-200 text-emerald-700" : "bg-amber-200 text-amber-700"}`}>
-                  {recommendRepair ? <WrenchScrewdriverIcon className="h-8 w-8" /> : <ShoppingBagIcon className="h-8 w-8" />}
+                <div className={`mx-auto flex h-20 w-20 items-center justify-center rounded-full shadow-lg mb-4 animate-spring-bounce ${recommendRepair ? "bg-gradient-to-br from-emerald-200 to-emerald-300 text-emerald-700" : "bg-gradient-to-br from-amber-200 to-amber-300 text-amber-700"}`}>
+                  {recommendRepair ? <WrenchScrewdriverIcon className="h-10 w-10" /> : <ShoppingBagIcon className="h-10 w-10" />}
                 </div>
                 <p className={`text-3xl sm:text-4xl font-black tracking-tight ${recommendRepair ? "text-emerald-700" : "text-amber-700"}`}>
                   {recommendRepair ? "Repairing looks worth it 👍" : "Replacing may be smarter"}

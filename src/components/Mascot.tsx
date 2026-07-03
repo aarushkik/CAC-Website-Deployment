@@ -12,10 +12,10 @@ interface MascotProps {
 }
 
 const sizes: Record<MascotSize, { px: number; cls: string }> = {
-  sm: { px: 48, cls: "h-12 w-12" },
-  md: { px: 80, cls: "h-20 w-20" },
-  lg: { px: 112, cls: "h-28 w-28" },
-  xl: { px: 160, cls: "h-40 w-40" },
+  sm: { px: 64, cls: "h-16 w-16" },
+  md: { px: 96, cls: "h-24 w-24" },
+  lg: { px: 140, cls: "h-[140px] w-[140px]" },
+  xl: { px: 200, cls: "h-[200px] w-[200px]" },
 };
 
 // Maps all variants cleanly to the original transparent orange hamster assets

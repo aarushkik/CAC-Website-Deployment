@@ -36,7 +36,7 @@ export default function ResourcesPage() {
     <div className="space-y-10 animate-fade-in pb-12">
       <div className="text-center space-y-3 pt-2 px-4">
         <h1 className="text-4xl font-black text-slate-900 tracking-tight leading-tight">
-          Local repair <span className="text-orange-500">help</span>
+          Local repair <span className="text-gradient">help</span>
         </h1>
         <p className="text-slate-600 text-sm font-bold leading-relaxed">
           Find trusted shops, repair cafes, and certified trade professionals in your neighborhood.
@@ -45,7 +45,7 @@ export default function ResourcesPage() {
 
       {/* 📍 Geolocation Section */}
       <section className="px-2">
-        <div className="rounded-3xl border-2 border-slate-200 bg-white shadow-md overflow-hidden flex flex-col">
+        <div className="rounded-3xl border-2 border-orange-200 bg-white shadow-md overflow-hidden flex flex-col animate-pop-in">
           {/* Header Image */}
           <div className="h-32 w-full relative">
             <img 
@@ -53,9 +53,9 @@ export default function ResourcesPage() {
               alt="Map and navigation" 
               className="absolute inset-0 w-full h-full object-cover opacity-90"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-5">
+            <div className="absolute inset-0 bg-gradient-to-t from-orange-950/70 to-transparent flex items-end p-5">
               <h3 className="text-xl font-black text-white flex items-center gap-2">
-                <MapPinIcon className="h-6 w-6 text-orange-400" />
+                <MapPinIcon className="h-6 w-6 text-orange-300" />
                 Service Locator
               </h3>
             </div>
@@ -76,7 +76,7 @@ export default function ResourcesPage() {
               <button
                 onClick={requestGeoLocation}
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-2 rounded-2xl bg-orange-500 hover:bg-orange-600 shadow-lg shadow-orange-500/30 px-6 py-4 text-lg font-black text-white transition-all duration-300 ease-out disabled:opacity-50 active:scale-95 hover:-translate-y-1"
+                className="w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/30 px-6 py-4 text-lg font-black text-white transition-all duration-300 ease-out disabled:opacity-50 active:scale-90 hover:-translate-y-1"
               >
                 {loading ? "Locating..." : "Auto-Detect Location"}
               </button>
@@ -182,7 +182,7 @@ export default function ResourcesPage() {
                 <CheckCircleIcon className="h-8 w-8 text-emerald-600 shrink-0" />
                 <div>
                   <p className="font-black text-base">Subscribed!</p>
-                  <p className="text-xs font-bold text-emerald-800 mt-0.5">We'll keep you posted.</p>
+                  <p className="text-xs font-bold text-emerald-800 mt-0.5">We&apos;ll keep you posted.</p>
                 </div>
               </div>
             )}
@@ -228,7 +228,7 @@ export default function ResourcesPage() {
               </div>
               <h4 className="text-xl font-black text-slate-900 mb-2">Start a Repair Cafe</h4>
               <p className="text-sm text-slate-600 leading-relaxed font-bold mb-6">
-                Can't find a repair center nearby? You can organize your own local Repair Cafe! Bring neighbors together and fix items side-by-side.
+                Can&apos;t find a repair center nearby? You can organize your own local Repair Cafe! Bring neighbors together and fix items side-by-side.
               </p>
               <a
                 href="https://www.repaircafe.org/"

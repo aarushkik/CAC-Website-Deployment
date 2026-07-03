@@ -83,13 +83,13 @@ export function OnboardingModal() {
                   Welcome to <span className="text-orange-500">RepairBuddy</span>
                 </h2>
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-md mx-auto font-medium">
-                  Your personal AI assistant for fixing everyday items safely and saving money. Let's show you around!
+                  Your personal AI assistant for fixing everyday items safely and saving money. Let&apos;s show you around!
                 </p>
                 <button
                   onClick={() => setStep(1)}
                   className="mt-4 inline-flex items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 px-10 py-4 font-bold text-white text-lg shadow-lg shadow-orange-500/30 transition-all duration-300 hover:scale-105 active:scale-95"
                 >
-                  Let's Go!
+                  Let&apos;s Go!
                   <ArrowRightIcon className="h-5 w-5" />
                 </button>
               </div>
@@ -112,7 +112,7 @@ export function OnboardingModal() {
 
                 <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Step 1: Scan & Diagnose</h2>
                 <p className="text-base text-slate-600 max-w-sm mx-auto leading-relaxed">
-                  Got a broken item? Look for the <strong>Scan an item</strong> button. Our AI will instantly identify the problem, check for safety hazards, and tell you if it's safe to DIY.
+                  Got a broken item? Look for the <strong>Scan an item</strong> button. Our AI will instantly identify the problem, check for safety hazards, and tell you if it&apos;s safe to DIY.
                 </p>
                 <div className="mt-8 pt-6 flex justify-between items-center border-t border-slate-100">
                   <button onClick={() => setStep(0)} className="text-base font-bold text-slate-400 hover:text-slate-600 transition-colors">
@@ -169,7 +169,7 @@ export function OnboardingModal() {
                   <CheckCircleIcon className="h-12 w-12" />
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                  You're all set!
+                  You&apos;re all set!
                 </h2>
                 <p className="text-base sm:text-lg text-slate-600 max-w-md mx-auto font-medium">
                   You can chat with our AI Hamster assistant anytime using the button in the bottom corner if you have questions!
