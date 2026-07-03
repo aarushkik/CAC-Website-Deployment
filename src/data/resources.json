@@ -1,0 +1,100 @@
+[
+  {
+    "id": "repair-clark-county",
+    "name": "Repair Clark County",
+    "type": "Repair cafe",
+    "city": "Vancouver",
+    "lat": 45.6387,
+    "lng": -122.6615,
+    "area": "Clark County",
+    "website": "https://www.columbiasprings.org/repair-clark-county/",
+    "categories": ["clothing", "small-appliances", "furniture", "electronics", "bikes"],
+    "notes": "Volunteer helpers repair household items for free when they can. Check the event page for dates and what to bring."
+  },
+  {
+    "id": "battle-ground-repair-cafe",
+    "name": "Battle Ground Repair Cafe",
+    "type": "Repair cafe",
+    "city": "Battle Ground",
+    "lat": 45.7801,
+    "lng": -122.5337,
+    "area": "Battle Ground Community Center",
+    "website": "https://www.greenlivingpdx.com/repair-cafes/",
+    "categories": ["clothing", "small-appliances", "furniture", "electronics", "bikes"],
+    "notes": "The event listing includes Battle Ground area Repair Cafe dates and locations."
+  },
+  {
+    "id": "camas-repair-cafe",
+    "name": "Camas Public Library Repair Cafe",
+    "type": "Repair cafe",
+    "city": "Camas",
+    "lat": 45.5871,
+    "lng": -122.3995,
+    "area": "Camas Public Library",
+    "website": "https://www.greenlivingpdx.com/repair-cafes/",
+    "categories": ["clothing", "small-appliances", "furniture", "electronics", "bikes"],
+    "notes": "The event listing includes a Camas area Repair Cafe date at the public library."
+  },
+  {
+    "id": "vancouver-tool-library",
+    "name": "Vancouver Washington Tool Library",
+    "type": "Tool library",
+    "city": "Vancouver",
+    "lat": 45.6387,
+    "lng": -122.6615,
+    "area": "Central Vancouver",
+    "website": "https://vanwatl.org/",
+    "categories": ["furniture", "bikes", "home"],
+    "notes": "A community tool library that lends tools and teaches repair skills."
+  },
+  {
+    "id": "bobs-bike-shop",
+    "name": "Bob's Bike Shop",
+    "type": "Bike shop",
+    "city": "Longview",
+    "lat": 46.1382,
+    "lng": -122.9382,
+    "area": "Downtown Longview",
+    "website": "https://bobsmerch.com/bike-shop/",
+    "categories": ["bikes"],
+    "notes": "Full-service bike repair shop inside Bob's Sporting Goods."
+  },
+  {
+    "id": "express-sewing",
+    "name": "Express Sewing",
+    "type": "Sewing & alterations",
+    "city": "Vancouver",
+    "lat": 45.6387,
+    "lng": -122.6615,
+    "area": "Vancouver",
+    "website": "https://www.expresssewing.shop/",
+    "categories": ["clothing"],
+    "notes": "Sewing and alterations shop in Vancouver."
+  },
+  {
+    "id": "express-alterations",
+    "name": "Express Alterations",
+    "type": "Sewing & alterations",
+    "city": "Vancouver",
+    "lat": 45.6387,
+    "lng": -122.6615,
+    "area": "Vancouver Mall",
+    "phone": "(360) 260-9366",
+    "website": "https://www.expressalterations.net/",
+    "categories": ["clothing"],
+    "notes": "Located inside Vancouver Mall."
+  },
+  {
+    "id": "prairie-electric",
+    "name": "Prairie Electric",
+    "type": "Electrician",
+    "city": "Vancouver",
+    "lat": 45.6387,
+    "lng": -122.6615,
+    "area": "Clark County",
+    "phone": "(360) 576-7426",
+    "website": "https://www.prairielectric.com/locations/vancouver-wa/",
+    "categories": ["home"],
+    "notes": "Licensed electrical contractors in Vancouver."
+  }
+]
