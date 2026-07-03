@@ -122,13 +122,13 @@ export default function ScannerPage() {
           <button 
             onClick={analyze} 
             disabled={description.trim().length === 0 || loading} 
-            className={`w-full flex justify-center items-center gap-2 rounded-2xl text-white font-black py-4 text-lg shadow-lg transition-all duration-300 hover:-translate-y-1 active:scale-90 mt-2 ${
+            className={`w-full flex justify-center items-center gap-2 rounded-2xl border-4 border-black font-black py-4 text-lg transition-all duration-200 mt-2 ${
               loading 
-                ? 'bg-gradient-animated shadow-orange-500/50 animate-pulse' 
-                : 'bg-gradient-to-r from-orange-500 to-amber-500 shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none'
+                ? 'bg-orange-600 text-white shadow-none animate-pulse cursor-not-allowed' 
+                : 'bg-orange-500 text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-orange-400 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none disabled:bg-slate-100 disabled:text-slate-400 disabled:border-slate-300 disabled:shadow-none'
             }`}
           >
-            <SparklesIcon className={`h-6 w-6 ${loading ? 'animate-spin' : ''}`} />
+            <SparklesIcon className={`h-6 w-6 ${loading ? 'animate-spin text-white' : 'text-black'}`} />
             {loading ? "Analyzing..." : "Analyze item"}
           </button>
         </div>

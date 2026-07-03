@@ -38,7 +38,7 @@ export function Mascot({ size = "md", variant = "hero", className = "" }: Mascot
   const srcPath = variants[variant];
 
   return (
-    <div className={`relative ${s.cls} shrink-0 ${className}`}>
+    <div className={`relative ${s.cls} shrink-0 ${className} animate-look-around`}>
       <Image
         src={srcPath}
         alt={`RepairBuddy mascot ${variant}`}

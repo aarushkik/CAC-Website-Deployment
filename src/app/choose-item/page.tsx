@@ -30,6 +30,7 @@ function ChooseItemContent() {
   const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const [isSearchActive, setIsSearchActive] = useState(activeCategory !== null);
 
   const [visibleItems, setVisibleItems] = useState<Item[]>([]);
   const [apiLoading, setApiLoading] = useState(false);
@@ -51,7 +52,7 @@ function ChooseItemContent() {
     return () => clearTimeout(delayDebounce);
   }, [activeCategory, query]);
 
-  const showSuggestions = isFocused || query.length > 0 || activeCategory !== null;
+  const showSuggestions = isSearchActive && (isFocused || query.length > 0 || activeCategory !== null);
 
   function setCategory(id: string | null) {
     const params = new URLSearchParams();
@@ -76,7 +77,7 @@ function ChooseItemContent() {
       
       {/* 🧭 Header with Vibrant Appliances Image */}
       <div className="text-center max-w-2xl mx-auto space-y-6 mb-2">
-        <div className="relative w-full aspect-[21/9] sm:aspect-[5/2] rounded-3xl overflow-hidden shadow-md border-4 border-white">
+        <div className="relative w-full aspect-[21/9] sm:aspect-[5/2] rounded-3xl overflow-hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] border-4 border-black">
           <img 
             src="/images/appliances.png" 
             alt="Flatlay of tools and broken household appliances" 
@@ -93,51 +94,78 @@ function ChooseItemContent() {
         </div>
       </div>
 
-      {/* 🔍 Glassmorphic iOS-Style Search Bar */}
-      <div className="max-w-xl w-full mx-auto relative z-20">
+      {/* 🔍 Animated Expanding Search Bar Wrapper */}
+      <div className="max-w-xl w-full mx-auto relative z-20 h-16 flex items-center justify-center">
         <div
-          className={`relative rounded-2xl border bg-slate-50 p-1 transition-all duration-300 ${
-            showSuggestions
-              ? "border-orange-500 bg-white shadow-lg shadow-orange-500/10"
-              : "border-slate-200 hover:border-orange-300 hover:bg-orange-50/50"
+          className={`relative rounded-3xl border-4 border-black transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isSearchActive
+              ? "w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+              : "w-14 h-14 bg-white text-black hover:bg-orange-50 cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
           }`}
+          onClick={() => {
+            if (!isSearchActive) {
+              setIsSearchActive(true);
+            }
+          }}
         >
-          <div className="flex items-center">
-            <span className="pl-4 text-slate-400 shrink-0">
-              <MagnifyingGlassIcon className={`h-5 w-5 transition-colors duration-300 ${isFocused ? "text-orange-500" : ""}`} />
-            </span>
+          <div className="flex items-center h-full w-full justify-between">
+            <button
+              onClick={(e) => {
+                if (isSearchActive) {
+                  e.stopPropagation();
+                  setIsSearchActive(false);
+                  setQuery("");
+                  setCategory(null);
+                }
+              }}
+              className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full transition-all duration-300 ${
+                isSearchActive ? "text-white pl-1" : "text-black pl-0 hover:scale-110"
+              }`}
+            >
+              {isSearchActive ? (
+                <XMarkIcon className="h-6 w-6 font-bold" />
+              ) : (
+                <MagnifyingGlassIcon className="h-6 w-6 font-bold" />
+              )}
+            </button>
+
             <input
               type="text"
               value={query}
-              onFocus={() => setIsFocused(true)}
+              onFocus={() => {
+                setIsSearchActive(true);
+                setIsFocused(true);
+              }}
+              onBlur={() => {
+                if (!query) {
+                  setIsFocused(false);
+                }
+              }}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search appliances, clothing, gear..."
-              className="w-full bg-transparent pl-3 pr-4 py-3 text-slate-800 text-base placeholder-slate-400 focus:outline-none font-bold"
+              className={`bg-transparent outline-none font-bold text-base transition-all duration-500 pl-2 ${
+                isSearchActive
+                  ? "w-full text-white placeholder-white/70 opacity-100 pr-4"
+                  : "w-0 opacity-0 pointer-events-none"
+              } !border-0 !shadow-none !translate-x-0 !translate-y-0 focus:!shadow-none focus:!translate-x-0 focus:!translate-y-0`}
             />
-            {query && (
-              <button
-                onClick={() => {
-                  setQuery("");
-                  setCategory(null);
-                }}
-                className="p-1.5 text-slate-400 hover:text-slate-800 mr-1.5 transition-colors"
+
+            {isSearchActive && (
+              <Link
+                href="/scanner"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-1.5 rounded-xl bg-white border-2 border-black hover:bg-orange-100 text-black px-4 py-2 text-sm font-black tracking-wide transition-all duration-200 shrink-0 mr-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none group"
               >
-                <XMarkIcon className="h-5 w-5" />
-              </button>
+                <CameraIcon className="h-4.5 w-4.5 text-orange-600 group-hover:scale-110 transition-transform" />
+                <span className="hidden sm:inline">Scan</span>
+              </Link>
             )}
-            <Link
-              href="/scanner"
-              className="flex items-center gap-1.5 rounded-xl bg-white border-2 border-slate-200 hover:border-orange-300 hover:bg-orange-50 text-slate-700 hover:text-orange-700 px-4 py-2 text-sm font-bold tracking-wide transition-all duration-300 shrink-0 mr-1 shadow-sm group"
-            >
-              <CameraIcon className="h-4.5 w-4.5 text-orange-500 group-hover:scale-110 transition-transform" />
-              <span className="hidden sm:inline">Scan</span>
-            </Link>
           </div>
         </div>
 
-        {/* 📋 Vibrant Suggestions Sheet */}
-        {showSuggestions && (
-          <div className="absolute top-full left-0 right-0 mt-3 bg-white border-4 border-orange-200 rounded-3xl p-5 shadow-2xl animate-scale-in z-30 space-y-6">
+      {/* 📋 Vibrant Suggestions Sheet */}
+      {showSuggestions && (
+        <div className="absolute top-[220px] left-2 right-2 mt-3 bg-white border-4 border-black rounded-3xl p-5 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] animate-scale-in z-30 space-y-6">
             
             {/* Category horizontal scroll container */}
             <div className="space-y-3">
@@ -366,7 +394,7 @@ function SwipeableDrawer({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="py-2.5 px-3 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-center text-[10px] font-bold transition-all"
+                className="py-2.5 px-3 rounded-lg border-2 border-black bg-white hover:bg-slate-50 text-black text-center text-[10px] font-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
                 Maps
               </a>
@@ -375,7 +403,7 @@ function SwipeableDrawer({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="py-2.5 px-3 rounded-lg border border-rose-100 bg-rose-50 hover:bg-rose-100/55 text-rose-600 text-center text-[10px] font-bold transition-all"
+                className="py-2.5 px-3 rounded-lg border-2 border-black bg-red-100 hover:bg-red-200 text-red-700 text-center text-[10px] font-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
                 Yelp
               </a>
@@ -384,7 +412,7 @@ function SwipeableDrawer({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="py-2.5 px-3 rounded-lg border border-sky-100 bg-sky-50 hover:bg-sky-100/55 text-sky-600 text-center text-[10px] font-bold transition-all"
+                className="py-2.5 px-3 rounded-lg border-2 border-black bg-sky-100 hover:bg-sky-200 text-sky-700 text-center text-[10px] font-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
                 LinkedIn
               </a>
@@ -395,10 +423,10 @@ function SwipeableDrawer({
                 e.stopPropagation();
                 setShowProChoices(true);
               }}
-              className="w-full py-2.5 px-4 rounded-xl border border-rose-100 bg-rose-50 hover:bg-rose-100/55 text-rose-600 text-center text-xs font-bold transition-all flex items-center justify-center gap-1"
+              className="w-full py-2.5 px-4 rounded-xl border-2 border-black bg-white hover:bg-slate-50 text-slate-800 text-center text-xs font-black transition-all flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
             >
               Find Professional Help
-              <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+              <ArrowTopRightOnSquareIcon className="h-4 w-4 stroke-[2.5px]" />
             </button>
           )}
 
@@ -408,10 +436,10 @@ function SwipeableDrawer({
               onClose();
               router.push(`/safety-checker?item=${item.id}`);
             }}
-            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-accent-500 to-orange-600 hover:shadow-md text-center text-xs font-bold text-white transition-all flex items-center justify-center gap-1"
+            className="w-full py-3.5 px-4 rounded-2xl bg-orange-500 border-4 border-black text-black font-black text-xs shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-orange-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-200 flex items-center justify-center gap-1"
           >
             Start Safety Check
-            <ArrowRightIcon className="h-4 w-4" />
+            <ArrowRightIcon className="h-4 w-4 stroke-[3px]" />
           </button>
         </div>
 
@@ -436,10 +464,10 @@ function CategoryChip({
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full border px-3 py-1 text-[10px] font-bold tracking-wide transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] ${
+      className={`rounded-xl border-2 border-black px-3.5 py-1.5 text-[10px] font-black tracking-wide transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none ${
         active
-          ? "border-accent-500 bg-gradient-to-r from-accent-500 to-orange-600 text-white shadow-sm"
-          : "border-slate-100 bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-800"
+          ? "bg-orange-500 text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+          : "bg-white text-slate-800 hover:bg-slate-50 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
       }`}
     >
       {label}

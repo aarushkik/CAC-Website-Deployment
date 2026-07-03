@@ -40,32 +40,31 @@ export default function HomePage() {
   return (
     <div className="space-y-14 py-2 pb-12">
       
-      {/* 🚀 Hero Section with Gradient Mesh */}
-      <section className="relative overflow-hidden rounded-3xl border-2 border-orange-200 p-6 shadow-lg animate-scale-in flex flex-col items-center">
-        <div className="absolute inset-0 gradient-mesh-hero pointer-events-none" />
+      {/* 🚀 Hero Section with Neo-Brutalist Layout */}
+      <section className="relative overflow-hidden rounded-3xl border-4 border-black bg-orange-500 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] animate-scale-in flex flex-col items-center">
         <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
 
         {/* Text Content */}
         <div className="relative z-10 flex flex-col items-center text-center space-y-5">
-          <p className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-orange-100 to-amber-100 border border-orange-200 px-4 py-1.5 text-[11px] font-black uppercase tracking-wider text-orange-700 shadow-sm animate-pop-in">
+          <p className="inline-flex items-center gap-1.5 rounded-full bg-white border-2 border-black px-4 py-1.5 text-[11px] font-black uppercase tracking-wider text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] animate-pop-in">
             <SparklesIcon className="h-3.5 w-3.5 animate-spin" style={{ animationDuration: '3s' }} />
             Your Community Repair Assistant
           </p>
           
-          <h1 className="text-3xl font-black tracking-tight text-slate-900 leading-[1.15] animate-pop-in delay-75">
-            Fix it yourself, safely — or find someone <span className="text-gradient">local who can.</span>
+          <h1 className="text-3xl font-black tracking-tight text-white leading-[1.15] animate-pop-in delay-75">
+            Fix it yourself, safely — or find someone <span className="underline decoration-white decoration-4 underline-offset-4">local who can.</span>
           </h1>
           
-          <p className="text-sm text-slate-600 leading-relaxed font-bold max-w-sm animate-pop-in delay-150">
+          <p className="text-sm text-orange-50 leading-relaxed font-black max-w-sm animate-pop-in delay-150">
             RepairBuddy helps you repair everyday items, save money, and reduce waste. We check every repair for safety first.
           </p>
 
           <div className="flex flex-col gap-4 w-full mt-3 animate-pop-in delay-250">
-            <Button href="/choose-item" className="w-full py-4 text-lg shadow-xl">
+            <Button href="/choose-item" className="w-full py-4 text-lg bg-white text-black border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-50">
               Start a repair
             </Button>
-            <Button href="/scanner" variant="secondary" className="w-full py-4 text-lg group">
-              <CameraIcon className="h-6 w-6 text-orange-500 mr-2 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300" />
+            <Button href="/scanner" className="w-full py-4 text-lg bg-black text-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-900 group">
+              <CameraIcon className="h-6 w-6 text-orange-400 mr-2 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300" />
               Scan an item
             </Button>
           </div>
@@ -73,7 +72,7 @@ export default function HomePage() {
 
         {/* Hero Photo */}
         <div className="relative z-10 w-full flex justify-center mt-8 animate-pop-in delay-350">
-          <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white rotate-1 hover:rotate-0 transition-all duration-500 hover:scale-[1.03] hover:shadow-orange-500/20">
+          <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-black rotate-1 hover:rotate-0 transition-all duration-500 hover:scale-[1.03]">
             <img 
               src="/images/hero.png" 
               alt="Person performing electronics repair safely" 
@@ -154,8 +153,8 @@ export default function HomePage() {
             <h2 className="text-2xl font-black tracking-tight text-slate-900">What are you <span className="text-gradient">fixing?</span></h2>
             <p className="text-slate-600 text-xs font-bold">Select a category to browse items.</p>
           </div>
-          <Link href="/choose-item" className="inline-flex items-center gap-1 text-sm font-black text-white bg-gradient-to-r from-orange-500 to-amber-500 rounded-full px-4 py-2 shadow-md shadow-orange-500/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-            Browse all <ArrowRightIcon className="h-4 w-4" />
+          <Link href="/choose-item" className="inline-flex items-center gap-1 text-sm font-black text-black bg-orange-100 border-2 border-black rounded-xl px-4 py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
+            Browse all <ArrowRightIcon className="h-4 w-4 stroke-[3px]" />
           </Link>
         </div>
 
@@ -167,11 +166,11 @@ export default function HomePage() {
               <Link
                 key={category.id}
                 href={`/choose-item?category=${category.id}`}
-                className={`group rounded-2xl border-2 ${colors.border} bg-white p-5 ${colors.hover} flex flex-col justify-between min-h-[160px] opacity-0 animate-pop-in`}
+                className="group rounded-3xl border-4 border-black bg-white p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex flex-col justify-between min-h-[160px] opacity-0 animate-pop-in transition-all duration-300"
                 style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'forwards' }}
               >
                 <div>
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${colors.bg} ${colors.text} shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300`}>
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 border-2 border-black text-orange-600 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:scale-110 group-hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 ${i % 2 === 0 ? 'animate-float' : 'animate-float-slow'}`}>
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-3 text-base font-black text-slate-900 group-hover:text-orange-600 transition-colors">
@@ -179,7 +178,7 @@ export default function HomePage() {
                   </h3>
                   <p className="mt-1 text-[11px] text-slate-500 leading-relaxed font-bold">{category.description}</p>
                 </div>
-                <span className={`text-[10px] font-black ${colors.text} mt-3 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-300`}>
+                <span className="text-[10px] font-black text-orange-600 mt-3 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-300">
                   Explore →
                 </span>
               </Link>

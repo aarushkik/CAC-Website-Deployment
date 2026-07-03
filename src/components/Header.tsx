@@ -20,9 +20,9 @@ export function Header() {
       <div className="flex items-center justify-between w-full h-12">
         {/* AI Helper Button */}
         <button 
-          className={`flex items-center gap-1.5 rounded-full bg-gradient-to-r from-orange-50 to-orange-100 border-2 border-orange-200 hover:from-orange-100 hover:to-orange-200 px-4 py-2 text-sm font-black text-orange-700 transition-all duration-300 active:scale-90 whitespace-nowrap hover:shadow-md hover:shadow-orange-500/10 hover-jelly ${isSearchOpen ? 'opacity-0 scale-75 pointer-events-none w-0 overflow-hidden px-0 border-none' : 'opacity-100 scale-100'}`}
+          className={`flex items-center gap-1.5 rounded-full bg-gradient-to-r from-orange-50 to-orange-100 border-2 border-orange-200 px-4 py-2 text-sm font-black text-orange-700 transition-all duration-300 active:scale-90 whitespace-nowrap shadow-md hover:shadow-orange-500/10 animate-color-breathe ${isSearchOpen ? 'opacity-0 scale-75 pointer-events-none w-0 overflow-hidden px-0 border-none' : 'opacity-100 scale-100'}`}
         >
-          <SparklesIcon className="h-5 w-5 text-orange-500" />
+          <SparklesIcon className="h-5 w-5 text-orange-500 animate-[spin_6s_linear_infinite]" />
           AI Helper
         </button>
 
