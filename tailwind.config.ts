@@ -19,20 +19,68 @@ const config: Config = {
           600: "#232333",
           500: "#2d2d42",
         },
-        // Primary accent — amber/orange (matches mascot)
+        // Orange mappings (Safety Amber / Tool Orange #FF7A00)
+        orange: {
+          50: "#fff7ed",
+          100: "#ffedd5",
+          200: "#fed7aa",
+          300: "#fdba74",
+          400: "#FF8F24",
+          500: "#FF7A00", // Safety Amber / Tool Orange
+          600: "#E06C00",
+          700: "#c2410c",
+        },
+        // Slate mapping (Workspace Gray #F8F9FA, Charcoal Black #212529, Deep Trust Blue #1A2B4C)
+        slate: {
+          50: "#F8F9FA", // Workspace Gray
+          100: "#F8F9FA", // Workspace Gray
+          200: "#e2e8f0",
+          300: "#cbd5e1",
+          400: "#94a3b8",
+          500: "#64748b",
+          600: "#475569",
+          700: "#334155",
+          800: "#212529", // Charcoal Black
+          900: "#212529", // Charcoal Black
+          950: "#1A2B4C", // Deep Trust Blue
+        },
+        // Blue mappings (Deep Trust Blue #1A2B4C)
+        blue: {
+          50: "#f0f4f8",
+          100: "#dbeafe",
+          500: "#1A2B4C",
+          600: "#15223c",
+          900: "#1A2B4C",
+          950: "#1A2B4C",
+        },
+        // Emerald / green mappings (Success Green #00B761)
+        emerald: {
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          200: "#bbf7d0",
+          300: "#86efac",
+          400: "#4ade80",
+          500: "#00B761", // Success Green
+          600: "#00A155",
+          700: "#15803d",
+        },
+        green: {
+          500: "#00B761", // Success Green
+        },
+        // Primary accent — amber/orange
         accent: {
           50: "#fff7ed",
           100: "#ffedd5",
           200: "#fed7aa",
           300: "#fdba74",
-          400: "#fb923c",
-          500: "#f59e0b",
-          600: "#ea580c",
+          400: "#FF8F24",
+          500: "#FF7A00",
+          600: "#E06C00",
           700: "#c2410c",
         },
         // Safety signal colors (vibrant on dark)
-        safe: "#10b981",
-        caution: "#f59e0b",
+        safe: "#00B761", // Success Green
+        caution: "#FF7A00", // Tool Orange
         danger: "#f43f5e",
         // ── Bold Vivid Palette ──
         "vivid-pink": {
@@ -61,8 +109,8 @@ const config: Config = {
           200: "#bbf7d0",
           300: "#86efac",
           400: "#4ade80",
-          500: "#22c55e",
-          600: "#16a34a",
+          500: "#00B761",
+          600: "#00A155",
           700: "#15803d",
         },
         "deep-purple": {

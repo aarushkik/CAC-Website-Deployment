@@ -9,6 +9,8 @@ import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { Mascot } from "@/components/Mascot";
 import { categories } from "@/lib/data";
 import type { Item } from "@/lib/types";
+import { useLanguage } from "@/lib/LanguageContext";
+import { tCategoryName, tItemName, tItemCommonIssue } from "@/lib/dataTranslations";
 import {
   MagnifyingGlassIcon,
   CameraIcon,
@@ -25,12 +27,13 @@ import {
 function ChooseItemContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const { t, language } = useLanguage();
   const activeCategory = searchParams.get("category");
 
   const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
-  const [isSearchActive, setIsSearchActive] = useState(activeCategory !== null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const [visibleItems, setVisibleItems] = useState<Item[]>([]);
   const [apiLoading, setApiLoading] = useState(false);
@@ -52,7 +55,7 @@ function ChooseItemContent() {
     return () => clearTimeout(delayDebounce);
   }, [activeCategory, query]);
 
-  const showSuggestions = isSearchActive && (isFocused || query.length > 0 || activeCategory !== null);
+  const showSuggestions = isFocused || query.length > 0 || activeCategory !== null;
 
   function setCategory(id: string | null) {
     const params = new URLSearchParams();
@@ -65,15 +68,15 @@ function ChooseItemContent() {
     const isRed = item.baseSafety === "red" || item.dangerous;
     const isYellow = item.baseSafety === "yellow";
     return {
-      difficulty: isRed ? "Expert" : isYellow ? "Moderate" : "Beginner",
+      difficulty: isRed ? (language === "es" ? "Experto" : language === "zh" ? "专家" : "Expert") : isYellow ? (language === "es" ? "Moderado" : language === "zh" ? "中等" : "Moderate") : (language === "es" ? "Principiante" : language === "zh" ? "初学者" : "Beginner"),
       difficultyColor: isRed ? "text-rose-600 border-rose-200 bg-rose-50" : isYellow ? "text-amber-600 border-amber-200 bg-amber-50" : "text-emerald-600 border-emerald-200 bg-emerald-50",
       people: isRed ? 2 : item.categoryId === "furniture" || item.categoryId === "bikes" ? 2 : 1,
-      estTime: isRed ? "N/A" : isYellow ? "1-2 Hours" : "30-45 Mins",
+      estTime: isRed ? "N/A" : isYellow ? (language === "es" ? "1-2 Horas" : language === "zh" ? "1-2 小时" : "1-2 Hours") : (language === "es" ? "30-45 Mins" : language === "zh" ? "30-45 分钟" : "30-45 Mins"),
     };
   }
 
   return (
-    <div className="min-h-[75vh] flex flex-col justify-start py-6 px-2 space-y-10 animate-fade-in relative z-10">
+    <div className="min-h-[75vh] flex flex-col justify-start py-6 px-2 space-y-4 animate-fade-in relative z-10">
       
       {/* 🧭 Header with Vibrant Appliances Image */}
       <div className="text-center max-w-2xl mx-auto space-y-6 mb-2">
@@ -86,140 +89,115 @@ function ChooseItemContent() {
         </div>
         <div className="space-y-2">
           <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
-            What needs <span className="text-orange-500">fixing</span>?
+            {t("whatNeedsFixing").split(t("fixingWord"))[0]}
+            <span className="text-[#FF7A00]">{t("fixingWord")}</span>
+            {t("whatNeedsFixing").split(t("fixingWord"))[1]}
           </h1>
           <p className="text-slate-600 text-sm sm:text-base font-semibold leading-relaxed">
-            Search items or upload a photo to verify safety guidelines and cost stats.
+            {t("searchItemsOrUpload")}
           </p>
         </div>
       </div>
 
-      {/* 🔍 Animated Expanding Search Bar Wrapper */}
-      <div className="max-w-xl w-full mx-auto relative z-20 h-16 flex items-center justify-center">
-        <div
-          className={`relative rounded-3xl border-4 border-black transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            isSearchActive
-              ? "w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
-              : "w-14 h-14 bg-white text-black hover:bg-orange-50 cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-          }`}
-          onClick={() => {
-            if (!isSearchActive) {
-              setIsSearchActive(true);
-            }
-          }}
-        >
-          <div className="flex items-center h-full w-full justify-between">
-            <button
-              onClick={(e) => {
-                if (isSearchActive) {
-                  e.stopPropagation();
-                  setIsSearchActive(false);
-                  setQuery("");
-                  setCategory(null);
-                }
-              }}
-              className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full transition-all duration-300 ${
-                isSearchActive ? "text-white pl-1" : "text-black pl-0 hover:scale-110"
-              }`}
-            >
-              {isSearchActive ? (
-                <XMarkIcon className="h-6 w-6 font-bold" />
-              ) : (
-                <MagnifyingGlassIcon className="h-6 w-6 font-bold" />
-              )}
-            </button>
-
+      {/* 🔍 Static Search Bar & Scan Button */}
+      <div className="max-w-xl w-full mx-auto relative z-20 space-y-4 px-2">
+        <div className="relative">
+          <div className="relative rounded-2xl border-4 border-black bg-white h-14 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus-within:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] focus-within:-translate-x-0.5 focus-within:-translate-y-0.5 flex items-center">
+            <span className="pl-4 text-slate-700 shrink-0 flex items-center justify-center">
+              <MagnifyingGlassIcon className="h-6 w-6 stroke-[2.5px]" />
+            </span>
             <input
+              ref={searchInputRef}
               type="text"
               value={query}
-              onFocus={() => {
-                setIsSearchActive(true);
-                setIsFocused(true);
-              }}
+              onFocus={() => setIsFocused(true)}
               onBlur={() => {
-                if (!query) {
-                  setIsFocused(false);
-                }
+                setTimeout(() => setIsFocused(false), 200);
               }}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search appliances, clothing, gear..."
-              className={`bg-transparent outline-none font-bold text-base transition-all duration-500 pl-2 ${
-                isSearchActive
-                  ? "w-full text-white placeholder-white/70 opacity-100 pr-4"
-                  : "w-0 opacity-0 pointer-events-none"
-              } !border-0 !shadow-none !translate-x-0 !translate-y-0 focus:!shadow-none focus:!translate-x-0 focus:!translate-y-0`}
+              placeholder={t("searchPlaceholder")}
+              className="flex-1 bg-transparent px-3 h-full text-black !text-black caret-orange-500 text-sm placeholder-slate-400 focus:outline-none font-bold"
             />
-
-            {isSearchActive && (
-              <Link
-                href="/scanner"
-                onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1.5 rounded-xl bg-white border-2 border-black hover:bg-orange-100 text-black px-4 py-2 text-sm font-black tracking-wide transition-all duration-200 shrink-0 mr-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none group"
+            {query && (
+              <button
+                onClick={() => {
+                  setQuery("");
+                  setCategory(null);
+                }}
+                className="p-2 text-slate-500 hover:text-slate-800 mr-2 transition-colors shrink-0"
               >
-                <CameraIcon className="h-4.5 w-4.5 text-orange-600 group-hover:scale-110 transition-transform" />
-                <span className="hidden sm:inline">Scan</span>
-              </Link>
+                <XMarkIcon className="h-6 w-6 stroke-[2.5px]" />
+              </button>
             )}
           </div>
-        </div>
 
-      {/* 📋 Vibrant Suggestions Sheet */}
-      {showSuggestions && (
-        <div className="absolute top-[220px] left-2 right-2 mt-3 bg-white border-4 border-black rounded-3xl p-5 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] animate-scale-in z-30 space-y-6">
-            
-            {/* Category horizontal scroll container */}
-            <div className="space-y-3">
-              <span className="block text-[10px] font-black uppercase tracking-widest text-orange-500">Quick Filters</span>
-              <div className="flex flex-wrap gap-2">
-                <CategoryChip label="All" active={!activeCategory} onClick={() => setCategory(null)} />
-                {categories.map((c) => (
-                  <CategoryChip
-                    key={c.id}
-                    label={c.name}
-                    active={activeCategory === c.id}
-                    onClick={() => setCategory(c.id)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* List panel */}
-            <div className="space-y-3">
-              <span className="block text-[10px] font-black uppercase tracking-widest text-orange-500">Suggestions</span>
-              {apiLoading ? (
-                <div className="flex flex-col items-center justify-center py-10 text-center space-y-3 animate-pulse">
-                  <Mascot size="sm" variant="thinking" />
-                  <span className="text-xs font-black uppercase tracking-widest text-slate-400 animate-pulse">Searching...</span>
-                </div>
-              ) : visibleItems.length === 0 ? (
-                <div className="flex flex-col items-center justify-center py-10 text-center space-y-4 animate-fade-in bg-slate-50 rounded-2xl border-2 border-slate-100">
-                  <Mascot size="md" variant="sweeping" />
-                  <div className="space-y-1">
-                    <span className="block text-sm font-black uppercase tracking-widest text-slate-500">Nothing found</span>
-                    <p className="text-slate-500 text-sm font-bold max-w-xs mx-auto">
-                      Try another query or scan a photo!
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="max-h-[300px] overflow-y-auto pr-2 space-y-2">
-                  {visibleItems.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => setSelectedItem(item)}
-                      className="w-full text-left py-4 px-4 flex items-center justify-between bg-slate-50 rounded-2xl border-2 border-slate-100 hover:border-orange-300 hover:bg-orange-50 transition-all duration-300 group active:scale-95 shadow-sm"
-                    >
-                      <span className="font-black text-slate-800 text-base group-hover:text-orange-600 transition-colors">
-                        {item.name}
-                      </span>
-                      <ChevronRightIcon className="h-5 w-5 text-slate-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all" />
-                    </button>
+          {/* 📋 Suggestions Sheet */}
+          {showSuggestions && (
+            <div className="absolute top-full left-1 right-2.5 mt-3 bg-white border-4 border-black rounded-3xl p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] animate-scale-in z-30 space-y-6">
+              
+              {/* Category horizontal scroll container */}
+              <div className="space-y-3">
+                <span className="block text-[10px] font-black uppercase tracking-widest text-orange-500">{t("quickFilters")}</span>
+                <div className="flex flex-wrap gap-2">
+                  <CategoryChip label={t("all")} active={!activeCategory} onClick={() => setCategory(null)} />
+                  {categories.map((c) => (
+                    <CategoryChip
+                      key={c.id}
+                      label={tCategoryName(c.id, language)}
+                      active={activeCategory === c.id}
+                      onClick={() => setCategory(c.id)}
+                    />
                   ))}
                 </div>
-              )}
+              </div>
+
+              {/* List panel */}
+              <div className="space-y-3">
+                <span className="block text-[10px] font-black uppercase tracking-widest text-orange-500">{t("suggestions")}</span>
+                {apiLoading ? (
+                  <div className="flex flex-col items-center justify-center py-10 text-center space-y-3 animate-pulse">
+                    <Mascot size="sm" variant="thinking" />
+                    <span className="text-xs font-black uppercase tracking-widest text-slate-400 animate-pulse">{t("searching")}</span>
+                  </div>
+                ) : visibleItems.length === 0 ? (
+                  <div className="flex flex-col items-center justify-center py-10 text-center space-y-4 animate-fade-in bg-slate-50 rounded-2xl border-2 border-slate-100">
+                    <Mascot size="md" variant="sweeping" />
+                    <div className="space-y-1">
+                      <span className="block text-sm font-black uppercase tracking-widest text-slate-500">{t("nothingFound")}</span>
+                      <p className="text-slate-500 text-sm font-bold max-w-xs mx-auto">
+                        {t("tryAnotherQuery")}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="max-h-[300px] overflow-y-auto pr-2 space-y-2">
+                    {visibleItems.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => setSelectedItem(item)}
+                        className="w-full text-left py-4 px-4 flex items-center justify-between bg-slate-50 rounded-2xl border-2 border-slate-100 hover:border-orange-300 hover:bg-orange-50 transition-all duration-300 group active:scale-95 shadow-sm"
+                      >
+                        <span className="font-black text-slate-800 text-base group-hover:text-orange-600 transition-colors">
+                          {tItemName(item.id, item.name, language)}
+                        </span>
+                        <ChevronRightIcon className="h-5 w-5 text-slate-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all" />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+
+        {/* 📷 Scan Button Below */}
+        <Link
+          href="/scanner"
+          className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#FF7A00] border-4 border-black text-white font-black py-4 text-base shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-[#E06C00] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-200"
+        >
+          <CameraIcon className="h-6 w-6 text-white stroke-[2.5px]" />
+          <span>{t("scanPhotoOrObject")}</span>
+        </Link>
       </div>
 
       {/* Swipeable Drawer Modal */}
@@ -244,6 +222,7 @@ function SwipeableDrawer({
   meta: any;
   onClose: () => void;
 }) {
+  const { t, language } = useLanguage();
   const [offsetY, setOffsetY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [showProChoices, setShowProChoices] = useState(false);
@@ -329,13 +308,17 @@ function SwipeableDrawer({
 
         {/* Title */}
         <div className="pr-6 space-y-1">
-          <span className="text-[9px] font-black uppercase tracking-widest text-accent-500">Overview</span>
-          <h3 className="text-xl font-black text-slate-800 leading-tight">{item.name}</h3>
+          <span className="text-[9px] font-black uppercase tracking-widest text-accent-500">
+            {language === "es" ? "Resumen" : language === "zh" ? "总览" : "Overview"}
+          </span>
+          <h3 className="text-xl font-black text-slate-800 leading-tight">
+            {tItemName(item.id, item.name, language)}
+          </h3>
           <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
             <SafetyBadge level={item.baseSafety} />
             {item.dangerous && (
               <span className="inline-flex items-center rounded-lg bg-rose-50 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider text-rose-600 border border-rose-100">
-                Pro Required
+                {language === "es" ? "Pro Requerido" : language === "zh" ? "需要专业人员" : "Pro Required"}
               </span>
             )}
           </div>
@@ -345,43 +328,57 @@ function SwipeableDrawer({
         <div className="grid grid-cols-2 gap-3">
           <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between space-y-0.5">
             <span className="text-[8px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-0.5">
-              <WrenchScrewdriverIcon className="h-3 w-3 text-accent-500/70" /> Difficulty
+              <WrenchScrewdriverIcon className="h-3 w-3 text-accent-500/70" /> 
+              {language === "es" ? "Dificultad" : language === "zh" ? "难度" : "Difficulty"}
             </span>
             <span className="text-xs font-extrabold text-slate-800">{meta.difficulty}</span>
           </div>
 
           <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between space-y-0.5">
             <span className="text-[8px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-0.5">
-              <UserGroupIcon className="h-3 w-3 text-accent-500/70" /> Helpers
+              <UserGroupIcon className="h-3 w-3 text-accent-500/70" />
+              {language === "es" ? "Ayudantes" : language === "zh" ? "助手" : "Helpers"}
             </span>
             <span className="text-xs font-extrabold text-slate-800">
-              {meta.people} {meta.people === 1 ? "Person" : "People"}
+              {meta.people} {meta.people === 1 
+                ? (language === "es" ? "Persona" : language === "zh" ? "人" : "Person") 
+                : (language === "es" ? "Personas" : language === "zh" ? "人" : "People")}
             </span>
           </div>
 
           <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between space-y-0.5">
             <span className="text-[8px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-0.5">
-              <ClockIcon className="h-3 w-3 text-accent-500/70" /> Active Time
+              <ClockIcon className="h-3 w-3 text-accent-500/70" />
+              {language === "es" ? "Tiempo Activo" : language === "zh" ? "用时" : "Active Time"}
             </span>
             <span className="text-xs font-extrabold text-slate-800">{meta.estTime}</span>
           </div>
 
           <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between space-y-0.5">
             <span className="text-[8px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-0.5">
-              <CurrencyDollarIcon className="h-3 w-3 text-emerald-500/70" /> Savings
+              <CurrencyDollarIcon className="h-3 w-3 text-emerald-500/70" />
+              {language === "es" ? "Ahorro" : language === "zh" ? "节省" : "Savings"}
             </span>
             <span className="text-xs font-extrabold text-emerald-600">
               {item.estimatedRepairCost && item.estimatedReplacementCost
-                ? `Save ~$${item.estimatedReplacementCost - item.estimatedRepairCost}`
-                : "Saves Money"}
+                ? (language === "es" 
+                    ? `Ahorra ~$${item.estimatedReplacementCost - item.estimatedRepairCost}` 
+                    : language === "zh" 
+                    ? `节省约 ~$${item.estimatedReplacementCost - item.estimatedRepairCost}` 
+                    : `Save ~$${item.estimatedReplacementCost - item.estimatedRepairCost}`)
+                : (language === "es" ? "Ahorra Dinero" : language === "zh" ? "省钱" : "Saves Money")}
             </span>
           </div>
         </div>
 
         {/* Common Issue Card */}
         <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-          <span className="block text-[8px] font-black uppercase tracking-widest text-slate-400">Common Issue</span>
-          <p className="text-xs text-slate-600 leading-relaxed font-semibold">{item.commonIssue}</p>
+          <span className="block text-[8px] font-black uppercase tracking-widest text-slate-400">
+            {language === "es" ? "Problema Común" : language === "zh" ? "常见问题" : "Common Issue"}
+          </span>
+          <p className="text-xs text-slate-600 leading-relaxed font-semibold">
+            {tItemCommonIssue(item.id, item.commonIssue, language)}
+          </p>
         </div>
 
         {/* Action buttons */}
@@ -396,7 +393,7 @@ function SwipeableDrawer({
                 onClick={(e) => e.stopPropagation()}
                 className="py-2.5 px-3 rounded-lg border-2 border-black bg-white hover:bg-slate-50 text-black text-center text-[10px] font-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
-                Maps
+                {language === "es" ? "Mapas" : language === "zh" ? "地图" : "Maps"}
               </a>
               <a
                 href={yelpProUrl}
@@ -425,7 +422,7 @@ function SwipeableDrawer({
               }}
               className="w-full py-2.5 px-4 rounded-xl border-2 border-black bg-white hover:bg-slate-50 text-slate-800 text-center text-xs font-black transition-all flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
             >
-              Find Professional Help
+              {language === "es" ? "Buscar ayuda profesional" : language === "zh" ? "寻找专业帮助" : "Find Professional Help"}
               <ArrowTopRightOnSquareIcon className="h-4 w-4 stroke-[2.5px]" />
             </button>
           )}
@@ -438,13 +435,13 @@ function SwipeableDrawer({
             }}
             className="w-full py-3.5 px-4 rounded-2xl bg-orange-500 border-4 border-black text-black font-black text-xs shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-orange-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-200 flex items-center justify-center gap-1"
           >
-            Start Safety Check
+            {language === "es" ? "Iniciar verificación de seguridad" : language === "zh" ? "开始安全检查" : "Start Safety Check"}
             <ArrowRightIcon className="h-4 w-4 stroke-[3px]" />
           </button>
         </div>
 
         <p className="text-[8px] font-black text-slate-400 text-center pt-1 uppercase tracking-widest">
-          ↓ Swipe down to dismiss ↓
+          {language === "es" ? "↓ Desliza hacia abajo para cerrar ↓" : language === "zh" ? "↓ 向下滑动以关闭 ↓" : "↓ Swipe down to dismiss ↓"}
         </p>
       </div>
     </div>

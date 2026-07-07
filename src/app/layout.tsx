@@ -6,6 +6,7 @@ import { LoadingScreen } from "@/components/LoadingScreen";
 import { OnboardingModal } from "@/components/OnboardingModal";
 import { PageTransition } from "@/components/PageTransition";
 import { AiChatWidget } from "@/components/AiChatWidget";
+import { ClientProviders } from "@/components/ClientProviders";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,6 +20,7 @@ const outfit = Outfit({
 });
 
 import { BottomNav } from "@/components/BottomNav";
+import { ClickSparkleEffect } from "@/components/ClickSparkleEffect";
 
 export const metadata: Metadata = {
   title: "RepairBuddy — Your Community Repair Assistant",
@@ -39,25 +41,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} font-sans`}>
-      <body className="flex min-h-screen items-center justify-center bg-slate-100 text-black font-black">
+      <body className="flex min-h-screen items-center justify-center bg-gradient-animated text-black font-black">
         {/* Phone Frame Mockup */}
-        <div className="relative w-full max-w-[428px] h-[100dvh] sm:h-[926px] bg-white sm:rounded-[3rem] sm:border-[16px] sm:border-black sm:shadow-2xl overflow-hidden flex flex-col">
+        <div className="relative w-[385px] h-[780px] max-h-[calc(100vh-32px)] bg-[#F8F9FA] rounded-[2rem] border-[12px] border-slate-900 shadow-[0_0_60px_rgba(255,122,0,0.15)] overflow-hidden flex flex-col">
           {/* Dynamic Island / Notch simulation */}
-          <div className="hidden sm:block absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-7 bg-black rounded-b-3xl z-50"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90px] h-4 bg-black rounded-b-xl z-50"></div>
           
-          <LoadingScreen />
-          <OnboardingModal />
+          <ClientProviders>
+            <ClickSparkleEffect />
+            <LoadingScreen />
+            <OnboardingModal />
 
-          <Header />
-          
-          <main id="main" className="flex-1 overflow-y-auto overflow-x-hidden relative z-10 pb-24 px-4 pt-6">
-            <PageTransition>
-              {children}
-            </PageTransition>
-          </main>
+            <Header />
+            
+            <main id="main" className="flex-1 overflow-y-auto overflow-x-hidden relative z-10 pb-24 px-4 pt-6">
+              <PageTransition>
+                {children}
+              </PageTransition>
+            </main>
 
-          <BottomNav />
-          <AiChatWidget />
+            <BottomNav />
+            <AiChatWidget />
+          </ClientProviders>
         </div>
       </body>
     </html>

@@ -111,7 +111,7 @@ export function AiChatWidget() {
                 />
               </div>
               <div>
-                <h4 className="font-extrabold text-slate-800 text-sm leading-tight">Hammy AI Helper</h4>
+                <h4 className="font-extrabold text-slate-800 text-sm leading-tight">Hammy</h4>
                 <span className="text-[10px] text-emerald-500 font-bold flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Active
                 </span>

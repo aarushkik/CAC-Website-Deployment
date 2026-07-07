@@ -131,7 +131,7 @@ function SafetyResultContent() {
                 </div>
                 <h3 className="text-lg font-bold text-white">Guide coming soon</h3>
                 <p className="mt-2 text-sm text-slate-400 leading-relaxed">
-                  We don&apos;t have a written guide for this yet. Check local resources for help.
+                  We don&apos;t have a written guide for this yet. Check local resources for guidance.
                 </p>
               </div>
               <Button href="/resources" variant="secondary" className="mt-6 w-full">

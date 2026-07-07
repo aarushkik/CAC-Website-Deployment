@@ -18,7 +18,9 @@ export function Footer() {
                   className="object-contain"
                 />
               </div>
-              <p className="font-bold text-black text-base">RepairBuddy</p>
+              <p className="font-bold text-black text-base">
+              Repair<span className="text-gradient">Buddy</span>
+            </p>
             </div>
             <p className="mt-1">
               Your community repair assistant. Fix everyday items safely, save money, and keep usable things out of the landfill.
