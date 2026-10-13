@@ -73,9 +73,11 @@ Anything that is not on the list can still be checked: describe it, and the safe
 your words (it starts at yellow and turns red when the words point at the dangerous list).
 
 Newer pieces: a full-colour result screen, a full-screen step-by-step mode for guides, simple
-3D pictures for 39 guides (`src/components/Guide3D.tsx`): five built from basic shapes with
-step highlighting, 34 ready-made CC0 models from Kenney and Poly Haven in `public/models`
-(see `public/models/CREDITS.txt`), a map view of local help (Leaflet + OpenStreetMap tiles), a recall lookup
+91 ready-made CC0 3D models from Kenney and Poly Haven in `public/models` (listed in
+`src/lib/models.ts`, credits in `public/models/CREDITS.txt`), shown on 44 guides, on red
+results, on a turntable on the home page (`src/components/Carousel3D.tsx`) and in a gallery at
+`/models`; five more guides have a hand-built model with step highlighting
+(`src/components/Guide3D.tsx`), a map view of local help (Leaflet + OpenStreetMap tiles), a recall lookup
 (US CPSC, `/api/recalls`), team challenges (`/teams`) and a district report (`/report`). Teams,
 the report and the "together" totals need an Upstash Redis database: put
 `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` in `.env.local` (never commit it).

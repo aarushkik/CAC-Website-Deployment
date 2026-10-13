@@ -8,6 +8,7 @@ const COLUMNS: Array<{ title: string; links: Array<[string, string]> }> = [
       ["Start a repair", "/choose-item"],
       ["Describe a problem", "/scanner"],
       ["All repair guides", "/guides"],
+      ["3D workshop", "/models"],
       ["Fix or replace?", "/calculator"],
     ],
   },

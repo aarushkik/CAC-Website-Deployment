@@ -1,7 +1,8 @@
 "use client";
 
 import { Cog6ToothIcon, WrenchIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline";
-import { motion, useReducedMotion } from "framer-motion";
+import { animate, motion, useInView, useReducedMotion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 /** Section heading with a strip of tape measure under it. */
 export function SectionTitle({ children, id }: { children: React.ReactNode; id?: string }) {
@@ -15,18 +16,52 @@ export function SectionTitle({ children, id }: { children: React.ReactNode; id?:
   );
 }
 
-/** A number shown as a mechanical counter, one box per digit. */
+/** A number shown as a mechanical counter, one box per digit. It counts up when it comes into view. */
 export function Counter({ value, className = "" }: { value: number; className?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const seen = useInView(ref, { once: true, margin: "-40px" });
+  const still = useReducedMotion();
+  const [shown, setShown] = useState(still ? value : 0);
+
+  useEffect(() => {
+    if (!seen || still) {
+      if (still) setShown(value);
+      return undefined;
+    }
+    const controls = animate(0, value, {
+      duration: 1.4,
+      ease: [0.2, 0.8, 0.2, 1],
+      onUpdate: (n) => setShown(Math.round(n)),
+    });
+    return () => controls.stop();
+  }, [seen, still, value]);
+
+  // keep the number of boxes fixed while it counts, so nothing jumps around
+  const digits = String(shown).padStart(String(value).length, "0").split("");
   return (
-    <span className={`display inline-flex gap-[0.08em] leading-none ${className}`} aria-label={String(value)}>
-      {String(value)
-        .split("")
-        .map((digit, i) => (
-          <span key={i} className="counter-digit" aria-hidden="true">
-            {digit}
-          </span>
-        ))}
+    <span ref={ref} className={`display inline-flex gap-[0.08em] leading-none ${className}`} aria-label={String(value)}>
+      {digits.map((digit, i) => (
+        <span key={i} className="counter-digit" aria-hidden="true">
+          {digit}
+        </span>
+      ))}
     </span>
+  );
+}
+
+/** A section that slides up into place the first time it is scrolled into view. */
+export function Reveal({ children, className }: { children: React.ReactNode; className?: string }) {
+  const still = useReducedMotion();
+  return (
+    <motion.section
+      className={className}
+      initial={still ? { opacity: 0 } : { opacity: 0, y: 36 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ type: "spring", stiffness: 180, damping: 24 }}
+    >
+      {children}
+    </motion.section>
   );
 }
 

@@ -202,3 +202,29 @@ describe("the recall database", () => {
     expect(parseRecalls("nope")).toBeNull();
   });
 });
+
+import { existsSync } from "node:fs";
+import { MODELS, modelForGuide, modelForItem } from "./models";
+import { getGuide as findGuide, getItem as findItem } from "./data";
+
+describe("the 3D models", () => {
+  it("all have their file in public/models, and no id is used twice", () => {
+    expect(MODELS.length).toBeGreaterThan(80);
+    expect(new Set(MODELS.map((m) => m.id)).size).toBe(MODELS.length);
+    for (const model of MODELS) expect(existsSync(`public/models/${model.file}`), model.file).toBe(true);
+  });
+
+  it("only point at guides and items that exist", () => {
+    for (const model of MODELS) {
+      for (const id of model.guides) expect(findGuide(id), id).toBeDefined();
+      for (const id of model.items) expect(findItem(id), id).toBeDefined();
+    }
+  });
+
+  it("are found for a guide, and for an item through its guide", () => {
+    expect(modelForGuide("running-toilet")?.id).toBe("toilet");
+    expect(modelForItem({ id: "running-toilet", guideId: "running-toilet" })?.id).toBe("toilet");
+    expect(modelForItem({ id: "microwave" })?.source).toBe("polyhaven");
+    expect(modelForItem({ id: "no-such-item" })).toBeUndefined();
+  });
+});

@@ -1,6 +1,7 @@
 3D models in this folder. All are CC0 (public domain dedication), free for any use.
 
 *.glb, car/, food/, camp/   Kenney (https://kenney.nl): Furniture Kit, Car Kit, Food Kit, Survival Kit
-ph/                         Poly Haven (https://polyhaven.com): Garden Hose Wall Mounted 01, Rubber Boots, Screwdriver
+ph/                         Poly Haven (https://polyhaven.com): 27 scanned models, one folder each, named as on their site.
+                            Their images were scaled down to 512 pixels to load faster.
 
 Credit is not required by the licence. It is given here and under each picture in the app anyway.

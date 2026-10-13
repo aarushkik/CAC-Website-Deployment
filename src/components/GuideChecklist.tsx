@@ -6,6 +6,7 @@ import { itemFromParams, itemQuery } from "@/lib/data";
 import { getGuideProgress, saveGuideProgress } from "@/lib/storage";
 import type { Guide } from "@/lib/types";
 import { Button } from "./Button";
+import { confetti } from "./Confetti";
 import { Guide3D, hasModel } from "./Guide3D";
 import { Icon } from "./Icon";
 
@@ -26,6 +27,7 @@ export function GuideChecklist({ guide }: { guide: Guide }) {
   function toggle(index: number) {
     const next = done.includes(index) ? done.filter((i) => i !== index) : [...done, index];
     setDone(next);
+    if (next.length === guide.steps.length && done.length < guide.steps.length) confetti();
     saveGuideProgress(guide.id, next);
   }
 

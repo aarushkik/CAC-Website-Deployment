@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type * as THREE_NS from "three";
+import { MODELS, modelForGuide } from "@/lib/models";
 
 /**
  * 3D pictures for guides, of two kinds. Five guides have a hand-built model (a
@@ -13,50 +14,6 @@ import type * as THREE_NS from "three";
 type Three = typeof THREE_NS;
 type Parts = Record<string, THREE_NS.Mesh[]>;
 type ModelName = "wheel" | "chair" | "door" | "faucet";
-
-/**
- * Guides that show a ready-made model from public/models. All of them are CC0
- * (free for any use): the .glb files are from Kenney's Furniture, Car, Food and
- * Survival kits (kenney.nl), the ones under ph/ are scans from Poly Haven
- * (polyhaven.com). See public/models/CREDITS.txt. They show what the item looks
- * like and do not change with the steps.
- */
-const GUIDE_FILES: Record<string, string> = {
-  "running-toilet": "toilet.glb",
-  "unclog-toilet": "toilet.glb",
-  "toilet-seat": "toilet.glb",
-  "unclog-sink": "bathroomSink.glb",
-  "disposal-jam": "kitchenSink.glb",
-  "washer-smell": "washer.glb",
-  "dryer-lint": "dryer.glb",
-  "fridge-seal": "kitchenFridge.glb",
-  "free-toaster-lever": "toaster.glb",
-  "coffee-maker-descale": "kitchenCoffeeMachine.glb",
-  "blender-gasket": "kitchenBlender.glb",
-  "lamp-bulb-check": "lampRoundTable.glb",
-  "squeaky-bed": "bedSingle.glb",
-  "cabinet-hinge": "kitchenCabinet.glb",
-  "level-table": "table.glb",
-  "upholstery-tear": "loungeSofa.glb",
-  "recaulk-tub": "bathtub.glb",
-  "replace-showerhead": "shower.glb",
-  "weatherstrip-door": "doorway.glb",
-  "loose-door-handle": "doorway.glb",
-  "stripped-screw-hole": "ph/screwdriver/screwdriver_1k.gltf",
-  "clean-keyboard": "computerKeyboard.glb",
-  "wiper-blades": "car/sedan.glb",
-  "cabin-air-filter": "car/sedan.glb",
-  "washer-fluid": "car/sedan.glb",
-  "headlight-bulb": "car/sedan.glb",
-  "tire-pressure": "car/wheel-default.glb",
-  "patch-tent": "camp/tent.glb",
-  "sharpen-knife": "food/cooking-knife.glb",
-  "season-cast-iron": "food/frying-pan.glb",
-  "loose-pot-handle": "food/pot.glb",
-  "oil-cutting-board": "food/cutting-board.glb",
-  "patch-hose": "ph/garden_hose_wall_mounted_01/garden_hose_wall_mounted_01_1k.gltf",
-  "clean-waterproof-boots": "ph/rubber_boots/rubber_boots_1k.gltf",
-};
 
 /** Which hand-built model a guide uses, and which parts each step points at. */
 const GUIDE_MODELS: Record<string, { model: ModelName; steps: string[][] }> = {
@@ -75,7 +32,7 @@ const PART_NAMES: Record<string, string> = {
 };
 
 export function hasModel(guideId: string): boolean {
-  return guideId in GUIDE_MODELS || guideId in GUIDE_FILES;
+  return guideId in GUIDE_MODELS || modelForGuide(guideId) !== undefined;
 }
 
 function builders(THREE: Three) {
@@ -221,13 +178,28 @@ function builders(THREE: Three) {
   };
 }
 
-export function Guide3D({ guideId, step, className = "" }: { guideId: string; step: number; className?: string }) {
+export function Guide3D({
+  guideId,
+  step,
+  className = "",
+  file: fileProp,
+  tall = false,
+}: {
+  guideId: string;
+  step: number;
+  className?: string;
+  /** Show this model file, whatever the guide. Used by the gallery and the result screen. */
+  file?: string;
+  /** A bigger picture, for the gallery. */
+  tall?: boolean;
+}) {
   const holder = useRef<HTMLDivElement>(null);
   const focusRef = useRef<string[]>([]);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
-  const config = GUIDE_MODELS[guideId];
-  const file = GUIDE_FILES[guideId];
+  const config = fileProp ? undefined : GUIDE_MODELS[guideId];
+  const file = fileProp ?? (config ? undefined : modelForGuide(guideId)?.file);
+  const source = MODELS.find((model) => model.file === file)?.source;
   const focus = config ? config.steps[Math.min(step, config.steps.length - 1)] ?? [] : [];
   focusRef.current = focus;
 
@@ -355,7 +327,9 @@ export function Guide3D({ guideId, step, className = "" }: { guideId: string; st
             ? `3D picture for this guide. Highlighted: ${focus.map((p) => PART_NAMES[p] ?? p).join(" and ")}.`
             : "3D model of the item this guide is about."
         }
-        className="relative h-56 w-full cursor-grab overflow-hidden rounded-card bg-gradient-to-b from-workshop-100 to-workshop-200 active:cursor-grabbing sm:h-64"
+        className={`relative w-full cursor-grab overflow-hidden rounded-card bg-gradient-to-b from-workshop-100 to-workshop-200 active:cursor-grabbing ${
+          tall ? "h-72 sm:h-[26rem]" : "h-56 sm:h-64"
+        }`}
       >
         {!ready && <span className="absolute inset-0 animate-pulse" />}
       </div>
@@ -374,12 +348,12 @@ export function Guide3D({ guideId, step, className = "" }: { guideId: string; st
             <span>
               Model by{" "}
               <a
-                href={file?.startsWith("ph/") ? "https://polyhaven.com" : "https://kenney.nl"}
+                href={source === "polyhaven" ? "https://polyhaven.com" : "https://kenney.nl"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
               >
-                {file?.startsWith("ph/") ? "Poly Haven" : "Kenney"}
+                {source === "polyhaven" ? "Poly Haven" : "Kenney"}
               </a>{" "}
               (CC0)
             </span>

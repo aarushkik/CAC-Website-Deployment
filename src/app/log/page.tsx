@@ -6,6 +6,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { countForCommunity } from "@/components/CommunityImpact";
+import { confetti } from "@/components/Confetti";
 import { Icon } from "@/components/Icon";
 import { PageHeader } from "@/components/PageHeader";
 import { categories, itemFromParams } from "@/lib/data";
@@ -76,6 +77,7 @@ function RepairLogContent() {
     });
     setEntries(updated);
     // a fixed item also counts toward the shared total (if that is switched on)
+    if (outcome === "fixed") confetti();
     if (outcome === "fixed") countForCommunity(parseFloat(moneySaved) || 0, parseFloat(wasteAvoided) || 0, categoryId);
     say(`Saved "${itemName.trim()}" to your log.`);
     // Reset form

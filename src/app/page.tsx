@@ -6,7 +6,7 @@ import { ContinueStrip, ImpactStrip, ProblemSearch } from "@/components/HomeWidg
 import { Icon, type IconName } from "@/components/Icon";
 import { CategoryTiles, Rise, Stagger, StaggerItem } from "@/components/Motion";
 import { Walkthrough } from "@/components/Walkthrough";
-import { Counter, SectionTitle, ToolsBackdrop, Wrenches } from "@/components/Workshop";
+import { Counter, Reveal, SectionTitle, ToolsBackdrop, Wrenches } from "@/components/Workshop";
 import { getGuide, getGuideCategory, guides, items } from "@/lib/data";
 import { SAFETY_QUESTIONS } from "@/lib/safety";
 
@@ -99,7 +99,7 @@ export default function HomePage() {
       </Stagger>
 
       {/* The three results */}
-      <section className="mt-14">
+      <Reveal className="mt-14">
         <SectionTitle>Three possible answers</SectionTitle>
         <p className="mt-3 max-w-2xl text-workshop-800">
           You answer {SAFETY_QUESTIONS.length} yes-or-no questions. &ldquo;Not sure&rdquo; counts as yes, so the
@@ -120,10 +120,10 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
+      </Reveal>
 
       {/* Categories */}
-      <section className="mt-14">
+      <Reveal className="mt-14">
         <div className="mb-4 flex items-end justify-between">
           <SectionTitle>Pick a category</SectionTitle>
           <Link href="/choose-item" className="text-sm font-semibold text-brand-700 hover:underline">
@@ -131,10 +131,10 @@ export default function HomePage() {
           </Link>
         </div>
         <CategoryTiles />
-      </section>
+      </Reveal>
 
       {/* Popular guides */}
-      <section className="mt-14">
+      <Reveal className="mt-14">
         <div className="mb-4 flex items-end justify-between">
           <SectionTitle>Popular fixes</SectionTitle>
           <Link href="/guides" className="text-sm font-semibold text-brand-700 hover:underline">
@@ -165,10 +165,10 @@ export default function HomePage() {
             );
           })}
         </div>
-      </section>
+      </Reveal>
 
       {/* What never gets a guide */}
-      <section className="hazard-stripes mt-14 rounded-[1.5rem] bg-[#b91c1c] p-6 text-white sm:p-10">
+      <Reveal className="hazard-stripes mt-14 rounded-[1.5rem] bg-[#b91c1c] p-6 text-white sm:p-10">
         <div className="grid gap-6 lg:grid-cols-[1fr,1.3fr] lg:items-center">
           <div>
             <h2 className="display text-3xl sm:text-4xl">Some things you should not fix</h2>
@@ -192,10 +192,10 @@ export default function HomePage() {
             </li>
           </ul>
         </div>
-      </section>
+      </Reveal>
 
       {/* Local help and recalls */}
-      <section className="mt-14 grid gap-4 md:grid-cols-2">
+      <Reveal className="mt-14 grid gap-4 md:grid-cols-2">
         {[
           { icon: "pin" as IconName, title: "Repair help near you", text: "Repair cafes, tool libraries, bike shops, tailors and tradespeople on a map, nearest first.", href: "/resources", link: "Open the map" },
           { icon: "alert" as IconName, title: "Recalled? Do not repair it", text: "Search the US government's recall notices by brand or product before you start.", href: "/recalls", link: "Check a recall" },
@@ -214,7 +214,7 @@ export default function HomePage() {
             </span>
           </Link>
         ))}
-      </section>
+      </Reveal>
     </div>
   );
 }

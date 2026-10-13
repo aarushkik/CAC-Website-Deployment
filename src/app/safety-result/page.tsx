@@ -8,10 +8,12 @@ import { Card } from "@/components/Card";
 import { CallScript } from "@/components/CallScript";
 import { countRedResult } from "@/components/CommunityImpact";
 import { RecallCheck } from "@/components/RecallCheck";
+import { Guide3D } from "@/components/Guide3D";
 import { Icon } from "@/components/Icon";
 import { PageHeader } from "@/components/PageHeader";
 import { itemFromParams, itemQuery } from "@/lib/data";
 import { estimateSavings } from "@/lib/impact";
+import { modelForItem } from "@/lib/models";
 import { evaluateSafety, safetyHeading, safetySummary } from "@/lib/safety";
 
 function SafetyResultContent() {
@@ -152,6 +154,17 @@ function SafetyResultContent() {
             </Button>
           </Card>
         </div>
+      )}
+
+      {!canDIY && modelForItem(item) && (
+        <section className="plate mt-6 rounded-card border-2 border-workshop-200 bg-surface p-5 shadow-card sm:p-6">
+          <h2 className="text-lg font-semibold text-workshop-900">Leave it closed</h2>
+          <p className="mt-1 text-sm text-workshop-800">
+            Do not open or take apart the {item.name.toLowerCase()}. A professional has the tools and
+            training for what is inside.
+          </p>
+          <Guide3D guideId="" file={modelForItem(item)!.file} step={0} className="mt-4" />
+        </section>
       )}
 
       <RecallCheck />

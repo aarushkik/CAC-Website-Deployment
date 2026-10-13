@@ -21,6 +21,7 @@ const tabs: Array<{ href: string; label: string; icon: IconName; match: string[]
 
 const moreLinks = [
   { href: "/guides", label: "Guides" },
+  { href: "/models", label: "3D" },
   { href: "/about", label: "About" },
 ];
 
