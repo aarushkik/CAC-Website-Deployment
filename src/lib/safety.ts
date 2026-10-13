@@ -1,7 +1,7 @@
 import type { Item, SafetyLevel, SafetyQuestion } from "./types";
 
 /**
- * Repairs that FixIt WA 03 must NEVER give detailed instructions for.
+ * Repairs that FixIt must NEVER give detailed instructions for.
  * These always resolve to a red result that recommends professional help.
  * Keep this list conservative: when in doubt, treat a repair as dangerous.
  */
@@ -74,10 +74,42 @@ export function moreCautious(a: SafetyLevel, b: SafetyLevel): SafetyLevel {
   return RANK[a] >= RANK[b] ? a : b;
 }
 
+/**
+ * Word patterns that point at a repair on the dangerous list. Free text from
+ * the "describe it" page is checked against these, so "my microwave sparks"
+ * and "rewire an outlet" are both caught, not only the exact list wording.
+ * Each pattern maps to the list entry it belongs to.
+ */
+const DANGER_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
+  { label: "car brakes", pattern: /\b(car|truck|van|suv|vehicle|auto)\b.*\bbrak|\bbrak\w*\b.*\b(car|truck|van|suv|vehicle)\b/ },
+  { label: "airbags", pattern: /\bair ?bags?\b/ },
+  { label: "gas appliances", pattern: /\bgas\b|\bpropane\b|\bfurnace\b|\bwater heater\b/ },
+  { label: "microwaves", pattern: /\bmicrowaves?\b/ },
+  { label: "high voltage electronics", pattern: /\bhigh[- ]?voltage\b|\bcapacitors?\b|\bcrt\b|\bpower supply\b|\btransformer\b/ },
+  { label: "electrical wiring", pattern: /\bwiring\b|\brewir\w*|\boutlets?\b|\bbreakers?\b|\bfuse box\b|\belectrical panel\b|\blight switch\b|\bspark\w*/ },
+  { label: "e-bike battery repair", pattern: /\be-?bike\b|\bscooter\b.*\bbatter|\bbatter\w*\b.*\b(swollen|swelling|bulg\w*|leak\w*|hot)\b|\b(swollen|swelling|bulg\w*)\b.*\bbatter/ },
+  { label: "power tool motor repair", pattern: /\b(drill|saw|grinder|power tool)\b.*\bmotor\b|\bmotor\b.*\b(drill|saw|grinder|power tool)\b/ },
+  { label: "structural repairs", pattern: /\bstructural\b|\bload[- ]?bearing\b|\bladders?\b|\bharness\b|\bhelmets?\b|\bcar seat\b/ },
+  { label: "signs of burning or smoke", pattern: /\bsmok\w*|\bburn\w*|\bscorch\w*|\bfire\b|\bmelt\w*/ },
+];
+
+/**
+ * Returns the dangerous-list entries a free-text description points at.
+ * An empty list means nothing dangerous was recognised, which is NOT the same
+ * as "safe": the safety check still has to run.
+ */
+export function dangerMatches(text: string): string[] {
+  const normalized = text.toLowerCase();
+  return DANGER_PATTERNS.filter(({ pattern }) => pattern.test(normalized)).map(({ label }) => label);
+}
+
 /** True if the given free-text repair matches the dangerous list. */
 export function isDangerousText(text: string): boolean {
   const normalized = text.toLowerCase();
-  return DANGEROUS_REPAIRS.some((danger) => normalized.includes(danger));
+  return (
+    DANGEROUS_REPAIRS.some((danger) => normalized.includes(danger)) ||
+    dangerMatches(text).length > 0
+  );
 }
 
 /**

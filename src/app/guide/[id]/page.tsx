@@ -1,8 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
+import { GuideChecklist, KeepAwakeButton, PrintButton } from "@/components/GuideChecklist";
+import { Icon } from "@/components/Icon";
 import { PageHeader } from "@/components/PageHeader";
+import { ToolChecklist } from "@/components/ToolChecklist";
 import { getGuide, guides } from "@/lib/data";
 
 /** Pre-render a page for every known guide. */
@@ -22,19 +26,25 @@ export default async function GuidePage({
   return (
     <div>
       <PageHeader title={guide.title}>
-        <div className="flex flex-wrap gap-2 text-sm">
-          <span className="rounded-full bg-workshop-100 px-3 py-1 font-medium text-workshop-900">
-            ⏱ {guide.time}
+        <div className="flex flex-wrap items-center gap-2 text-sm">
+          <span className="chip bg-workshop-100 text-workshop-900">
+            <Icon name="clock" size={15} />
+            {guide.time}
           </span>
-          <span className="rounded-full bg-workshop-100 px-3 py-1 font-medium text-workshop-900">
-            🧠 {guide.difficulty}
+          <span className="chip bg-workshop-100 text-workshop-900">
+            <Icon name="star" size={15} />
+            {guide.difficulty}
           </span>
+          <span className="chip bg-workshop-100 text-workshop-900">{guide.steps.length} steps</span>
         </div>
       </PageHeader>
 
       {/* Safety tips first — always. */}
       <Card className="border-caution/40 bg-caution/5">
-        <h2 className="text-lg font-semibold text-workshop-900">⚠️ Read before you start</h2>
+        <h2 className="flex items-center gap-2 text-lg font-semibold text-workshop-900">
+          <Icon name="alert" className="text-caution" />
+          Read before you start
+        </h2>
         <ul className="mt-2 list-inside list-disc space-y-1 text-workshop-800">
           {guide.safetyTips.map((tip, i) => (
             <li key={i}>{tip}</li>
@@ -49,37 +59,32 @@ export default async function GuidePage({
         </p>
       </Card>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr,2fr]">
-        <Card>
-          <h2 className="text-lg font-semibold text-workshop-900">🧰 What you&apos;ll need</h2>
-          <ul className="mt-2 list-inside list-disc space-y-1 text-workshop-800">
-            {guide.tools.map((tool, i) => (
-              <li key={i}>{tool}</li>
-            ))}
-          </ul>
+      <div className="mt-5 grid gap-5 lg:grid-cols-[1fr,2fr] lg:items-start">
+        <Card className="lg:sticky lg:top-20">
+          <h2 className="text-lg font-semibold text-workshop-900">What you&apos;ll need</h2>
+          <ToolChecklist tools={guide.tools} />
+          <p className="mt-4 border-t border-workshop-200 pt-3 text-sm text-workshop-800">
+            Missing a tool? A{" "}
+            <Link href="/resources" className="font-semibold text-brand-700 underline">
+              tool library or repair cafe
+            </Link>{" "}
+            can lend one.
+          </p>
         </Card>
 
-        <Card>
-          <h2 className="text-lg font-semibold text-workshop-900">Steps</h2>
-          <ol className="mt-3 space-y-4">
-            {guide.steps.map((step, i) => (
-              <li key={i} className="flex gap-3">
-                <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-brand-600 font-bold text-white">
-                  {i + 1}
-                </span>
-                <div>
-                  <p className="font-semibold text-workshop-900">{step.title}</p>
-                  <p className="text-workshop-800">{step.detail}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </Card>
+        {/* The checklist reads the item from the address, so it waits for the browser. */}
+        <Suspense fallback={<Card>Loading the steps…</Card>}>
+          <GuideChecklist guide={guide} />
+        </Suspense>
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Button href="/log">✅ I did it — log this repair</Button>
-        <Button href="/calculator" variant="secondary">
+      <div className="no-print mt-6 flex flex-wrap gap-3">
+        <KeepAwakeButton />
+        <PrintButton />
+        <Button href="/guides" variant="ghost">
+          All guides
+        </Button>
+        <Button href="/calculator" variant="ghost">
           Compare fix vs. replace
         </Button>
       </div>

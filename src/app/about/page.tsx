@@ -4,15 +4,15 @@ import { PageHeader } from "@/components/PageHeader";
 import { DANGEROUS_REPAIRS } from "@/lib/safety";
 
 export const metadata = {
-  title: "About — FixIt WA 03",
+  title: "About — FixIt",
 };
 
 export default function AboutPage() {
   return (
     <div>
       <PageHeader
-        title="About FixIt WA 03"
-        intro="A community repair assistant built for Southwest Washington's 3rd Congressional District."
+        title="About FixIt"
+        intro="A repair assistant that checks safety first."
       />
 
       <div className="grid gap-6 lg:grid-cols-2">
@@ -20,7 +20,7 @@ export default function AboutPage() {
           <h2 className="text-lg font-semibold text-workshop-900">Why we built this</h2>
           <p className="mt-2 text-workshop-800">
             Too many working items get thrown away because fixing them feels hard or unsafe.
-            FixIt WA 03 helps neighbors repair everyday things with confidence — saving money,
+            FixIt helps people repair everyday things with confidence — saving money,
             cutting waste, and supporting the right to repair. When a repair isn&apos;t safe to do
             at home, we connect people with local pros and student trade programs instead.
           </p>
@@ -43,7 +43,7 @@ export default function AboutPage() {
       <Card className="mt-6 border-danger/30 bg-danger/5">
         <h2 className="text-lg font-semibold text-workshop-900">Our safety promise</h2>
         <p className="mt-2 text-workshop-800">
-          FixIt WA 03 will <strong>never</strong> give step-by-step instructions for dangerous
+          FixIt will <strong>never</strong> give step-by-step instructions for dangerous
           repairs. For anything on this list, we recommend a professional and help you document
           the problem safely:
         </p>
@@ -51,7 +51,7 @@ export default function AboutPage() {
           {DANGEROUS_REPAIRS.map((d) => (
             <span
               key={d}
-              className="rounded-full border border-danger/30 bg-white px-3 py-1 text-sm font-medium capitalize text-danger"
+              className="rounded-full border border-danger/30 bg-surface px-3 py-1 text-sm font-medium capitalize text-danger"
             >
               {d}
             </span>
@@ -76,19 +76,19 @@ export default function AboutPage() {
         <p className="mt-2 text-workshop-800">
           Repair skills connect directly to careers in electrical work, HVAC, machining, auto
           repair, and sewing. The habits that make a good repair guide also matter in the trades:
-          check safety first, use the right tools, and work carefully. For a local path into that
-          world, Clark College&apos;s CTE Dual Credit page is a good place to start.
+          check safety first, use the right tools, and work carefully. In the US, Apprenticeship.gov
+          lists paid apprenticeships by trade and by place.
         </p>
         <a
-          href="https://www.clark.edu/academics/hs-dual-credit/cte/"
-          className="mt-4 inline-flex items-center justify-center rounded-card bg-brand-600 px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-brand-700"
+          href="https://www.apprenticeship.gov/apprenticeship-job-finder"
+          className="mt-4 inline-flex items-center justify-center rounded-card bg-brand-600 px-6 py-3 text-lg font-semibold text-white transition-colors hover:brightness-110"
         >
-          Explore Clark College CTE
+          Find an apprenticeship
         </a>
       </Card>
 
       <p className="mt-8 text-xs text-workshop-800">
-        Congressional App Challenge project. Data shown is placeholder content for the demo.
+        The repairs, guides and cost estimates were written for this project and have not been reviewed by a tradesperson.
       </p>
     </div>
   );

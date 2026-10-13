@@ -4,17 +4,37 @@
     "title": "Sew up a torn seam",
     "time": "15-25 min",
     "difficulty": "Beginner",
-    "tools": ["Needle", "Thread that matches the fabric", "Scissors", "Pins (optional)"],
+    "tools": [
+      "Needle",
+      "Thread that matches the fabric",
+      "Scissors",
+      "Pins (optional)"
+    ],
     "safetyTips": [
       "Keep fingers clear of the needle point.",
       "Work in good light and take breaks to avoid eye strain."
     ],
     "steps": [
-      { "title": "Turn the item inside out", "detail": "This hides the stitches on the finished side." },
-      { "title": "Pin the seam", "detail": "Line up both edges and pin so the fabric stays put." },
-      { "title": "Thread and knot", "detail": "Thread the needle, double the thread, and tie a knot at the end." },
-      { "title": "Sew small backstitches", "detail": "Sew along the old seam line with small, even backstitches for strength." },
-      { "title": "Knot and trim", "detail": "Tie off the thread at the end and trim the extra." }
+      {
+        "title": "Turn the item inside out",
+        "detail": "This hides the stitches on the finished side."
+      },
+      {
+        "title": "Pin the seam",
+        "detail": "Line up both edges and pin so the fabric stays put."
+      },
+      {
+        "title": "Thread and knot",
+        "detail": "Thread the needle, double the thread, and tie a knot at the end."
+      },
+      {
+        "title": "Sew small backstitches",
+        "detail": "Sew along the old seam line with small, even backstitches for strength."
+      },
+      {
+        "title": "Knot and trim",
+        "detail": "Tie off the thread at the end and trim the extra."
+      }
     ]
   },
   {
@@ -22,13 +42,31 @@
     "title": "Free a stuck zipper",
     "time": "5-15 min",
     "difficulty": "Beginner",
-    "tools": ["Graphite pencil or bar soap", "Pliers (gentle)", "Cotton swab"],
-    "safetyTips": ["Pull gently; forcing a zipper can tear the fabric."],
+    "tools": [
+      "Graphite pencil or bar soap",
+      "Pliers (gentle)",
+      "Cotton swab"
+    ],
+    "safetyTips": [
+      "Pull gently; forcing a zipper can tear the fabric."
+    ],
     "steps": [
-      { "title": "Find what's stuck", "detail": "Check for fabric caught in the slider or bent teeth." },
-      { "title": "Free caught fabric", "detail": "Gently pull the fabric out while easing the slider back." },
-      { "title": "Lubricate the teeth", "detail": "Rub a graphite pencil or bar soap along the teeth." },
-      { "title": "Work the slider", "detail": "Slide up and down slowly until it moves freely." }
+      {
+        "title": "Find what's stuck",
+        "detail": "Check for fabric caught in the slider or bent teeth."
+      },
+      {
+        "title": "Free caught fabric",
+        "detail": "Gently pull the fabric out while easing the slider back."
+      },
+      {
+        "title": "Lubricate the teeth",
+        "detail": "Rub a graphite pencil or bar soap along the teeth."
+      },
+      {
+        "title": "Work the slider",
+        "detail": "Slide up and down slowly until it moves freely."
+      }
     ]
   },
   {
@@ -36,17 +74,32 @@
     "title": "Troubleshoot a lamp that won't turn on",
     "time": "10-20 min",
     "difficulty": "Beginner",
-    "tools": ["Replacement bulb", "A working outlet to test"],
+    "tools": [
+      "Replacement bulb",
+      "A working outlet to test"
+    ],
     "safetyTips": [
       "Always unplug the lamp before touching the socket.",
       "If you see damaged wiring, scorch marks, or a burning smell, stop and get professional help.",
       "Do not attempt internal rewiring yourself."
     ],
     "steps": [
-      { "title": "Unplug the lamp", "detail": "Never work on a lamp while it is plugged in." },
-      { "title": "Swap the bulb", "detail": "Try a bulb you know works to rule out a dead bulb." },
-      { "title": "Test the outlet", "detail": "Plug the lamp into an outlet you know is working." },
-      { "title": "Check the switch", "detail": "See if the switch clicks and feels normal. If not, replace the whole lamp or ask a pro to service it." }
+      {
+        "title": "Unplug the lamp",
+        "detail": "Never work on a lamp while it is plugged in."
+      },
+      {
+        "title": "Swap the bulb",
+        "detail": "Try a bulb you know works to rule out a dead bulb."
+      },
+      {
+        "title": "Test the outlet",
+        "detail": "Plug the lamp into an outlet you know is working."
+      },
+      {
+        "title": "Check the switch",
+        "detail": "See if the switch clicks and feels normal. If not, replace the whole lamp or ask a pro to service it."
+      }
     ]
   },
   {
@@ -54,13 +107,31 @@
     "title": "Tighten wobbly furniture",
     "time": "15-30 min",
     "difficulty": "Beginner",
-    "tools": ["Screwdriver or hex key", "Wood glue (optional)", "Clamp or heavy book"],
-    "safetyTips": ["Ask for a second set of hands when flipping heavy furniture."],
+    "tools": [
+      "Screwdriver or hex key",
+      "Wood glue (optional)",
+      "Clamp or heavy book"
+    ],
+    "safetyTips": [
+      "Ask for a second set of hands when flipping heavy furniture."
+    ],
     "steps": [
-      { "title": "Find the loose joint", "detail": "Rock the furniture gently to see which joint moves." },
-      { "title": "Tighten hardware", "detail": "Snug up any screws or bolts you find." },
-      { "title": "Re-glue if needed", "detail": "For loose wooden dowels, add a little wood glue and press together." },
-      { "title": "Clamp and dry", "detail": "Clamp or weigh the joint and let glue dry fully before use." }
+      {
+        "title": "Find the loose joint",
+        "detail": "Rock the furniture gently to see which joint moves."
+      },
+      {
+        "title": "Tighten hardware",
+        "detail": "Snug up any screws or bolts you find."
+      },
+      {
+        "title": "Re-glue if needed",
+        "detail": "For loose wooden dowels, add a little wood glue and press together."
+      },
+      {
+        "title": "Clamp and dry",
+        "detail": "Clamp or weigh the joint and let glue dry fully before use."
+      }
     ]
   },
   {
@@ -68,13 +139,32 @@
     "title": "Patch a flat bike tube",
     "time": "20-40 min",
     "difficulty": "Beginner",
-    "tools": ["Patch kit", "Tire levers", "Pump", "Bucket of water (to find the hole)"],
-    "safetyTips": ["Let air out fully before removing the tire to avoid a sudden pop."],
+    "tools": [
+      "Patch kit",
+      "Tire levers",
+      "Pump",
+      "Bucket of water (to find the hole)"
+    ],
+    "safetyTips": [
+      "Let air out fully before removing the tire to avoid a sudden pop."
+    ],
     "steps": [
-      { "title": "Remove the wheel and tube", "detail": "Use tire levers to pry one side of the tire off the rim." },
-      { "title": "Find the hole", "detail": "Inflate the tube and listen, or dip it in water to spot bubbles." },
-      { "title": "Apply the patch", "detail": "Rough the area, apply glue, and press the patch firmly." },
-      { "title": "Reinstall and inflate", "detail": "Put the tube and tire back, then inflate to the pressure on the tire wall." }
+      {
+        "title": "Remove the wheel and tube",
+        "detail": "Use tire levers to pry one side of the tire off the rim."
+      },
+      {
+        "title": "Find the hole",
+        "detail": "Inflate the tube and listen, or dip it in water to spot bubbles."
+      },
+      {
+        "title": "Apply the patch",
+        "detail": "Rough the area, apply glue, and press the patch firmly."
+      },
+      {
+        "title": "Reinstall and inflate",
+        "detail": "Put the tube and tire back, then inflate to the pressure on the tire wall."
+      }
     ]
   },
   {
@@ -82,17 +172,32 @@
     "title": "Adjust bike brake pads (rim brakes)",
     "time": "20-40 min",
     "difficulty": "Careful beginner",
-    "tools": ["Hex keys", "Clean rag"],
+    "tools": [
+      "Hex keys",
+      "Clean rag"
+    ],
     "safetyTips": [
       "Test the brakes at walking speed before any real ride.",
       "If the brakes are hydraulic, or you are unsure, take the bike to a shop.",
       "Never ride a bike whose brakes do not reliably stop it."
     ],
     "steps": [
-      { "title": "Check pad wear", "detail": "Replace pads if the grooves are worn smooth." },
-      { "title": "Align the pads", "detail": "Loosen the pad bolt and set the pad to hit the rim, not the tire." },
-      { "title": "Set pad spacing", "detail": "Adjust the cable so pads sit close but don't rub when released." },
-      { "title": "Test carefully", "detail": "Walk the bike and squeeze the levers to confirm it stops before riding." }
+      {
+        "title": "Check pad wear",
+        "detail": "Replace pads if the grooves are worn smooth."
+      },
+      {
+        "title": "Align the pads",
+        "detail": "Loosen the pad bolt and set the pad to hit the rim, not the tire."
+      },
+      {
+        "title": "Set pad spacing",
+        "detail": "Adjust the cable so pads sit close but don't rub when released."
+      },
+      {
+        "title": "Test carefully",
+        "detail": "Walk the bike and squeeze the levers to confirm it stops before riding."
+      }
     ]
   },
   {
@@ -100,17 +205,32 @@
     "title": "Reinforce a frayed low-voltage cable",
     "time": "10-15 min",
     "difficulty": "Beginner",
-    "tools": ["Heat-shrink tubing or electrical tape", "Scissors"],
+    "tools": [
+      "Heat-shrink tubing or electrical tape",
+      "Scissors"
+    ],
     "safetyTips": [
       "Only do this for low-voltage cables like USB or headphone cords.",
       "If you see exposed copper on a wall-power cable, recycle it and replace it.",
       "Never patch a frayed high-voltage or mains cable."
     ],
     "steps": [
-      { "title": "Unplug the cable", "detail": "Disconnect from both the device and power." },
-      { "title": "Check the damage", "detail": "If the inner wires are cut, replace the cable instead of patching." },
-      { "title": "Add strain relief", "detail": "Slide heat-shrink or wrap tape over the fray to support the bend point." },
-      { "title": "Test gently", "detail": "Reconnect and confirm it charges without wiggling." }
+      {
+        "title": "Unplug the cable",
+        "detail": "Disconnect from both the device and power."
+      },
+      {
+        "title": "Check the damage",
+        "detail": "If the inner wires are cut, replace the cable instead of patching."
+      },
+      {
+        "title": "Add strain relief",
+        "detail": "Slide heat-shrink or wrap tape over the fray to support the bend point."
+      },
+      {
+        "title": "Test gently",
+        "detail": "Reconnect and confirm it charges without wiggling."
+      }
     ]
   },
   {
@@ -118,16 +238,32 @@
     "title": "Replace a dripping faucet washer",
     "time": "30-45 min",
     "difficulty": "Careful beginner",
-    "tools": ["Adjustable wrench", "Replacement washer/cartridge", "Towel"],
+    "tools": [
+      "Adjustable wrench",
+      "Replacement washer/cartridge",
+      "Towel"
+    ],
     "safetyTips": [
       "Turn off the water supply under the sink before starting.",
       "If pipes are corroded or you can't stop the water, call a plumber."
     ],
     "steps": [
-      { "title": "Shut off the water", "detail": "Close the valves under the sink and open the faucet to drain it." },
-      { "title": "Open the handle", "detail": "Remove the handle screw and lift off the handle." },
-      { "title": "Replace the washer", "detail": "Swap the worn washer or cartridge for a matching new one." },
-      { "title": "Reassemble and test", "detail": "Put it back together, turn the water on slowly, and check for drips." }
+      {
+        "title": "Shut off the water",
+        "detail": "Close the valves under the sink and open the faucet to drain it."
+      },
+      {
+        "title": "Open the handle",
+        "detail": "Remove the handle screw and lift off the handle."
+      },
+      {
+        "title": "Replace the washer",
+        "detail": "Swap the worn washer or cartridge for a matching new one."
+      },
+      {
+        "title": "Reassemble and test",
+        "detail": "Put it back together, turn the water on slowly, and check for drips."
+      }
     ]
   },
   {
@@ -135,16 +271,33 @@
     "title": "Sew on a missing button",
     "time": "10-20 min",
     "difficulty": "Beginner",
-    "tools": ["Needle", "Thread that matches the fabric", "Scissors", "Button"],
+    "tools": [
+      "Needle",
+      "Thread that matches the fabric",
+      "Scissors",
+      "Button"
+    ],
     "safetyTips": [
       "Keep your fingers clear of the needle point.",
       "Work in bright light so the stitches stay neat."
     ],
     "steps": [
-      { "title": "Mark the spot", "detail": "Line up the button with the other buttons and mark the hole position." },
-      { "title": "Thread and knot", "detail": "Thread the needle, double the thread, and tie a small knot at the end." },
-      { "title": "Sew through the holes", "detail": "Pass the needle through each hole several times until the button feels secure." },
-      { "title": "Tie off and trim", "detail": "Make a knot on the back side and trim the extra thread." }
+      {
+        "title": "Mark the spot",
+        "detail": "Line up the button with the other buttons and mark the hole position."
+      },
+      {
+        "title": "Thread and knot",
+        "detail": "Thread the needle, double the thread, and tie a small knot at the end."
+      },
+      {
+        "title": "Sew through the holes",
+        "detail": "Pass the needle through each hole several times until the button feels secure."
+      },
+      {
+        "title": "Tie off and trim",
+        "detail": "Make a knot on the back side and trim the extra thread."
+      }
     ]
   },
   {
@@ -152,16 +305,33 @@
     "title": "Clean a fan that will not spin",
     "time": "15-25 min",
     "difficulty": "Beginner",
-    "tools": ["Microfiber cloth", "Soft brush", "Vacuum with brush attachment", "Light machine oil (if the manual allows it)"],
+    "tools": [
+      "Microfiber cloth",
+      "Soft brush",
+      "Vacuum with brush attachment",
+      "Light machine oil (if the manual allows it)"
+    ],
     "safetyTips": [
       "Always unplug the fan before cleaning it.",
       "Do not open sealed motor housing or touch damaged cords."
     ],
     "steps": [
-      { "title": "Unplug and inspect", "detail": "Check the cord, plug, and blades for obvious damage before touching anything else." },
-      { "title": "Clear dust buildup", "detail": "Brush and vacuum the grille, blades, and vents so air can move again." },
-      { "title": "Check for blockage", "detail": "Turn the blades by hand. Remove any stuck dust or debris that blocks movement." },
-      { "title": "Test the fan", "detail": "Plug it back in and run it for a minute. If it still hums but does not turn, stop and get help." }
+      {
+        "title": "Unplug and inspect",
+        "detail": "Check the cord, plug, and blades for obvious damage before touching anything else."
+      },
+      {
+        "title": "Clear dust buildup",
+        "detail": "Brush and vacuum the grille, blades, and vents so air can move again."
+      },
+      {
+        "title": "Check for blockage",
+        "detail": "Turn the blades by hand. Remove any stuck dust or debris that blocks movement."
+      },
+      {
+        "title": "Test the fan",
+        "detail": "Plug it back in and run it for a minute. If it still hums but does not turn, stop and get help."
+      }
     ]
   },
   {
@@ -169,16 +339,33 @@
     "title": "Free a stuck toaster lever",
     "time": "10-20 min",
     "difficulty": "Beginner",
-    "tools": ["Small brush", "Cotton swab", "Compressed air", "Soft cloth"],
+    "tools": [
+      "Small brush",
+      "Cotton swab",
+      "Compressed air",
+      "Soft cloth"
+    ],
     "safetyTips": [
       "Unplug the toaster before cleaning it.",
       "Never use metal tools inside the slots."
     ],
     "steps": [
-      { "title": "Unplug and cool down", "detail": "Make sure the toaster is fully unplugged and cool before starting." },
-      { "title": "Shake out crumbs", "detail": "Empty the crumb tray and gently tap out loose bits from the slots." },
-      { "title": "Clean the latch", "detail": "Brush around the lever and slide area so crumbs do not jam the mechanism." },
-      { "title": "Test the lever", "detail": "Press the lever a few times. If it still will not stay down, stop and replace the toaster." }
+      {
+        "title": "Unplug and cool down",
+        "detail": "Make sure the toaster is fully unplugged and cool before starting."
+      },
+      {
+        "title": "Shake out crumbs",
+        "detail": "Empty the crumb tray and gently tap out loose bits from the slots."
+      },
+      {
+        "title": "Clean the latch",
+        "detail": "Brush around the lever and slide area so crumbs do not jam the mechanism."
+      },
+      {
+        "title": "Test the lever",
+        "detail": "Press the lever a few times. If it still will not stay down, stop and replace the toaster."
+      }
     ]
   },
   {
@@ -186,16 +373,32 @@
     "title": "Touch up a scratched wood finish",
     "time": "15-30 min",
     "difficulty": "Beginner",
-    "tools": ["Soft cloth", "Furniture polish or wax", "Wood touch-up marker or wax stick"],
+    "tools": [
+      "Soft cloth",
+      "Furniture polish or wax",
+      "Wood touch-up marker or wax stick"
+    ],
     "safetyTips": [
       "Test products on a hidden spot first.",
       "Do not sand through veneer or decorative finish."
     ],
     "steps": [
-      { "title": "Clean the surface", "detail": "Wipe off dust and dirt so the touch-up blends better." },
-      { "title": "Match the color", "detail": "Choose a marker or wax stick that is close to the wood tone." },
-      { "title": "Fill the scratch", "detail": "Rub the touch-up product into the scratch and smooth it flat." },
-      { "title": "Buff it dry", "detail": "Let it set, then buff lightly with a cloth." }
+      {
+        "title": "Clean the surface",
+        "detail": "Wipe off dust and dirt so the touch-up blends better."
+      },
+      {
+        "title": "Match the color",
+        "detail": "Choose a marker or wax stick that is close to the wood tone."
+      },
+      {
+        "title": "Fill the scratch",
+        "detail": "Rub the touch-up product into the scratch and smooth it flat."
+      },
+      {
+        "title": "Buff it dry",
+        "detail": "Let it set, then buff lightly with a cloth."
+      }
     ]
   },
   {
@@ -203,16 +406,32 @@
     "title": "Lube a dry bike chain",
     "time": "10-20 min",
     "difficulty": "Beginner",
-    "tools": ["Bike chain lube", "Clean rag", "Gloves (optional)"],
+    "tools": [
+      "Bike chain lube",
+      "Clean rag",
+      "Gloves (optional)"
+    ],
     "safetyTips": [
       "Keep fingers away from the chainrings while turning the pedals.",
       "Wipe off extra lube so it does not attract dirt."
     ],
     "steps": [
-      { "title": "Wipe the chain", "detail": "Use a rag to remove dirt and old grease from the chain." },
-      { "title": "Apply lube", "detail": "Add one drop to each link while slowly backpedaling." },
-      { "title": "Spin and wipe", "detail": "Turn the pedals a few times, then wipe away any extra lube." },
-      { "title": "Test the ride", "detail": "Shift through a few gears and listen for squeaks." }
+      {
+        "title": "Wipe the chain",
+        "detail": "Use a rag to remove dirt and old grease from the chain."
+      },
+      {
+        "title": "Apply lube",
+        "detail": "Add one drop to each link while slowly backpedaling."
+      },
+      {
+        "title": "Spin and wipe",
+        "detail": "Turn the pedals a few times, then wipe away any extra lube."
+      },
+      {
+        "title": "Test the ride",
+        "detail": "Shift through a few gears and listen for squeaks."
+      }
     ]
   },
   {
@@ -220,16 +439,32 @@
     "title": "Clean a crackling headphone jack",
     "time": "10-15 min",
     "difficulty": "Beginner",
-    "tools": ["Compressed air or a soft brush", "Cotton swab", "Known-good headphones or cable"],
+    "tools": [
+      "Compressed air or a soft brush",
+      "Cotton swab",
+      "Known-good headphones or cable"
+    ],
     "safetyTips": [
       "Power off the device before cleaning the port.",
       "Stop if the jack is loose, bent, or visibly damaged."
     ],
     "steps": [
-      { "title": "Turn the device off", "detail": "Disconnect power and headphones before touching the port." },
-      { "title": "Inspect the jack", "detail": "Look for lint, dust, or a bent plug inside the opening." },
-      { "title": "Clear the port", "detail": "Use air or a soft brush to remove debris. Do not force anything in." },
-      { "title": "Test sound", "detail": "Try a known-good cable. If the crackle remains, the port likely needs a pro." }
+      {
+        "title": "Turn the device off",
+        "detail": "Disconnect power and headphones before touching the port."
+      },
+      {
+        "title": "Inspect the jack",
+        "detail": "Look for lint, dust, or a bent plug inside the opening."
+      },
+      {
+        "title": "Clear the port",
+        "detail": "Use air or a soft brush to remove debris. Do not force anything in."
+      },
+      {
+        "title": "Test sound",
+        "detail": "Try a known-good cable. If the crackle remains, the port likely needs a pro."
+      }
     ]
   },
   {
@@ -237,16 +472,2397 @@
     "title": "Fix a running toilet",
     "time": "20-35 min",
     "difficulty": "Beginner",
-    "tools": ["Replacement flapper", "Towel", "Adjustable wrench (optional)"],
+    "tools": [
+      "Replacement flapper",
+      "Towel",
+      "Adjustable wrench (optional)"
+    ],
     "safetyTips": [
       "Turn off the water if the tank might overflow.",
       "If the tank or supply line is cracked, call a plumber."
     ],
     "steps": [
-      { "title": "Lift the tank lid", "detail": "Set it down carefully on a towel so it does not crack." },
-      { "title": "Check the flapper", "detail": "See if the flapper seals fully over the flush valve." },
-      { "title": "Adjust the chain", "detail": "Remove extra slack so the flapper can close all the way." },
-      { "title": "Replace worn parts", "detail": "If the flapper is stiff or warped, swap it for a matching one and test the flush." }
+      {
+        "title": "Lift the tank lid",
+        "detail": "Set it down carefully on a towel so it does not crack."
+      },
+      {
+        "title": "Check the flapper",
+        "detail": "See if the flapper seals fully over the flush valve."
+      },
+      {
+        "title": "Adjust the chain",
+        "detail": "Remove extra slack so the flapper can close all the way."
+      },
+      {
+        "title": "Replace worn parts",
+        "detail": "If the flapper is stiff or warped, swap it for a matching one and test the flush."
+      }
+    ]
+  },
+  {
+    "id": "patch-jeans",
+    "title": "Patch a hole in jeans",
+    "time": "20-30 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Iron-on denim patch",
+      "Iron",
+      "Scissors",
+      "Needle and thread (optional)"
+    ],
+    "safetyTips": [
+      "The iron is hot. Keep it on its stand between presses.",
+      "Let the patch cool before you touch it."
+    ],
+    "steps": [
+      {
+        "title": "Trim loose threads",
+        "detail": "Cut away the frayed threads around the hole so the patch sits flat."
+      },
+      {
+        "title": "Cut the patch",
+        "detail": "Make it about half an inch bigger than the hole on every side and round the corners."
+      },
+      {
+        "title": "Turn the jeans inside out",
+        "detail": "The patch goes on the inside, shiny side against the fabric."
+      },
+      {
+        "title": "Press with the iron",
+        "detail": "Hold the iron on the patch for the time printed on the patch packet, usually 30 to 45 seconds."
+      },
+      {
+        "title": "Stitch the edge",
+        "detail": "A few stitches around the edge keep the patch on through many washes."
+      }
+    ]
+  },
+  {
+    "id": "hem-pants",
+    "title": "Hem pants that are too long",
+    "time": "30-45 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Needle and matching thread",
+      "Pins",
+      "Scissors",
+      "Iron",
+      "Measuring tape"
+    ],
+    "safetyTips": [
+      "Keep pins in a dish, not on the floor.",
+      "Mind the hot iron."
+    ],
+    "steps": [
+      {
+        "title": "Mark the length",
+        "detail": "Put the pants on with shoes, fold the leg up to where you want it, and pin it."
+      },
+      {
+        "title": "Measure both legs",
+        "detail": "Take the pants off and check both folds are the same height."
+      },
+      {
+        "title": "Press the fold",
+        "detail": "Iron the fold so it stays in place."
+      },
+      {
+        "title": "Sew a blind stitch",
+        "detail": "Catch only a thread or two of the outside fabric so the stitches barely show."
+      },
+      {
+        "title": "Knot and press",
+        "detail": "Tie off inside the hem and iron once more."
+      }
+    ]
+  },
+  {
+    "id": "darn-sock",
+    "title": "Darn a hole in a sock",
+    "time": "20-30 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Darning or large needle",
+      "Thread or yarn of similar thickness",
+      "A ball, jar or darning egg",
+      "Scissors"
+    ],
+    "safetyTips": [
+      "Keep fingers behind the needle."
+    ],
+    "steps": [
+      {
+        "title": "Stretch the hole over the ball",
+        "detail": "Hold the sock snug over a tennis ball or a jar so the hole lies flat."
+      },
+      {
+        "title": "Stitch rows across",
+        "detail": "Sew parallel rows across the hole, starting and ending in good fabric."
+      },
+      {
+        "title": "Weave the other way",
+        "detail": "Go over and under the first rows at a right angle to make a small woven patch."
+      },
+      {
+        "title": "Tie off inside",
+        "detail": "Run the thread through a few stitches on the inside and trim."
+      }
+    ]
+  },
+  {
+    "id": "replace-drawstring",
+    "title": "Put a drawstring back in",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Safety pin",
+      "The drawstring or a new cord"
+    ],
+    "safetyTips": [
+      "Close the safety pin before you push it through."
+    ],
+    "steps": [
+      {
+        "title": "Pin the end",
+        "detail": "Push a safety pin through one end of the string and close it."
+      },
+      {
+        "title": "Feed it through",
+        "detail": "Push the pin into the channel and work it along by bunching the fabric and pulling it straight."
+      },
+      {
+        "title": "Even out the ends",
+        "detail": "Pull until both ends are the same length."
+      },
+      {
+        "title": "Knot the ends",
+        "detail": "A knot at each end stops it from slipping back in."
+      }
+    ]
+  },
+  {
+    "id": "depill-sweater",
+    "title": "Remove pilling from a sweater",
+    "time": "10-15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Fabric shaver or sweater comb",
+      "Lint roller"
+    ],
+    "safetyTips": [
+      "Lay the sweater flat. Shaving over a fold can cut a hole."
+    ],
+    "steps": [
+      {
+        "title": "Lay it flat",
+        "detail": "Spread the sweater on a table and smooth it out."
+      },
+      {
+        "title": "Shave lightly",
+        "detail": "Move the shaver or comb in small circles without pressing down."
+      },
+      {
+        "title": "Roll away the fluff",
+        "detail": "Finish with a lint roller."
+      }
+    ]
+  },
+  {
+    "id": "fix-snap",
+    "title": "Replace a broken snap",
+    "time": "15-20 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Sew-on snaps",
+      "Needle and thread",
+      "Scissors"
+    ],
+    "safetyTips": [
+      "Keep fingers clear of the needle point."
+    ],
+    "steps": [
+      {
+        "title": "Remove the old snap",
+        "detail": "Snip the threads and pull the broken half off."
+      },
+      {
+        "title": "Line up the new one",
+        "detail": "Put the new half exactly where the old one was so it meets the other side."
+      },
+      {
+        "title": "Sew every hole",
+        "detail": "Make four or five stitches through each hole of the snap."
+      },
+      {
+        "title": "Test it",
+        "detail": "Snap it shut and check the fabric lies flat."
+      }
+    ]
+  },
+  {
+    "id": "reglue-shoe-sole",
+    "title": "Glue a shoe sole back on",
+    "time": "20 min + 24 h to dry",
+    "difficulty": "Beginner",
+    "tools": [
+      "Shoe repair glue",
+      "Rubbing alcohol and a rag",
+      "Sandpaper",
+      "Rubber bands or clamps"
+    ],
+    "safetyTips": [
+      "Use the glue outside or by an open window.",
+      "Keep glue off your skin and away from children."
+    ],
+    "steps": [
+      {
+        "title": "Clean both sides",
+        "detail": "Wipe the sole and the shoe with rubbing alcohol and let them dry."
+      },
+      {
+        "title": "Rough them up",
+        "detail": "Lightly sand both surfaces so the glue grips."
+      },
+      {
+        "title": "Spread the glue",
+        "detail": "Put a thin, even layer on both sides and wait as long as the tube says."
+      },
+      {
+        "title": "Press and hold",
+        "detail": "Press the sole on and wrap the shoe tightly with rubber bands."
+      },
+      {
+        "title": "Wait a full day",
+        "detail": "Do not wear the shoe for 24 hours."
+      }
+    ]
+  },
+  {
+    "id": "replace-shoelaces",
+    "title": "Replace worn shoelaces and frayed tips",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "New laces of the same length",
+      "Clear tape or heat-shrink tubing"
+    ],
+    "safetyTips": [
+      "If you shrink tubing with a hair dryer, keep the heat moving."
+    ],
+    "steps": [
+      {
+        "title": "Measure the old lace",
+        "detail": "Lay it flat and measure it, or count the eyelet pairs."
+      },
+      {
+        "title": "Lace from the toe",
+        "detail": "Start at the bottom eyelets with both ends even."
+      },
+      {
+        "title": "Fix a frayed tip",
+        "detail": "Wrap the tip tightly with clear tape, or shrink a short piece of tubing over it."
+      }
+    ]
+  },
+  {
+    "id": "fix-bag-strap",
+    "title": "Sew a torn bag strap back on",
+    "time": "30 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Heavy needle",
+      "Strong polyester or upholstery thread",
+      "Thimble",
+      "Pins or clips"
+    ],
+    "safetyTips": [
+      "Use a thimble. Pushing a needle through webbing takes force."
+    ],
+    "steps": [
+      {
+        "title": "Line up the strap",
+        "detail": "Put it back where it was and pin or clip it."
+      },
+      {
+        "title": "Sew a box",
+        "detail": "Stitch a square around the edge of the overlap with small stitches."
+      },
+      {
+        "title": "Sew an X",
+        "detail": "Stitch corner to corner inside the box. This spreads the load."
+      },
+      {
+        "title": "Knot twice",
+        "detail": "Tie off on the inside and tug the strap hard to test it before you load the bag."
+      }
+    ]
+  },
+  {
+    "id": "clean-waterproof-boots",
+    "title": "Clean and re-waterproof boots",
+    "time": "30 min + drying",
+    "difficulty": "Beginner",
+    "tools": [
+      "Soft brush",
+      "Mild soap and water",
+      "Waterproofing wax or spray",
+      "Rag"
+    ],
+    "safetyTips": [
+      "Use sprays outside.",
+      "Do not dry boots on a heater, it cracks leather and melts glue."
+    ],
+    "steps": [
+      {
+        "title": "Brush off the dirt",
+        "detail": "Take the laces out and brush off dry mud."
+      },
+      {
+        "title": "Wash gently",
+        "detail": "Wipe with a little soapy water and rinse with a damp rag."
+      },
+      {
+        "title": "Treat while damp",
+        "detail": "Rub in wax or spray on the waterproofing as the label says."
+      },
+      {
+        "title": "Dry slowly",
+        "detail": "Stuff with newspaper and leave at room temperature."
+      }
+    ]
+  },
+  {
+    "id": "vacuum-clog",
+    "title": "Clear a vacuum that lost suction",
+    "time": "15-20 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Scissors",
+      "Broom handle or a straightened coat hanger",
+      "Trash bag"
+    ],
+    "safetyTips": [
+      "Unplug it and let it cool completely before you touch anything.",
+      "Wear a dust mask if dust bothers you."
+    ],
+    "steps": [
+      {
+        "title": "Unplug it",
+        "detail": "Take the plug out of the wall first."
+      },
+      {
+        "title": "Empty the bin or bag",
+        "detail": "A full bin is the most common cause."
+      },
+      {
+        "title": "Wash or tap out the filters",
+        "detail": "Follow the markings on the filter. Let washed filters dry for a full day."
+      },
+      {
+        "title": "Check the hose",
+        "detail": "Take the hose off and push a broom handle through to clear a blockage."
+      },
+      {
+        "title": "Clean the brush roll",
+        "detail": "Cut away hair and string wrapped around the roller."
+      }
+    ]
+  },
+  {
+    "id": "coffee-maker-descale",
+    "title": "Descale a coffee maker or kettle",
+    "time": "30-40 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "White vinegar or descaling powder",
+      "Water"
+    ],
+    "safetyTips": [
+      "The liquid gets hot. Let it cool before you pour it out.",
+      "Rinse well so nothing tastes of vinegar."
+    ],
+    "steps": [
+      {
+        "title": "Mix the solution",
+        "detail": "Fill the tank with half water and half white vinegar."
+      },
+      {
+        "title": "Run half a cycle",
+        "detail": "Start it, stop halfway, and let it sit for 20 minutes."
+      },
+      {
+        "title": "Finish the cycle",
+        "detail": "Let the rest run through and pour it away."
+      },
+      {
+        "title": "Rinse twice",
+        "detail": "Run two full tanks of clean water through."
+      }
+    ]
+  },
+  {
+    "id": "blender-gasket",
+    "title": "Stop a blender leaking from the base",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Replacement gasket for your model",
+      "Dish soap"
+    ],
+    "safetyTips": [
+      "Unplug it and let it cool completely before you touch anything.",
+      "The blades are sharp. Hold the blade unit by its base."
+    ],
+    "steps": [
+      {
+        "title": "Unplug and take the jar off",
+        "detail": "Never work on the jar while it sits on the motor."
+      },
+      {
+        "title": "Unscrew the base",
+        "detail": "Turn the bottom ring and lift out the blade unit and the rubber ring."
+      },
+      {
+        "title": "Check the ring",
+        "detail": "If it is cracked, flat, or stretched, swap it for a new one."
+      },
+      {
+        "title": "Put it back in order",
+        "detail": "Ring, then blade unit, then screw the base on firmly."
+      },
+      {
+        "title": "Test with water",
+        "detail": "Fill it a third with water over the sink and check for drips."
+      }
+    ]
+  },
+  {
+    "id": "dishwasher-filter",
+    "title": "Clean a dishwasher that leaves dishes dirty",
+    "time": "20 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Old toothbrush",
+      "Dish soap",
+      "Toothpick",
+      "White vinegar"
+    ],
+    "safetyTips": [
+      "Broken glass can sit in the filter. Feel carefully or wear gloves."
+    ],
+    "steps": [
+      {
+        "title": "Pull out the bottom rack",
+        "detail": "The filter is in the floor of the tub."
+      },
+      {
+        "title": "Twist the filter out",
+        "detail": "Most turn a quarter turn and lift out."
+      },
+      {
+        "title": "Scrub it",
+        "detail": "Wash it under the tap with a toothbrush."
+      },
+      {
+        "title": "Clear the spray arm holes",
+        "detail": "Poke out bits of food with a toothpick."
+      },
+      {
+        "title": "Run it empty",
+        "detail": "Put a cup of vinegar on the top rack and run a hot cycle."
+      }
+    ]
+  },
+  {
+    "id": "fridge-seal",
+    "title": "Fix a fridge door that will not seal",
+    "time": "20 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Warm soapy water",
+      "Rag",
+      "Petroleum jelly",
+      "A dollar bill"
+    ],
+    "safetyTips": [
+      "Do not use sharp tools on the seal."
+    ],
+    "steps": [
+      {
+        "title": "Do the dollar test",
+        "detail": "Close the door on a bill. If it slides out easily, the seal is not gripping there."
+      },
+      {
+        "title": "Wash the seal",
+        "detail": "Clean the rubber and the surface it touches. Sticky spills stop it sealing."
+      },
+      {
+        "title": "Rub in a thin film",
+        "detail": "A little petroleum jelly keeps the rubber soft."
+      },
+      {
+        "title": "Check the fridge is level",
+        "detail": "If the door swings open by itself, turn the front feet to tilt it slightly back."
+      }
+    ]
+  },
+  {
+    "id": "washer-smell",
+    "title": "Get rid of a smelly washing machine",
+    "time": "15 min + a wash cycle",
+    "difficulty": "Beginner",
+    "tools": [
+      "White vinegar or washer cleaner",
+      "Rag",
+      "Old toothbrush"
+    ],
+    "safetyTips": [
+      "Never mix vinegar and bleach."
+    ],
+    "steps": [
+      {
+        "title": "Wipe the door seal",
+        "detail": "Pull back the rubber on a front loader and wipe out the grey slime."
+      },
+      {
+        "title": "Clean the drawer",
+        "detail": "Take the detergent drawer out and scrub it."
+      },
+      {
+        "title": "Run a hot empty cycle",
+        "detail": "Add two cups of vinegar or a cleaner tablet."
+      },
+      {
+        "title": "Leave the door open",
+        "detail": "Let it dry out between washes."
+      }
+    ]
+  },
+  {
+    "id": "dryer-lint",
+    "title": "Clean a dryer that takes too long",
+    "time": "30 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "Vacuum with a hose",
+      "Dryer vent brush",
+      "Screwdriver"
+    ],
+    "safetyTips": [
+      "Unplug the dryer first.",
+      "If it is a gas dryer, do not move it or touch the gas line. Call a professional.",
+      "Lint build-up is a fire risk, so this is worth doing every year."
+    ],
+    "steps": [
+      {
+        "title": "Unplug the dryer",
+        "detail": "Pull the plug before anything else."
+      },
+      {
+        "title": "Wash the lint screen",
+        "detail": "Rinse it with soapy water, dryer sheets leave a film on it."
+      },
+      {
+        "title": "Vacuum the screen slot",
+        "detail": "Reach in with the hose or a vent brush."
+      },
+      {
+        "title": "Clean the vent hose",
+        "detail": "Loosen the clamp at the back, pull the hose off, and brush it out."
+      },
+      {
+        "title": "Check outside",
+        "detail": "Make sure the flap on the outside wall opens freely."
+      }
+    ]
+  },
+  {
+    "id": "disposal-jam",
+    "title": "Free a jammed garbage disposal",
+    "time": "10-15 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "The hex key that came with it (usually 1/4 inch)",
+      "Tongs",
+      "Flashlight"
+    ],
+    "safetyTips": [
+      "Never put your hand in a disposal. Use tongs.",
+      "Switch it off at the wall before you start."
+    ],
+    "steps": [
+      {
+        "title": "Switch it off",
+        "detail": "Turn off the wall switch."
+      },
+      {
+        "title": "Look inside with a light",
+        "detail": "Lift out anything you can see with tongs."
+      },
+      {
+        "title": "Turn it from below",
+        "detail": "Fit the hex key in the hole in the middle of the underside and work it back and forth."
+      },
+      {
+        "title": "Press the reset button",
+        "detail": "It is a small red button on the bottom."
+      },
+      {
+        "title": "Test with water running",
+        "detail": "Run cold water and switch it on."
+      }
+    ]
+  },
+  {
+    "id": "iron-clean",
+    "title": "Clean a sticky or spitting iron",
+    "time": "15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Baking soda",
+      "Water",
+      "Cotton swabs",
+      "Rag",
+      "Distilled water"
+    ],
+    "safetyTips": [
+      "Do this with the iron unplugged and cold."
+    ],
+    "steps": [
+      {
+        "title": "Make a paste",
+        "detail": "Mix two parts baking soda with one part water."
+      },
+      {
+        "title": "Rub the plate",
+        "detail": "Wipe the paste on the cold plate and wipe it off with a damp rag."
+      },
+      {
+        "title": "Clear the steam holes",
+        "detail": "Use a damp cotton swab."
+      },
+      {
+        "title": "Flush the tank",
+        "detail": "Fill with distilled water, heat it, and steam over an old towel."
+      }
+    ]
+  },
+  {
+    "id": "hair-dryer-filter",
+    "title": "Fix a hair dryer that overheats and cuts out",
+    "time": "10 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "Old toothbrush",
+      "Tweezers"
+    ],
+    "safetyTips": [
+      "Unplug it and let it cool completely before you touch anything.",
+      "Stop if you see damaged wires, scorch marks, or smell burning."
+    ],
+    "steps": [
+      {
+        "title": "Unplug it and let it cool",
+        "detail": "Wait ten minutes."
+      },
+      {
+        "title": "Take off the back grille",
+        "detail": "Most twist or snap off."
+      },
+      {
+        "title": "Brush off the lint",
+        "detail": "Clean the grille and the mesh under it."
+      },
+      {
+        "title": "Pick out hair",
+        "detail": "Use tweezers, and do not push anything into the dryer."
+      },
+      {
+        "title": "Put it back and test",
+        "detail": "If it still cuts out, stop using it."
+      }
+    ]
+  },
+  {
+    "id": "stripped-screw-hole",
+    "title": "Fix a stripped screw hole in wood",
+    "time": "15 min + drying",
+    "difficulty": "Beginner",
+    "tools": [
+      "Wooden toothpicks or matchsticks",
+      "Wood glue",
+      "Screwdriver",
+      "Utility knife"
+    ],
+    "safetyTips": [
+      "Cut away from your body."
+    ],
+    "steps": [
+      {
+        "title": "Take the screw out",
+        "detail": "Remove the loose screw and the hardware."
+      },
+      {
+        "title": "Fill the hole",
+        "detail": "Dip toothpicks in wood glue and pack the hole with them."
+      },
+      {
+        "title": "Trim flush",
+        "detail": "Snap or cut the ends off level with the surface."
+      },
+      {
+        "title": "Let it dry",
+        "detail": "Give it an hour."
+      },
+      {
+        "title": "Drive the screw again",
+        "detail": "It now has fresh wood to bite into."
+      }
+    ]
+  },
+  {
+    "id": "squeaky-bed",
+    "title": "Quiet a squeaky bed frame",
+    "time": "20-30 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Screwdriver or hex key",
+      "Candle wax or paraffin",
+      "Felt pads"
+    ],
+    "safetyTips": [
+      "Get help lifting the mattress."
+    ],
+    "steps": [
+      {
+        "title": "Find the squeak",
+        "detail": "Take the mattress off and rock the frame to hear where it comes from."
+      },
+      {
+        "title": "Tighten every bolt",
+        "detail": "Go around all the joints."
+      },
+      {
+        "title": "Wax the rubbing spots",
+        "detail": "Rub candle wax where wood touches wood or metal."
+      },
+      {
+        "title": "Pad the slats",
+        "detail": "Put felt between the slats and the frame."
+      }
+    ]
+  },
+  {
+    "id": "cabinet-hinge",
+    "title": "Adjust a cabinet door that hangs crooked",
+    "time": "10-15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Phillips screwdriver"
+    ],
+    "safetyTips": [
+      "Support the door with your other hand while you loosen screws."
+    ],
+    "steps": [
+      {
+        "title": "Find the adjusting screws",
+        "detail": "Modern hinges have one screw for side to side and one for in and out."
+      },
+      {
+        "title": "Turn a little",
+        "detail": "Give the side screw a quarter turn and close the door to check."
+      },
+      {
+        "title": "Match the gap",
+        "detail": "Adjust until the gap is even with the door next to it."
+      },
+      {
+        "title": "Tighten the mounting screws",
+        "detail": "Make sure the hinge is firm on the cabinet."
+      }
+    ]
+  },
+  {
+    "id": "upholstery-tear",
+    "title": "Mend a small tear in upholstery",
+    "time": "30 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "Curved upholstery needle",
+      "Strong matching thread",
+      "Fabric glue",
+      "Scissors"
+    ],
+    "safetyTips": [
+      "Curved needles are sharp at an odd angle. Go slowly."
+    ],
+    "steps": [
+      {
+        "title": "Trim loose threads",
+        "detail": "Do not cut the fabric itself."
+      },
+      {
+        "title": "Tuck the edges under",
+        "detail": "Fold the frayed edges in so the tear closes."
+      },
+      {
+        "title": "Sew a ladder stitch",
+        "detail": "Take small stitches from one side to the other so they pull the edges together."
+      },
+      {
+        "title": "Pull snug and knot",
+        "detail": "Hide the knot in the seam."
+      },
+      {
+        "title": "Seal with a dot of glue",
+        "detail": "Fabric glue on the knot keeps it from opening."
+      }
+    ]
+  },
+  {
+    "id": "level-table",
+    "title": "Level a table that rocks on the floor",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Felt pads or adjustable feet",
+      "A coin or card to test"
+    ],
+    "safetyTips": [
+      "Tip the table gently, do not lift it alone if it is heavy."
+    ],
+    "steps": [
+      {
+        "title": "Find the short leg",
+        "detail": "Rock the table and see which leg lifts."
+      },
+      {
+        "title": "Check the floor",
+        "detail": "Turn the table a quarter turn. If it stops rocking, the floor is uneven, not the table."
+      },
+      {
+        "title": "Add a pad",
+        "detail": "Stick felt pads under the short leg until the rocking stops."
+      }
+    ]
+  },
+  {
+    "id": "reglue-veneer",
+    "title": "Glue down lifting veneer or laminate edge",
+    "time": "15 min + drying",
+    "difficulty": "Beginner",
+    "tools": [
+      "Wood glue",
+      "Thin card or a toothpick",
+      "Wax paper",
+      "A heavy book or clamp",
+      "Damp rag"
+    ],
+    "safetyTips": [
+      "Do not force the veneer up, it snaps."
+    ],
+    "steps": [
+      {
+        "title": "Clean under the flap",
+        "detail": "Slide a card under and brush out dust."
+      },
+      {
+        "title": "Work in glue",
+        "detail": "Spread wood glue under the flap with a toothpick."
+      },
+      {
+        "title": "Press and wipe",
+        "detail": "Push it down and wipe away what squeezes out."
+      },
+      {
+        "title": "Weigh it down",
+        "detail": "Cover with wax paper and put a heavy book on top overnight."
+      }
+    ]
+  },
+  {
+    "id": "slipped-chain",
+    "title": "Put a slipped bike chain back on",
+    "time": "5 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "A rag or gloves"
+    ],
+    "safetyTips": [
+      "Keep fingers away from where the chain meets the gears while the pedals turn."
+    ],
+    "steps": [
+      {
+        "title": "Shift to the smallest gears",
+        "detail": "This gives the chain the most slack."
+      },
+      {
+        "title": "Hook the chain on top",
+        "detail": "Lay it over the top of the front chainring."
+      },
+      {
+        "title": "Turn the pedals backward by hand",
+        "detail": "The chain feeds itself back on."
+      },
+      {
+        "title": "Spin and check",
+        "detail": "Lift the back wheel and pedal forward a few turns."
+      }
+    ]
+  },
+  {
+    "id": "adjust-seat",
+    "title": "Set bike seat height and stop it slipping",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Hex keys or the quick-release lever",
+      "A rag"
+    ],
+    "safetyTips": [
+      "Never raise the post past its minimum insertion mark."
+    ],
+    "steps": [
+      {
+        "title": "Loosen the clamp",
+        "detail": "Open the quick release or loosen the bolt."
+      },
+      {
+        "title": "Set the height",
+        "detail": "With the pedal at the bottom, your leg should be almost straight."
+      },
+      {
+        "title": "Clean the post if it slips",
+        "detail": "Wipe grease and grit off the post and inside the clamp."
+      },
+      {
+        "title": "Tighten firmly",
+        "detail": "Close the lever or bolt and try to twist the seat by hand."
+      }
+    ]
+  },
+  {
+    "id": "adjust-shifting",
+    "title": "Fix bike gears that skip or will not shift",
+    "time": "20 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "Your hands",
+      "A bike stand or a friend to lift the wheel",
+      "Chain lube"
+    ],
+    "safetyTips": [
+      "Keep fingers out of the chain and spokes while the wheel spins."
+    ],
+    "steps": [
+      {
+        "title": "Lift the back wheel",
+        "detail": "You need to pedal and shift at the same time."
+      },
+      {
+        "title": "Find the barrel adjuster",
+        "detail": "It is the small knob where the cable enters the rear derailleur or the shifter."
+      },
+      {
+        "title": "Slow to shift to bigger gears",
+        "detail": "Turn the adjuster a quarter turn counter-clockwise."
+      },
+      {
+        "title": "Slow to shift to smaller gears",
+        "detail": "Turn it a quarter turn clockwise."
+      },
+      {
+        "title": "Test every gear",
+        "detail": "If it still skips, the cable or the chain may be worn. A bike shop can check."
+      }
+    ]
+  },
+  {
+    "id": "replace-grips",
+    "title": "Replace worn bike grips",
+    "time": "15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "New grips",
+      "Rubbing alcohol",
+      "Flat screwdriver",
+      "Rag"
+    ],
+    "safetyTips": [
+      "Do not ride until the grips are dry and do not twist."
+    ],
+    "steps": [
+      {
+        "title": "Loosen the old grip",
+        "detail": "Slide a screwdriver under the edge and drip in rubbing alcohol."
+      },
+      {
+        "title": "Twist it off",
+        "detail": "Work it back and forth."
+      },
+      {
+        "title": "Clean the bar",
+        "detail": "Wipe off the old glue."
+      },
+      {
+        "title": "Slide the new grip on",
+        "detail": "Wet the inside with alcohol and push it on quickly."
+      },
+      {
+        "title": "Let it dry",
+        "detail": "Give it an hour, the alcohol evaporates and the grip holds."
+      }
+    ]
+  },
+  {
+    "id": "inflate-tire",
+    "title": "Pump a bike tire to the right pressure",
+    "time": "5 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Floor pump with a gauge"
+    ],
+    "safetyTips": [
+      "Do not go over the maximum pressure printed on the tire."
+    ],
+    "steps": [
+      {
+        "title": "Read the tire",
+        "detail": "The pressure range is printed on the side wall."
+      },
+      {
+        "title": "Know your valve",
+        "detail": "A thin valve with a small nut on top is Presta, unscrew the nut first. A car-style valve is Schrader."
+      },
+      {
+        "title": "Push the pump head on",
+        "detail": "Flip the lever to lock it."
+      },
+      {
+        "title": "Pump to the middle of the range",
+        "detail": "Check with the gauge."
+      },
+      {
+        "title": "Close up",
+        "detail": "Take the head off, tighten the Presta nut, and put the cap on."
+      }
+    ]
+  },
+  {
+    "id": "clean-charging-port",
+    "title": "Fix a phone that will not charge",
+    "time": "10 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "Wooden or plastic toothpick",
+      "Flashlight",
+      "Soft brush"
+    ],
+    "safetyTips": [
+      "Switch the phone off first.",
+      "Never use metal in the port.",
+      "If the phone or battery is hot or swollen, stop."
+    ],
+    "steps": [
+      {
+        "title": "Try another cable and charger",
+        "detail": "This rules out the easy cause."
+      },
+      {
+        "title": "Switch the phone off",
+        "detail": "Hold the power button and turn it off."
+      },
+      {
+        "title": "Look in the port",
+        "detail": "Shine a light in. Pocket lint packs down at the bottom."
+      },
+      {
+        "title": "Pick it out gently",
+        "detail": "Scrape along the bottom with a wooden toothpick and lift the lint out."
+      },
+      {
+        "title": "Brush and test",
+        "detail": "Brush out the dust, switch on, and plug in."
+      }
+    ]
+  },
+  {
+    "id": "clean-keyboard",
+    "title": "Fix sticky or dead keyboard keys",
+    "time": "15-20 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Can of compressed air",
+      "Rubbing alcohol (70% or more)",
+      "Cotton swabs",
+      "Soft cloth"
+    ],
+    "safetyTips": [
+      "Switch off and unplug first.",
+      "Do not pour liquid on the keyboard."
+    ],
+    "steps": [
+      {
+        "title": "Power down",
+        "detail": "Unplug the keyboard or switch the laptop off."
+      },
+      {
+        "title": "Shake it out",
+        "detail": "Turn it upside down and tap gently."
+      },
+      {
+        "title": "Blow between the keys",
+        "detail": "Use short bursts of air at an angle."
+      },
+      {
+        "title": "Clean sticky keys",
+        "detail": "Rub around the key with a swab dipped in a little alcohol."
+      },
+      {
+        "title": "Let it dry",
+        "detail": "Wait ten minutes before you switch on."
+      }
+    ]
+  },
+  {
+    "id": "battery-corrosion",
+    "title": "Clean leaked battery crust from a remote or toy",
+    "time": "15 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "White vinegar or lemon juice",
+      "Cotton swabs",
+      "Old toothbrush",
+      "Gloves",
+      "Safety glasses"
+    ],
+    "safetyTips": [
+      "Wear gloves and glasses, the white crust irritates skin and eyes.",
+      "Throw the old batteries away at a battery drop-off.",
+      "This is only for AA, AAA, C, D and 9V batteries. Never open a rechargeable pack."
+    ],
+    "steps": [
+      {
+        "title": "Take the batteries out",
+        "detail": "Put on gloves and remove them."
+      },
+      {
+        "title": "Dab on vinegar",
+        "detail": "A swab with a little vinegar dissolves the crust. It may fizz."
+      },
+      {
+        "title": "Scrub the contacts",
+        "detail": "Brush the springs and plates until the metal shines."
+      },
+      {
+        "title": "Dry fully",
+        "detail": "Wipe and leave it open for an hour."
+      },
+      {
+        "title": "Put in fresh batteries",
+        "detail": "Check the plus and minus marks."
+      }
+    ]
+  },
+  {
+    "id": "controller-drift",
+    "title": "Clean a game controller with stick drift",
+    "time": "15 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "Rubbing alcohol (90% or more)",
+      "Cotton swabs",
+      "Compressed air"
+    ],
+    "safetyTips": [
+      "Switch the controller off and unplug it.",
+      "Opening the controller is not part of this guide."
+    ],
+    "steps": [
+      {
+        "title": "Power it off",
+        "detail": "Unplug or switch off."
+      },
+      {
+        "title": "Blow around the stick",
+        "detail": "Push the stick to one side and blow air under the cap."
+      },
+      {
+        "title": "Clean the base",
+        "detail": "Rub around the base with a swab and a little alcohol while you rotate the stick."
+      },
+      {
+        "title": "Let it dry",
+        "detail": "Wait ten minutes."
+      },
+      {
+        "title": "Recalibrate",
+        "detail": "Use the calibration option in the console settings."
+      }
+    ]
+  },
+  {
+    "id": "replace-ear-pads",
+    "title": "Replace worn headphone ear pads",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Replacement pads for your model"
+    ],
+    "safetyTips": [
+      "Pull on the pad, not on the speaker."
+    ],
+    "steps": [
+      {
+        "title": "Find how they attach",
+        "detail": "Most pads clip into a groove or twist off."
+      },
+      {
+        "title": "Pull the old pad off",
+        "detail": "Work around the edge with a fingernail."
+      },
+      {
+        "title": "Seat the new one",
+        "detail": "Tuck the lip into the groove bit by bit."
+      },
+      {
+        "title": "Check both sides",
+        "detail": "The seam goes at the bottom."
+      }
+    ]
+  },
+  {
+    "id": "screen-protector",
+    "title": "Replace a cracked screen protector",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "New screen protector",
+      "The wipes that come with it",
+      "A card"
+    ],
+    "safetyTips": [
+      "If the glass screen itself is cracked, do not press on it."
+    ],
+    "steps": [
+      {
+        "title": "Lift the old one",
+        "detail": "Pick up a corner with a fingernail and peel slowly."
+      },
+      {
+        "title": "Clean the screen",
+        "detail": "Use the wet wipe, the dry wipe, then the dust sticker."
+      },
+      {
+        "title": "Line it up",
+        "detail": "Hold the protector by the edges and line it up with the camera and speaker."
+      },
+      {
+        "title": "Press from the middle",
+        "detail": "Push bubbles to the edge with a card."
+      }
+    ]
+  },
+  {
+    "id": "remote-not-working",
+    "title": "Fix a TV remote that stopped working",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Fresh batteries",
+      "Phone camera",
+      "Rubbing alcohol and a swab"
+    ],
+    "safetyTips": [
+      "Check the plus and minus marks."
+    ],
+    "steps": [
+      {
+        "title": "Change the batteries",
+        "detail": "Put in a fresh pair."
+      },
+      {
+        "title": "Test with a phone camera",
+        "detail": "Point the remote at the camera and press a button. A working remote shows a flashing light on screen."
+      },
+      {
+        "title": "Clean the contacts",
+        "detail": "Rub the springs with a swab and a little alcohol."
+      },
+      {
+        "title": "Free stuck buttons",
+        "detail": "Press every button a few times, one may be held down."
+      }
+    ]
+  },
+  {
+    "id": "unclog-sink",
+    "title": "Unclog a slow sink drain",
+    "time": "20-30 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Plunger",
+      "Bucket",
+      "Plastic drain strip",
+      "Rubber gloves"
+    ],
+    "safetyTips": [
+      "Do not use this guide after pouring chemical drain cleaner, it can splash and burn.",
+      "Wear gloves."
+    ],
+    "steps": [
+      {
+        "title": "Pull the stopper",
+        "detail": "Lift or unscrew it and clean off the hair."
+      },
+      {
+        "title": "Use a drain strip",
+        "detail": "Push the barbed strip down and pull out the clog."
+      },
+      {
+        "title": "Plunge",
+        "detail": "Cover the overflow hole with a wet rag and plunge ten times."
+      },
+      {
+        "title": "Clean the trap",
+        "detail": "Put a bucket under the U-shaped pipe, unscrew the two nuts by hand, and empty it."
+      },
+      {
+        "title": "Run hot water",
+        "detail": "Check the nuts for drips."
+      }
+    ]
+  },
+  {
+    "id": "unclog-toilet",
+    "title": "Unclog a toilet",
+    "time": "10-15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Flange plunger",
+      "Rubber gloves",
+      "Old towels"
+    ],
+    "safetyTips": [
+      "If the bowl is close to overflowing, close the valve behind the toilet first."
+    ],
+    "steps": [
+      {
+        "title": "Stop the water",
+        "detail": "Turn the valve on the wall behind the toilet clockwise."
+      },
+      {
+        "title": "Seat the plunger",
+        "detail": "The rubber flap goes into the hole so it seals."
+      },
+      {
+        "title": "Push and pull",
+        "detail": "Start gently, then plunge firmly fifteen times without breaking the seal."
+      },
+      {
+        "title": "Open the valve and flush",
+        "detail": "If it clears, flush once more."
+      }
+    ]
+  },
+  {
+    "id": "patch-drywall",
+    "title": "Patch a small hole in drywall",
+    "time": "30 min + drying",
+    "difficulty": "Beginner",
+    "tools": [
+      "Spackle",
+      "Putty knife",
+      "Self-adhesive mesh patch (for holes over half an inch)",
+      "Fine sandpaper",
+      "Dust mask"
+    ],
+    "safetyTips": [
+      "Wear a dust mask when sanding.",
+      "Houses built before 1978 can have lead paint. Do not sand old paint."
+    ],
+    "steps": [
+      {
+        "title": "Clean the hole",
+        "detail": "Cut away loose paper and brush off dust."
+      },
+      {
+        "title": "Cover bigger holes",
+        "detail": "Stick a mesh patch over anything larger than a nail hole."
+      },
+      {
+        "title": "Spread spackle",
+        "detail": "Press it in and smooth it past the edges."
+      },
+      {
+        "title": "Let it dry and sand",
+        "detail": "Sand lightly until it is level with the wall."
+      },
+      {
+        "title": "Second coat and paint",
+        "detail": "Add a thin second coat if you can see the patch, then prime and paint."
+      }
+    ]
+  },
+  {
+    "id": "squeaky-hinge",
+    "title": "Stop a squeaky door hinge",
+    "time": "5-10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Silicone spray or petroleum jelly",
+      "Rag",
+      "Nail and hammer (optional)"
+    ],
+    "safetyTips": [
+      "Put a rag under the hinge to catch drips."
+    ],
+    "steps": [
+      {
+        "title": "Find the noisy hinge",
+        "detail": "Open and close the door and listen."
+      },
+      {
+        "title": "Lubricate the pin",
+        "detail": "Spray or rub lubricant at the top of the hinge pin."
+      },
+      {
+        "title": "Work it in",
+        "detail": "Swing the door ten times."
+      },
+      {
+        "title": "Wipe the drips",
+        "detail": "Clean up what runs down."
+      }
+    ]
+  },
+  {
+    "id": "loose-door-handle",
+    "title": "Tighten a loose door handle",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Phillips screwdriver",
+      "Small hex key"
+    ],
+    "safetyTips": [
+      "Do not overtighten, the latch can bind."
+    ],
+    "steps": [
+      {
+        "title": "Find the screws",
+        "detail": "They are on the inside plate, or a small set screw sits under the handle."
+      },
+      {
+        "title": "Tighten evenly",
+        "detail": "Hold the handle straight and tighten each screw a little at a time."
+      },
+      {
+        "title": "Test the latch",
+        "detail": "The handle should spring back by itself."
+      }
+    ]
+  },
+  {
+    "id": "recaulk-tub",
+    "title": "Replace cracked or mouldy bathtub caulk",
+    "time": "1 hour + 24 h to cure",
+    "difficulty": "Some experience",
+    "tools": [
+      "Caulk remover tool or plastic scraper",
+      "100% silicone bathroom caulk",
+      "Caulk gun",
+      "Painter's tape",
+      "Rubbing alcohol"
+    ],
+    "safetyTips": [
+      "Open a window, silicone smells strong.",
+      "Scrape away from yourself."
+    ],
+    "steps": [
+      {
+        "title": "Scrape out the old caulk",
+        "detail": "Get all of it, new caulk does not stick to old."
+      },
+      {
+        "title": "Clean and dry",
+        "detail": "Wipe the joint with alcohol and let it dry completely."
+      },
+      {
+        "title": "Tape both sides",
+        "detail": "Leave a gap of about a quarter inch."
+      },
+      {
+        "title": "Run one bead",
+        "detail": "Cut the nozzle small and squeeze steadily along the joint."
+      },
+      {
+        "title": "Smooth and peel",
+        "detail": "Smooth with a wet finger, pull the tape right away, and keep it dry for 24 hours."
+      }
+    ]
+  },
+  {
+    "id": "replace-showerhead",
+    "title": "Replace a showerhead",
+    "time": "15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Adjustable wrench",
+      "Plumber's tape",
+      "Rag"
+    ],
+    "safetyTips": [
+      "Wrap the rag around the fitting so the wrench does not scratch it.",
+      "Do not force the pipe in the wall."
+    ],
+    "steps": [
+      {
+        "title": "Unscrew the old head",
+        "detail": "Turn it counter-clockwise, hold the pipe still with your other hand."
+      },
+      {
+        "title": "Clean the threads",
+        "detail": "Peel off the old tape."
+      },
+      {
+        "title": "Wrap new tape",
+        "detail": "Three turns clockwise around the threads."
+      },
+      {
+        "title": "Screw on the new head",
+        "detail": "Hand tight, then a quarter turn with the wrench."
+      },
+      {
+        "title": "Check for drips",
+        "detail": "Run the water and tighten slightly if it leaks."
+      }
+    ]
+  },
+  {
+    "id": "weatherstrip-door",
+    "title": "Seal a drafty door",
+    "time": "30 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Self-adhesive foam weatherstrip",
+      "Scissors",
+      "Rubbing alcohol",
+      "Rag",
+      "Measuring tape"
+    ],
+    "safetyTips": [
+      "Mind your fingers in the door hinge side."
+    ],
+    "steps": [
+      {
+        "title": "Find the draft",
+        "detail": "On a windy day, feel around the frame with a wet hand."
+      },
+      {
+        "title": "Clean the frame",
+        "detail": "Wipe where the strip will go and let it dry."
+      },
+      {
+        "title": "Stick the strip",
+        "detail": "Press it along the stop where the door closes against the frame."
+      },
+      {
+        "title": "Close the door",
+        "detail": "It should press on the foam and still latch easily."
+      }
+    ]
+  },
+  {
+    "id": "window-screen",
+    "title": "Patch or replace a torn window screen",
+    "time": "30-45 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Screen patch or roll of screen",
+      "Spline roller",
+      "New spline",
+      "Utility knife",
+      "Flat screwdriver"
+    ],
+    "safetyTips": [
+      "Cut away from your hand."
+    ],
+    "steps": [
+      {
+        "title": "Small hole",
+        "detail": "Stick or hook a screen patch over it and you are done."
+      },
+      {
+        "title": "Pull the old spline",
+        "detail": "Pry up the rubber cord in the groove and take the old screen out."
+      },
+      {
+        "title": "Lay new screen",
+        "detail": "Cut it two inches bigger than the frame."
+      },
+      {
+        "title": "Roll in new spline",
+        "detail": "Press the cord into the groove with the roller, keeping the screen flat."
+      },
+      {
+        "title": "Trim",
+        "detail": "Cut off the extra along the outside of the groove."
+      }
+    ]
+  },
+  {
+    "id": "smoke-alarm-chirp",
+    "title": "Stop a chirping smoke alarm",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "New battery of the type printed on the alarm",
+      "Step stool",
+      "Vacuum with a brush"
+    ],
+    "safetyTips": [
+      "Use a steady stool and have someone hold it.",
+      "Never leave an alarm without a battery.",
+      "Alarms older than 10 years should be replaced, the date is on the back."
+    ],
+    "steps": [
+      {
+        "title": "Find the one chirping",
+        "detail": "The chirp comes about once a minute."
+      },
+      {
+        "title": "Twist it off the base",
+        "detail": "Turn counter-clockwise."
+      },
+      {
+        "title": "Change the battery",
+        "detail": "Match the plus and minus marks."
+      },
+      {
+        "title": "Vacuum the vents",
+        "detail": "Dust sets alarms off."
+      },
+      {
+        "title": "Test",
+        "detail": "Put it back and hold the test button until it sounds."
+      }
+    ]
+  },
+  {
+    "id": "furnace-filter",
+    "title": "Change a furnace or heat pump air filter",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "New filter of the same size"
+    ],
+    "safetyTips": [
+      "Switch the system off at the thermostat first.",
+      "This is only the filter. Do not open any other panel."
+    ],
+    "steps": [
+      {
+        "title": "Switch it off",
+        "detail": "Set the thermostat to off."
+      },
+      {
+        "title": "Find the filter",
+        "detail": "It is behind a slot or grille where the big return duct meets the unit."
+      },
+      {
+        "title": "Read the size",
+        "detail": "It is printed on the edge of the old filter."
+      },
+      {
+        "title": "Slide in the new one",
+        "detail": "The arrow on the frame points toward the furnace."
+      },
+      {
+        "title": "Switch back on",
+        "detail": "Write the date on the filter edge."
+      }
+    ]
+  },
+  {
+    "id": "toilet-seat",
+    "title": "Replace or tighten a toilet seat",
+    "time": "15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Screwdriver",
+      "Pliers or adjustable wrench",
+      "Rubber gloves"
+    ],
+    "safetyTips": [
+      "Do not overtighten, porcelain cracks."
+    ],
+    "steps": [
+      {
+        "title": "Flip the caps",
+        "detail": "The bolts are under two covers at the back of the seat."
+      },
+      {
+        "title": "Hold the nut underneath",
+        "detail": "Grip it with pliers and turn the bolt from above."
+      },
+      {
+        "title": "Lift the seat off",
+        "detail": "Clean around the holes."
+      },
+      {
+        "title": "Fit the new seat",
+        "detail": "Drop the bolts in, centre the seat, and tighten by hand plus a little."
+      }
+    ]
+  },
+  {
+    "id": "nail-holes",
+    "title": "Fill nail holes in a wall",
+    "time": "10 min + drying",
+    "difficulty": "Beginner",
+    "tools": [
+      "Spackle",
+      "Putty knife or an old card",
+      "Damp sponge",
+      "Touch-up paint"
+    ],
+    "safetyTips": [
+      "Houses built before 1978 can have lead paint. Do not sand old paint."
+    ],
+    "steps": [
+      {
+        "title": "Press in spackle",
+        "detail": "Push a little into each hole."
+      },
+      {
+        "title": "Scrape flat",
+        "detail": "Pull the knife across so only the hole is filled."
+      },
+      {
+        "title": "Wipe",
+        "detail": "A damp sponge takes off the rest without sanding."
+      },
+      {
+        "title": "Touch up",
+        "detail": "Dab on paint when dry."
+      }
+    ]
+  },
+  {
+    "id": "sharpen-knife",
+    "title": "Sharpen a dull kitchen knife",
+    "time": "15-20 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "Sharpening stone or pull-through sharpener",
+      "Water",
+      "Towel"
+    ],
+    "safetyTips": [
+      "Always move the blade so the edge points away from your hand.",
+      "Put a damp towel under the stone so it cannot slide.",
+      "Wash the knife afterwards, there are metal filings on it."
+    ],
+    "steps": [
+      {
+        "title": "Wet the stone",
+        "detail": "Soak or wet it as its instructions say."
+      },
+      {
+        "title": "Find the angle",
+        "detail": "Hold the blade at about 15 to 20 degrees, roughly two stacked coins under the spine."
+      },
+      {
+        "title": "Stroke one side",
+        "detail": "Push the edge across the stone from heel to tip ten times."
+      },
+      {
+        "title": "Do the other side",
+        "detail": "Same number of strokes."
+      },
+      {
+        "title": "Test on paper",
+        "detail": "A sharp knife slices a sheet of paper cleanly."
+      }
+    ]
+  },
+  {
+    "id": "season-cast-iron",
+    "title": "Remove rust and re-season cast iron",
+    "time": "20 min + 1 hour in the oven",
+    "difficulty": "Beginner",
+    "tools": [
+      "Steel wool",
+      "Dish soap",
+      "Cooking oil",
+      "Paper towels",
+      "Oven"
+    ],
+    "safetyTips": [
+      "The pan stays hot for a long time. Use oven mitts."
+    ],
+    "steps": [
+      {
+        "title": "Scrub off the rust",
+        "detail": "Use steel wool and a little soap."
+      },
+      {
+        "title": "Dry it right away",
+        "detail": "Heat it on the stove for a minute."
+      },
+      {
+        "title": "Rub in oil",
+        "detail": "A very thin layer all over, then wipe off as much as you can."
+      },
+      {
+        "title": "Bake upside down",
+        "detail": "One hour at 450 F with foil on the rack below."
+      },
+      {
+        "title": "Let it cool in the oven",
+        "detail": "Repeat for a darker finish."
+      }
+    ]
+  },
+  {
+    "id": "loose-pot-handle",
+    "title": "Tighten a loose pot or pan handle",
+    "time": "5 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Screwdriver that fits the screw"
+    ],
+    "safetyTips": [
+      "If the handle is riveted and loose, or cracked, stop using the pan for hot food."
+    ],
+    "steps": [
+      {
+        "title": "Find the screw",
+        "detail": "It is where the handle meets the pan, sometimes under a cap."
+      },
+      {
+        "title": "Tighten it",
+        "detail": "Hold the handle straight and tighten firmly."
+      },
+      {
+        "title": "Check after washing",
+        "detail": "Heat loosens it again over time."
+      }
+    ]
+  },
+  {
+    "id": "oil-cutting-board",
+    "title": "Restore a dry or cracked-looking cutting board",
+    "time": "15 min + overnight",
+    "difficulty": "Beginner",
+    "tools": [
+      "Food-grade mineral oil",
+      "Clean rag",
+      "Coarse salt and half a lemon"
+    ],
+    "safetyTips": [
+      "Only use food-grade mineral oil. Cooking oils go rancid."
+    ],
+    "steps": [
+      {
+        "title": "Scrub with salt and lemon",
+        "detail": "This lifts stains and smells."
+      },
+      {
+        "title": "Rinse and dry upright",
+        "detail": "Let it dry fully."
+      },
+      {
+        "title": "Flood with oil",
+        "detail": "Rub oil in on every side."
+      },
+      {
+        "title": "Leave overnight",
+        "detail": "Wipe off what is left in the morning."
+      }
+    ]
+  },
+  {
+    "id": "sharpen-pruners",
+    "title": "Clean and sharpen garden pruners",
+    "time": "20 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "Steel wool",
+      "Sharpening file or stone",
+      "Light oil",
+      "Work gloves"
+    ],
+    "safetyTips": [
+      "Wear gloves and file away from your body."
+    ],
+    "steps": [
+      {
+        "title": "Scrub off sap and rust",
+        "detail": "Use steel wool."
+      },
+      {
+        "title": "Find the bevel",
+        "detail": "Only the angled side of the blade gets sharpened."
+      },
+      {
+        "title": "File in one direction",
+        "detail": "Follow the angle from the base to the tip, ten to twenty strokes."
+      },
+      {
+        "title": "Knock off the burr",
+        "detail": "One light pass on the flat side."
+      },
+      {
+        "title": "Oil the pivot",
+        "detail": "A drop of oil, then open and close a few times."
+      }
+    ]
+  },
+  {
+    "id": "patch-hose",
+    "title": "Fix a leaking garden hose",
+    "time": "15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Hose mender kit or new hose washer",
+      "Utility knife",
+      "Screwdriver"
+    ],
+    "safetyTips": [
+      "Turn the water off and drain the hose first.",
+      "Cut on a board, away from your hand."
+    ],
+    "steps": [
+      {
+        "title": "Leak at the tap",
+        "detail": "Pry out the flat rubber washer in the hose end and press in a new one."
+      },
+      {
+        "title": "Leak in the middle",
+        "detail": "Cut out the damaged section with two straight cuts."
+      },
+      {
+        "title": "Push in the mender",
+        "detail": "Press each cut end fully onto the mender."
+      },
+      {
+        "title": "Tighten the clamps",
+        "detail": "Screw both clamps down and test."
+      }
+    ]
+  },
+  {
+    "id": "patch-tent",
+    "title": "Patch a tear in a tent or rain jacket",
+    "time": "15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Gear repair tape",
+      "Rubbing alcohol",
+      "Scissors",
+      "Rag"
+    ],
+    "safetyTips": [
+      "Do the repair on a flat, dry surface."
+    ],
+    "steps": [
+      {
+        "title": "Clean the area",
+        "detail": "Wipe both sides with alcohol and let it dry."
+      },
+      {
+        "title": "Cut a rounded patch",
+        "detail": "An inch bigger than the tear all round, with round corners."
+      },
+      {
+        "title": "Stick and press",
+        "detail": "Lay the fabric flat, apply the patch, and rub hard from the centre."
+      },
+      {
+        "title": "Patch the inside too",
+        "detail": "For a tear longer than an inch."
+      }
+    ]
+  },
+  {
+    "id": "patch-inflatable",
+    "title": "Patch a leaking air mattress or pool float",
+    "time": "20 min + curing",
+    "difficulty": "Beginner",
+    "tools": [
+      "Vinyl patch kit",
+      "Dish soap and water",
+      "Marker",
+      "Rubbing alcohol"
+    ],
+    "safetyTips": [
+      "Use the glue in fresh air."
+    ],
+    "steps": [
+      {
+        "title": "Find the leak",
+        "detail": "Inflate it, wipe on soapy water, and look for growing bubbles."
+      },
+      {
+        "title": "Mark it and deflate",
+        "detail": "Circle the spot and let all the air out."
+      },
+      {
+        "title": "Clean and dry",
+        "detail": "Wipe with alcohol."
+      },
+      {
+        "title": "Apply the patch",
+        "detail": "Glue and press as the kit says, with round corners."
+      },
+      {
+        "title": "Wait before inflating",
+        "detail": "Give it the full curing time, usually several hours."
+      }
+    ]
+  },
+  {
+    "id": "trimmer-line",
+    "title": "Replace string trimmer line",
+    "time": "15 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "Trimmer line of the size in the manual",
+      "Gloves",
+      "Safety glasses"
+    ],
+    "safetyTips": [
+      "Unplug the trimmer or remove its battery first. For a gas trimmer, switch it off and pull the spark plug cap.",
+      "Wear gloves and glasses."
+    ],
+    "steps": [
+      {
+        "title": "Cut the power",
+        "detail": "Battery out, cord unplugged, or spark plug cap off."
+      },
+      {
+        "title": "Open the head",
+        "detail": "Press the tabs or unscrew the cap and lift out the spool."
+      },
+      {
+        "title": "Wind new line",
+        "detail": "Follow the arrow on the spool and keep the turns neat."
+      },
+      {
+        "title": "Thread the ends",
+        "detail": "Feed them through the eyelets and snap the cap on."
+      }
+    ]
+  },
+  {
+    "id": "clean-grill-grates",
+    "title": "Clean rusty or greasy grill grates",
+    "time": "30 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Grill brush without loose bristles or a ball of foil",
+      "Dish soap",
+      "Cooking oil",
+      "Paper towels"
+    ],
+    "safetyTips": [
+      "Make sure the grill is off and cold.",
+      "This is only the grates. Do not touch the gas hose or burners.",
+      "Check the grates for loose brush bristles before cooking."
+    ],
+    "steps": [
+      {
+        "title": "Take the grates out",
+        "detail": "Lift them off when cold."
+      },
+      {
+        "title": "Scrub",
+        "detail": "Use hot soapy water and a brush."
+      },
+      {
+        "title": "Rinse and dry fully",
+        "detail": "Rust comes back fast on wet iron."
+      },
+      {
+        "title": "Oil lightly",
+        "detail": "Wipe on a thin coat of cooking oil."
+      }
+    ]
+  },
+  {
+    "id": "toy-batteries",
+    "title": "Fix a battery toy that stopped working",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Small Phillips screwdriver",
+      "Fresh batteries",
+      "Cotton swab"
+    ],
+    "safetyTips": [
+      "Keep button batteries away from children. A swallowed one is an emergency.",
+      "Screw the battery door back on."
+    ],
+    "steps": [
+      {
+        "title": "Open the battery door",
+        "detail": "It is held by a small screw."
+      },
+      {
+        "title": "Look for crust",
+        "detail": "White or green crust means a battery leaked. Use the battery crust guide."
+      },
+      {
+        "title": "Put in fresh batteries",
+        "detail": "All new, all the same kind."
+      },
+      {
+        "title": "Check the switch",
+        "detail": "Slide it back and forth a few times."
+      },
+      {
+        "title": "Close it up",
+        "detail": "Tighten the screw."
+      }
+    ]
+  },
+  {
+    "id": "glue-plastic",
+    "title": "Glue a broken plastic toy or part",
+    "time": "15 min + curing",
+    "difficulty": "Beginner",
+    "tools": [
+      "Plastic glue or two-part epoxy",
+      "Rubbing alcohol",
+      "Tape or clamps",
+      "Toothpick"
+    ],
+    "safetyTips": [
+      "Use glue in fresh air and keep it off skin.",
+      "Do not glue parts that hold a child's weight or keep them safe."
+    ],
+    "steps": [
+      {
+        "title": "Clean the break",
+        "detail": "Wipe both faces with alcohol."
+      },
+      {
+        "title": "Dry fit",
+        "detail": "Check the pieces go together."
+      },
+      {
+        "title": "Glue thinly",
+        "detail": "Spread a little on one face with a toothpick."
+      },
+      {
+        "title": "Hold it",
+        "detail": "Tape or clamp it for the time on the label."
+      },
+      {
+        "title": "Wait before play",
+        "detail": "Give it a full day."
+      }
+    ]
+  },
+  {
+    "id": "wiper-blades",
+    "title": "Replace windshield wiper blades",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "New blades of the size in your owner's manual",
+      "Towel"
+    ],
+    "safetyTips": [
+      "Lay a towel on the glass. A bare wiper arm snapping back can crack the windshield."
+    ],
+    "steps": [
+      {
+        "title": "Lift the arm",
+        "detail": "Pull it away from the glass until it stays up."
+      },
+      {
+        "title": "Release the old blade",
+        "detail": "Press the small tab where the blade meets the arm and slide the blade off."
+      },
+      {
+        "title": "Slide the new one on",
+        "detail": "Push until it clicks."
+      },
+      {
+        "title": "Lower gently",
+        "detail": "Set the arm back on the glass and test with washer fluid."
+      }
+    ]
+  },
+  {
+    "id": "cabin-air-filter",
+    "title": "Replace a car's cabin air filter",
+    "time": "15 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "New filter for your model",
+      "Vacuum"
+    ],
+    "safetyTips": [
+      "Do this with the engine off."
+    ],
+    "steps": [
+      {
+        "title": "Find it",
+        "detail": "Most are behind the glove box. Your manual says where."
+      },
+      {
+        "title": "Drop the glove box",
+        "detail": "Squeeze the sides or undo the stops."
+      },
+      {
+        "title": "Slide out the old filter",
+        "detail": "Note which way the arrow points."
+      },
+      {
+        "title": "Vacuum the slot",
+        "detail": "Clear out leaves."
+      },
+      {
+        "title": "Fit the new one",
+        "detail": "Same arrow direction, then close the glove box."
+      }
+    ]
+  },
+  {
+    "id": "tire-pressure",
+    "title": "Check and top up car tire pressure",
+    "time": "10 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Tire pressure gauge",
+      "Air pump at home or at a gas station"
+    ],
+    "safetyTips": [
+      "Use the pressure on the sticker in the driver's door, not the number on the tire.",
+      "Check when the tires are cold."
+    ],
+    "steps": [
+      {
+        "title": "Find the right pressure",
+        "detail": "Read the sticker inside the driver's door."
+      },
+      {
+        "title": "Measure",
+        "detail": "Unscrew the valve cap and press the gauge on firmly."
+      },
+      {
+        "title": "Add air in short bursts",
+        "detail": "Check with the gauge between bursts."
+      },
+      {
+        "title": "Cap it",
+        "detail": "Screw every cap back on and do all four tires."
+      }
+    ]
+  },
+  {
+    "id": "key-fob-battery",
+    "title": "Replace a car key fob battery",
+    "time": "5 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "New coin battery of the number printed on the old one",
+      "Small flat screwdriver or a coin"
+    ],
+    "safetyTips": [
+      "Keep coin batteries away from children. A swallowed one is an emergency."
+    ],
+    "steps": [
+      {
+        "title": "Open the fob",
+        "detail": "Twist a coin in the notch on the edge."
+      },
+      {
+        "title": "Note which side is up",
+        "detail": "Usually the plus side faces you."
+      },
+      {
+        "title": "Swap the battery",
+        "detail": "Slide the old one out and the new one in."
+      },
+      {
+        "title": "Snap it shut",
+        "detail": "Press the halves together and test the buttons."
+      }
+    ]
+  },
+  {
+    "id": "washer-fluid",
+    "title": "Refill windshield washer fluid",
+    "time": "5 min",
+    "difficulty": "Beginner",
+    "tools": [
+      "Washer fluid",
+      "Funnel"
+    ],
+    "safetyTips": [
+      "Only do this with the engine off and cool.",
+      "Fill only the cap with the windshield symbol."
+    ],
+    "steps": [
+      {
+        "title": "Open the hood",
+        "detail": "Pull the lever under the dash, then the catch at the front."
+      },
+      {
+        "title": "Find the blue cap",
+        "detail": "It has a windshield and spray symbol."
+      },
+      {
+        "title": "Pour to the line",
+        "detail": "Use a funnel."
+      },
+      {
+        "title": "Close the cap and hood",
+        "detail": "Push the hood down until it latches."
+      }
+    ]
+  },
+  {
+    "id": "headlight-bulb",
+    "title": "Replace a car headlight bulb",
+    "time": "20-30 min",
+    "difficulty": "Some experience",
+    "tools": [
+      "New bulb of the type in the manual",
+      "Clean gloves"
+    ],
+    "safetyTips": [
+      "Engine off and lights off, and let the bulb cool.",
+      "Do not touch the glass of the new bulb with bare fingers.",
+      "If you have to remove the bumper or the battery to reach it, let a shop do it."
+    ],
+    "steps": [
+      {
+        "title": "Open the hood",
+        "detail": "Find the back of the headlight."
+      },
+      {
+        "title": "Unplug the connector",
+        "detail": "Press the tab and pull it straight off."
+      },
+      {
+        "title": "Release the bulb",
+        "detail": "Take off the dust cover and twist the bulb or unhook the clip."
+      },
+      {
+        "title": "Fit the new bulb",
+        "detail": "Wear gloves and seat it the same way."
+      },
+      {
+        "title": "Reconnect and test",
+        "detail": "Check low and high beam before you close the hood."
+      }
     ]
   }
 ]

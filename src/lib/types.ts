@@ -1,4 +1,4 @@
-/** Shared types for FixIt WA 03. */
+/** Shared types for FixIt. */
 
 /** The three safety outcomes shown to the user. */
 export type SafetyLevel = "green" | "yellow" | "red";
@@ -9,7 +9,7 @@ export interface Category {
   name: string;
   /** Short description for the category card. */
   description: string;
-  /** Emoji used as a simple, dependency-free icon. */
+  /** Name of the Heroicon drawn for this category, see components/CategoryIcon.tsx. */
   icon: string;
 }
 
@@ -38,6 +38,8 @@ export interface Item {
   estimatedReplacementCost?: number;
   /** Rough weight in pounds, used to estimate waste avoided. */
   estimatedWeightLbs?: number;
+  /** Everyday words people use for this problem, used by the search. */
+  keywords?: string[];
 }
 
 /** A yes/no question asked during the safety check. */
@@ -73,7 +75,7 @@ export interface Guide {
   steps: GuideStep[];
 }
 
-/** A local repair resource in the WA 03 area. */
+/** A hand-picked local repair resource. */
 export interface Resource {
   id: string;
   name: string;

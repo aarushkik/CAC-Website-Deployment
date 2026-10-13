@@ -3,19 +3,22 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
+import { Icon } from "@/components/Icon";
 import { PageHeader } from "@/components/PageHeader";
-import { SafetyBadge } from "@/components/SafetyBadge";
-import { getItem } from "@/lib/data";
+import { itemFromParams, itemQuery } from "@/lib/data";
 import { SAFETY_QUESTIONS } from "@/lib/safety";
 
+/**
+ * The safety check, one question per screen. Every question has to be answered
+ * before there is a result, and "Not sure" counts the same as "Yes", so the
+ * result can only come out more careful than the truth, never less.
+ */
 function SafetyCheckerContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const itemId = searchParams.get("item");
-  const item = itemId ? getItem(itemId) : undefined;
+  const item = itemFromParams(searchParams);
 
-  // Track only the questions answered "yes"; unanswered defaults to no/safe.
+  const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, boolean>>({});
 
   if (!item) {
@@ -30,89 +33,118 @@ function SafetyCheckerContent() {
     );
   }
 
-  function toggle(id: string, value: boolean) {
-    setAnswers((prev) => ({ ...prev, [id]: value }));
-  }
+  const total = SAFETY_QUESTIONS.length;
+  const question = SAFETY_QUESTIONS[step];
 
-  function submit() {
-    const flags = Object.entries(answers)
+  function answer(flagged: boolean) {
+    const next = { ...answers, [question.id]: flagged };
+    setAnswers(next);
+    if (step + 1 < total) {
+      setStep(step + 1);
+      return;
+    }
+    const flags = Object.entries(next)
       .filter(([, yes]) => yes)
       .map(([id]) => id)
       .join(",");
-    const params = new URLSearchParams({ item: item!.id });
-    if (flags) params.set("flags", flags);
-    router.push(`/safety-result?${params.toString()}`);
+    router.push(`/safety-result?${itemQuery(item!)}${flags ? `&flags=${flags}` : ""}`);
   }
 
   return (
-    <div>
-      <PageHeader title="Quick safety check" intro="Answer these to get a safe repair recommendation.">
-        <div className="flex items-center gap-3">
-          <span className="text-lg font-semibold text-workshop-900">{item.name}</span>
-          <SafetyBadge level={item.baseSafety} />
-        </div>
-      </PageHeader>
-
-      <Card>
-        <p className="mb-4 text-workshop-800">
-          Answer honestly. If you&apos;re not sure, choose <strong>Yes</strong> — we&apos;ll err on the
-          side of caution.
+    <div className="mx-auto max-w-xl">
+      <div className="mb-5 flex items-center justify-between gap-3">
+        <button
+          type="button"
+          onClick={() => (step === 0 ? router.back() : setStep(step - 1))}
+          className="flex min-h-[2.75rem] items-center gap-1.5 rounded-lg pr-3 text-sm font-semibold text-brand-700 hover:underline"
+        >
+          <Icon name="back" size={18} />
+          {step === 0 ? "Back" : "Previous question"}
+        </button>
+        <p className="text-sm font-semibold text-workshop-800" aria-live="polite">
+          Question {step + 1} of {total}
         </p>
-        <ul className="space-y-4">
-          {SAFETY_QUESTIONS.map((q) => (
-            <li key={q.id} className="rounded-card border border-workshop-200 p-4">
-              <p className="font-medium text-workshop-900">{q.text}</p>
-              <div className="mt-3 flex gap-2" role="group" aria-label={q.text}>
-                <ToggleButton
-                  active={answers[q.id] === true}
-                  onClick={() => toggle(q.id, true)}
-                  tone="danger"
-                >
-                  Yes
-                </ToggleButton>
-                <ToggleButton
-                  active={answers[q.id] === false}
-                  onClick={() => toggle(q.id, false)}
-                  tone="safe"
-                >
-                  No
-                </ToggleButton>
-              </div>
-            </li>
-          ))}
-        </ul>
+      </div>
 
-        <div className="mt-6">
-          <Button onClick={submit}>See my result</Button>
+      <div
+        className="h-2 overflow-hidden rounded-full bg-workshop-200"
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={total}
+        aria-valuenow={step}
+        aria-label="Safety check progress"
+      >
+        <div
+          className="h-full rounded-full bg-brand-600 transition-all duration-300"
+          style={{ width: `${(step / total) * 100}%` }}
+        />
+      </div>
+
+      <p className="mt-6 text-sm text-workshop-800">
+        Safety check for <strong className="text-workshop-900">{item.name}</strong>
+      </p>
+
+      <div key={question.id} className="mt-2 animate-rise rounded-[1.25rem] border border-workshop-200 bg-surface p-6 shadow-lift sm:p-8">
+        <h1 className="text-2xl font-bold leading-snug text-workshop-900 sm:text-[1.75rem]">
+          {question.text}
+        </h1>
+
+        <div className="mt-7 grid gap-3">
+          <AnswerButton
+            tone="no"
+            chosen={answers[question.id] === false}
+            onClick={() => answer(false)}
+            title="No"
+          />
+          <AnswerButton
+            tone="yes"
+            chosen={answers[question.id] === true}
+            onClick={() => answer(true)}
+            title="Yes"
+          />
+          <button
+            type="button"
+            onClick={() => answer(true)}
+            className="min-h-[3rem] rounded-card text-sm font-semibold text-workshop-800 underline decoration-workshop-300 underline-offset-4 hover:text-workshop-900"
+          >
+            I&apos;m not sure (we&apos;ll treat that as a yes)
+          </button>
         </div>
-      </Card>
+      </div>
+
+      <p className="mt-5 text-center text-sm text-workshop-800">
+        Answer honestly. The result can only get more careful, never less.
+      </p>
     </div>
   );
 }
 
-function ToggleButton({
-  active,
+function AnswerButton({
   tone,
+  chosen,
+  title,
   onClick,
-  children,
 }: {
-  active: boolean;
-  tone: "danger" | "safe";
+  tone: "yes" | "no";
+  chosen: boolean;
+  title: string;
   onClick: () => void;
-  children: React.ReactNode;
 }) {
-  const activeClasses =
-    tone === "danger" ? "border-danger bg-danger text-white" : "border-safe bg-safe text-white";
+  const colours =
+    tone === "yes"
+      ? "hover:border-danger hover:bg-danger/5" + (chosen ? " border-danger bg-danger/10" : "")
+      : "hover:border-safe hover:bg-safe/5" + (chosen ? " border-safe bg-safe/10" : "");
   return (
     <button
       type="button"
       onClick={onClick}
-      aria-pressed={active}
-      className={`min-w-[5rem] rounded-lg border px-5 py-2 font-semibold transition-colors ${
-        active ? activeClasses : "border-workshop-200 bg-white text-workshop-800 hover:bg-workshop-100"
-      }`}
+      aria-pressed={chosen}
+      className={`flex min-h-[3.75rem] items-center justify-between rounded-card border-2 border-workshop-200 bg-surface px-5 text-left text-lg font-bold text-workshop-900 transition active:scale-[.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-100 ${colours}`}
     >
-      {children}
+      {title}
+      <span className={tone === "yes" ? "text-danger" : "text-safe"}>
+        <Icon name={tone === "yes" ? "alert" : "check"} size={22} />
+      </span>
     </button>
   );
 }

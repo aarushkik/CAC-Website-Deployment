@@ -30,9 +30,14 @@ function CalculatorContent() {
 
   const repair = parseFloat(repairCost);
   const replace = parseFloat(replacementCost);
-  const hasNumbers = !Number.isNaN(repair) && !Number.isNaN(replace);
+  const hasNumbers = !Number.isNaN(repair) && !Number.isNaN(replace) && replace > 0;
   const savings = hasNumbers ? replace - repair : 0;
-  const recommendRepair = hasNumbers && savings > 0;
+  // A common rule of thumb: a repair is clearly worth it under half the price of a new one.
+  const share = hasNumbers ? repair / replace : 0;
+  const verdict = !hasNumbers ? null : share <= 0.5 ? "repair" : share < 1 ? "close" : "replace";
+  const selected = getItem(itemId);
+  const dangerous = selected?.dangerous === true;
+  const logLink = selected ? `/log?item=${selected.id}&outcome=fixed` : "/log";
 
   return (
     <div>
@@ -48,7 +53,7 @@ function CalculatorContent() {
             <select
               value={itemId}
               onChange={(e) => applyItemDefaults(e.target.value)}
-              className="mt-2 w-full rounded-card border border-workshop-200 bg-white px-4 py-3 text-workshop-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100"
+              className="input mt-2"
             >
               <option value="">Choose an item…</option>
               {items.map((item) => (
@@ -67,35 +72,86 @@ function CalculatorContent() {
 
         <Card
           className={
-            hasNumbers ? (recommendRepair ? "border-safe/40 bg-safe/5" : "border-caution/40 bg-caution/5") : ""
+            verdict === "repair"
+              ? "border-safe/40 bg-safe/5"
+              : verdict
+                ? "border-caution/40 bg-caution/5"
+                : ""
           }
         >
-          <h2 className="text-lg font-semibold text-workshop-900">Recommendation</h2>
-          {!hasNumbers ? (
+          <p className="eyebrow">Recommendation</p>
+          {!verdict ? (
             <p className="mt-2 text-workshop-800">Enter both costs to see a recommendation.</p>
           ) : (
-            <div className="mt-2">
-              <p className="text-2xl font-bold text-workshop-900">
-                {recommendRepair ? "Repairing looks worth it 👍" : "Replacing may be smarter"}
+            <div className="mt-1" aria-live="polite">
+              <p className="text-2xl font-extrabold text-workshop-900">
+                {verdict === "repair"
+                  ? "Repair it"
+                  : verdict === "close"
+                    ? "It's a close call"
+                    : "Replacing costs less"}
               </p>
               <p className="mt-2 text-workshop-800">
-                {recommendRepair
-                  ? `You'd save about $${savings.toFixed(0)} by repairing instead of replacing.`
-                  : savings === 0
-                    ? "The costs are about the same. Consider effort, sentimental value, and waste."
-                    : `Replacing costs about $${Math.abs(savings).toFixed(0)} less, but repairing still keeps an item out of the landfill.`}
+                {verdict === "repair"
+                  ? `The repair is ${Math.round(share * 100)}% of the price of a new one. You keep about $${savings.toFixed(0)}.`
+                  : verdict === "close"
+                    ? `You would still save about $${savings.toFixed(0)}, but the repair is ${Math.round(share * 100)}% of the price of a new one. Think about how long the fix will last.`
+                    : savings === 0
+                      ? "The costs are the same. Repairing still keeps the item out of the landfill."
+                      : `A new one is about $${Math.abs(savings).toFixed(0)} cheaper than the repair. Repairing still keeps the item out of the landfill.`}
               </p>
-              {recommendRepair && (
-                <Button href="/log" className="mt-4">
-                  Log this repair
-                </Button>
+
+              <div className="mt-5 space-y-3">
+                <CostBar label="Repair" amount={repair} max={Math.max(repair, replace)} colour="bg-safe" />
+                <CostBar label="Replace" amount={replace} max={Math.max(repair, replace)} colour="bg-workshop-500" />
+              </div>
+
+              {dangerous ? (
+                <p className="mt-5 rounded-card border border-danger/30 bg-danger/10 p-3 text-sm text-danger">
+                  <strong>{selected!.name}</strong> is not a do-it-yourself repair. The repair cost
+                  here is what a professional might charge.
+                </p>
+              ) : (
+                verdict !== "replace" && (
+                  <Button href={logLink} className="mt-5">
+                    I fixed it, log the savings
+                  </Button>
+                )
               )}
             </div>
           )}
           <p className="mt-6 text-xs text-workshop-800">
-            Tip: repairs also save the environmental cost of making something new.
+            Rule of thumb used here: a repair under half the price of a new one is clearly worth
+            it. The starting numbers are rough estimates.
           </p>
         </Card>
+      </div>
+    </div>
+  );
+}
+
+function CostBar({
+  label,
+  amount,
+  max,
+  colour,
+}: {
+  label: string;
+  amount: number;
+  max: number;
+  colour: string;
+}) {
+  return (
+    <div>
+      <div className="flex justify-between text-sm font-medium text-workshop-900">
+        <span>{label}</span>
+        <span>${amount.toFixed(0)}</span>
+      </div>
+      <div className="mt-1 h-3 overflow-hidden rounded-full bg-surface">
+        <div
+          className={`h-full rounded-full transition-all duration-300 ${colour}`}
+          style={{ width: `${max > 0 ? Math.max(2, (amount / max) * 100) : 0}%` }}
+        />
       </div>
     </div>
   );
@@ -113,7 +169,7 @@ function MoneyInput({
   return (
     <label className="block">
       <span className="font-medium text-workshop-900">{label}</span>
-      <div className="mt-2 flex items-center rounded-card border border-workshop-200 bg-white focus-within:border-brand-500 focus-within:ring-2 focus-within:ring-brand-100">
+      <div className="mt-2 flex items-center rounded-card border border-workshop-200 bg-surface focus-within:border-brand-500 focus-within:ring-4 focus-within:ring-brand-100">
         <span className="pl-4 text-workshop-800">$</span>
         <input
           type="number"
@@ -122,7 +178,7 @@ function MoneyInput({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="0"
-          className="w-full bg-transparent px-2 py-3 text-workshop-900 focus:outline-none"
+          className="w-full bg-transparent px-2 py-3 text-base text-workshop-900 focus:outline-none"
         />
       </div>
     </label>

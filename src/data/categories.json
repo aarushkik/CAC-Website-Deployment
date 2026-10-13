@@ -3,36 +3,66 @@
     "id": "clothing",
     "name": "Clothing & Textiles",
     "description": "Rips, buttons, hems, zippers, and worn seams.",
-    "icon": "🧵"
+    "icon": "scissors"
   },
   {
     "id": "small-appliances",
     "name": "Small Appliances",
     "description": "Toasters, lamps, fans, and everyday plug-in items.",
-    "icon": "🔌"
+    "icon": "power"
   },
   {
     "id": "furniture",
     "name": "Furniture",
     "description": "Wobbly chairs, loose joints, drawers, and hardware.",
-    "icon": "🪑"
+    "icon": "archive-box"
   },
   {
     "id": "bikes",
     "name": "Bikes",
     "description": "Flat tires, chains, brakes pads, and tune-ups.",
-    "icon": "🚲"
+    "icon": "cog"
   },
   {
     "id": "electronics",
     "name": "Electronics",
     "description": "Phones, cables, headphones, and battery devices.",
-    "icon": "📱"
+    "icon": "phone"
   },
   {
     "id": "home",
     "name": "Home & Fixtures",
     "description": "Leaky faucets, doors, and simple household fixes.",
-    "icon": "🏠"
+    "icon": "home"
+  },
+  {
+    "id": "shoes-bags",
+    "name": "Shoes & Bags",
+    "description": "Soles, laces, straps, buckles, and worn heels.",
+    "icon": "shopping-bag"
+  },
+  {
+    "id": "kitchen",
+    "name": "Kitchen & Cookware",
+    "description": "Dull knives, loose handles, rusty pans, and seals.",
+    "icon": "fire"
+  },
+  {
+    "id": "outdoor",
+    "name": "Yard & Outdoor",
+    "description": "Garden tools, hoses, tents, and camping gear.",
+    "icon": "sun"
+  },
+  {
+    "id": "toys",
+    "name": "Toys & Kids' Gear",
+    "description": "Battery toys, inflatables, and broken plastic.",
+    "icon": "puzzle"
+  },
+  {
+    "id": "auto",
+    "name": "Car Basics",
+    "description": "Wipers, filters, bulbs, and simple upkeep.",
+    "icon": "truck"
   }
 ]

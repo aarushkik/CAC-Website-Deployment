@@ -11,9 +11,9 @@ export function PageHeader({
   children?: ReactNode;
 }) {
   return (
-    <div className="mb-8">
-      <h1 className="text-3xl font-extrabold text-workshop-900 sm:text-4xl">{title}</h1>
-      {intro && <p className="mt-3 max-w-2xl text-lg text-workshop-800">{intro}</p>}
+    <div className="mb-6 animate-rise sm:mb-8">
+      <h1 className="display text-4xl leading-none text-workshop-900 sm:text-6xl">{title}</h1>
+      {intro && <p className="mt-2 max-w-2xl text-base text-workshop-800 sm:text-lg">{intro}</p>}
       {children && <div className="mt-4">{children}</div>}
     </div>
   );

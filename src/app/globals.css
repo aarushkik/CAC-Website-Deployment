@@ -5,28 +5,244 @@
 :root {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
+
+  /* light theme */
+  --surface: 255 255 255;
+  --w-50: 250 247 242;
+  --w-100: 243 236 225;
+  --w-200: 230 217 198;
+  --w-300: 211 192 164;
+  --w-500: 138 117 88;
+  --w-600: 107 90 68;
+  --w-800: 70 59 46;
+  --w-900: 47 39 29;
+  --b-50: 238 246 255;
+  --b-100: 217 235 255;
+  --b-200: 182 214 255;
+  --b-300: 132 184 253;
+  --b-400: 79 141 246;
+  --b-500: 37 99 235;
+  --b-600: 29 78 216;
+  --b-700: 30 64 175;
+  --b-800: 28 53 127;
+  --b-900: 23 37 84;
+  color-scheme: light;
+}
+
+/* dark theme: backgrounds go dark, text shades go light, the button blue stays readable */
+/* .toolbox gives one part of the page the dark colours in both themes: the top bar. */
+:root[data-theme="dark"],
+.toolbox {
+  --surface: 30 26 21;
+  --w-50: 19 16 12;
+  --w-100: 38 33 26;
+  --w-200: 60 52 42;
+  --w-300: 86 75 60;
+  --w-500: 150 136 115;
+  --w-600: 180 167 147;
+  --w-800: 216 206 190;
+  --w-900: 245 239 229;
+  --b-50: 20 31 56;
+  --b-100: 28 46 88;
+  --b-200: 40 66 128;
+  --b-300: 59 96 180;
+  --b-400: 79 141 246;
+  --b-500: 110 160 252;
+  --b-600: 37 99 235;
+  --b-700: 150 192 253;
+  --b-800: 194 217 254;
+  --b-900: 221 235 254;
+  color-scheme: dark;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   @apply bg-workshop-50 text-workshop-900 antialiased;
+  transition: background-color 0.25s, color 0.25s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  letter-spacing: -0.015em;
+}
+
+/* Big headings: heavy, tight, upper case, in a condensed face where the device has one. */
+.display {
+  font-family: "Avenir Next Condensed", "Arial Narrow", "Roboto Condensed", sans-serif-condensed,
+    var(--font-sans);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Black and yellow tape under the top bar. */
+.hazard-tape {
+  height: 6px;
+  background: repeating-linear-gradient(-45deg, #facc15 0 12px, #1c1917 12px 24px);
 }
 
 @layer components {
-  /* Shared form control styling used by the repair log and other forms. */
+  /* Shared form control styling. 16px text stops iPhones zooming in on focus. */
   .input {
-    @apply w-full rounded-card border border-workshop-200 bg-white px-4 py-3 text-workshop-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100;
+    @apply w-full rounded-card border-2 border-workshop-200 bg-surface px-4 py-3 text-base text-workshop-900 placeholder:text-workshop-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-100;
+  }
+
+  /* A card that is also a link or button. */
+  .tile {
+    @apply rounded-card border-2 border-workshop-200 bg-surface shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-workshop-900 hover:shadow-lift focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-100 active:translate-y-0 active:scale-[.99];
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-widest text-brand-700;
   }
 }
 
-/* Subtle workshop grid texture behind the app. */
+/* Subtle workshop grid texture behind the hero. */
 .workshop-texture {
-  background-image: radial-gradient(
-    theme("colors.workshop.200") 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(rgb(var(--w-200)) 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+/* Room for the bottom tab bar and the iPhone home indicator. */
+.pb-tabbar {
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+@media (min-width: 768px) {
+  .pb-tabbar {
+    padding-bottom: 2rem;
+  }
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
+
+/* Red results: faint hazard stripes over the red. */
+.hazard-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.1) 0 22px,
+    transparent 22px 44px
+  );
+}
+
+/* Leaflet draws its own controls: make them fit both themes. */
+.leaflet-container {
+  font: inherit;
+  background: rgb(var(--w-100));
+}
+:root[data-theme="dark"] .leaflet-tile {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+}
+
+@media print {
+  .result-hero {
+    color: #000 !important;
+    background: none !important;
+    border: 3px solid #000;
+    -webkit-print-color-adjust: exact;
+  }
+  .result-hero * {
+    color: #000 !important;
+  }
+}
+
+/* The repair wall: a pegboard of small holes. */
+.pegboard {
+  background-color: rgb(var(--w-100));
+  background-image: radial-gradient(rgb(var(--w-300)) 2px, transparent 2.5px);
+  background-size: 22px 22px;
+}
+
+/* ---------------------------------------------------------------- workshop details */
+
+/* The whole app sits on graph paper, like a workshop drawing. */
+body {
+  background-image:
+    linear-gradient(rgb(var(--w-200) / 0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--w-200) / 0.45) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* A panel bolted on at its four corners. */
+.plate {
+  position: relative;
+}
+.plate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  --screw: radial-gradient(circle, rgb(var(--w-900) / 0.55) 0 1px, rgb(var(--w-300)) 1.5px 4.5px, rgb(var(--w-500) / 0.6) 5px 5.5px, transparent 6px);
+  background:
+    var(--screw) 9px 9px / 12px 12px no-repeat,
+    var(--screw) calc(100% - 9px) 9px / 12px 12px no-repeat,
+    var(--screw) 9px calc(100% - 9px) / 12px 12px no-repeat,
+    var(--screw) calc(100% - 9px) calc(100% - 9px) / 12px 12px no-repeat;
+}
+
+/* A strip of yellow tape measure, used under section headings. */
+.tape-measure {
+  height: 16px;
+  width: 11rem;
+  border-radius: 3px;
+  border: 1.5px solid #1c1917;
+  background:
+    repeating-linear-gradient(90deg, #1c1917 0 1.5px, transparent 1.5px 40px) left bottom / 100% 100% no-repeat,
+    repeating-linear-gradient(90deg, #1c1917 0 1px, transparent 1px 8px) left bottom / 100% 45% no-repeat,
+    #facc15;
+}
+
+/* One digit of a mechanical counter. */
+.counter-digit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0.78em;
+  padding: 0.06em 0.1em 0;
+  border-radius: 0.14em;
+  color: #fafaf9;
+  background: linear-gradient(#292524 0 48%, #0c0a09 48% 52%, #1c1917 52%);
+  box-shadow: inset 0 0 0 1.5px #44403c;
+  font-variant-numeric: tabular-nums;
+}
+
+/* A job ticket: a stub on the left, torn off along a dashed line. */
+.ticket-stub {
+  border-right: 2px dashed rgb(var(--w-300));
+  background: rgb(var(--w-100));
 }

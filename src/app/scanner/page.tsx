@@ -1,148 +1,165 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useMemo, useState } from "react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
+import { Icon } from "@/components/Icon";
 import { PageHeader } from "@/components/PageHeader";
-import { items } from "@/lib/data";
-import { isDangerousText } from "@/lib/safety";
+import { SafetyBadge } from "@/components/SafetyBadge";
+import { dangerMatches } from "@/lib/safety";
+import { findItems } from "@/lib/search";
 
 /**
- * Placeholder "AI scanner". Real image recognition can be added later.
- * For now it accepts a photo and a short description, then makes a simple
- * keyword-based guess. Dangerous keywords are flagged immediately so the app
- * never encourages an unsafe DIY repair, even before a real model exists.
+ * "Describe it": the user types what is wrong in their own words and gets the
+ * closest items. The matching is keyword based (see lib/search.ts), it is not
+ * image recognition. Words that point at a dangerous repair are flagged right
+ * away, before any item is picked. The photo never leaves the device, it is
+ * only there so the user has it ready to show a repair shop.
  */
-export default function ScannerPage() {
-  const router = useRouter();
+function DescribeContent() {
+  const searchParams = useSearchParams();
+  const [description, setDescription] = useState(searchParams.get("q") ?? "");
   const [preview, setPreview] = useState<string | null>(null);
-  const [description, setDescription] = useState("");
-  const [dangerWarning, setDangerWarning] = useState(false);
-  const [guessIds, setGuessIds] = useState<string[] | null>(null);
+
+  const matches = useMemo(() => findItems(description), [description]);
+  const dangers = useMemo(() => dangerMatches(description), [description]);
+  const typed = description.trim().length > 2;
 
   function onFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (file) setPreview(URL.createObjectURL(file));
   }
 
-  function analyze() {
-    setDangerWarning(isDangerousText(description));
-
-    const words = description.toLowerCase();
-    const matches = items
-      .filter((item) =>
-        item.name
-          .toLowerCase()
-          .split(/\s+/)
-          .some((word) => word.length > 3 && words.includes(word)),
-      )
-      .map((item) => item.id);
-
-    setGuessIds(matches);
-  }
-
   return (
     <div>
       <PageHeader
-        title="AI Scanner"
-        intro="Upload a photo and describe the problem. We'll suggest a likely match and run a safety check."
-      >
-        <p className="rounded-card bg-workshop-100 px-4 py-3 text-sm text-workshop-800">
-          <strong>Note:</strong> Automatic photo recognition is a placeholder in this
-          version. Your description drives the match today. No photo is uploaded to a
-          server — it stays on your device.
-        </p>
-      </PageHeader>
+        title="Describe the problem"
+        intro="Say what is wrong in your own words. The closest repairs show up as you type."
+      />
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-5 lg:grid-cols-2">
         <Card>
-          <h2 className="text-lg font-semibold text-workshop-900">1. Add a photo (optional)</h2>
-          <label className="mt-3 flex cursor-pointer flex-col items-center justify-center rounded-card border-2 border-dashed border-workshop-200 bg-workshop-50 px-4 py-10 text-center hover:bg-workshop-100">
-            {preview ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={preview} alt="Item preview" className="max-h-48 rounded-lg object-contain" />
-            ) : (
-              <>
-                <span className="text-4xl" aria-hidden="true">
-                  📷
-                </span>
-                <span className="mt-2 font-medium text-workshop-900">Tap to add a photo</span>
-                <span className="text-sm text-workshop-800">or use the description below</span>
-              </>
-            )}
-            <input type="file" accept="image/*" className="sr-only" onChange={onFile} />
+          <label className="block">
+            <span className="font-semibold text-workshop-900">What is broken?</span>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows={3}
+              autoFocus
+              placeholder="e.g. My bike tire keeps going flat"
+              className="input mt-2"
+            />
           </label>
 
-          <h2 className="mt-6 text-lg font-semibold text-workshop-900">2. Describe the problem</h2>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            rows={3}
-            placeholder="e.g. My bike tire is flat, or my lamp won't turn on"
-            className="mt-3 w-full rounded-card border border-workshop-200 bg-white px-4 py-3 text-workshop-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100"
-          />
-
-          <div className="mt-4">
-            <Button onClick={analyze} disabled={description.trim().length === 0}>
-              Analyze
-            </Button>
-          </div>
+          <label className="mt-4 flex cursor-pointer items-center gap-4 rounded-card border-2 border-dashed border-workshop-200 bg-workshop-50 p-4 transition hover:bg-workshop-100">
+            {preview ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={preview} alt="Your photo of the item" className="h-20 w-20 rounded-xl object-cover" />
+            ) : (
+              <span className="flex h-14 w-14 flex-none items-center justify-center rounded-xl bg-surface text-workshop-600 shadow-card">
+                <Icon name="camera" size={24} />
+              </span>
+            )}
+            <span>
+              <span className="block font-medium text-workshop-900">
+                {preview ? "Photo added" : "Add a photo (optional)"}
+              </span>
+              <span className="block text-sm text-workshop-800">
+                Handy to show a repair shop. It stays on this device and is not used for the match.
+              </span>
+            </span>
+            <input type="file" accept="image/*" capture="environment" className="sr-only" onChange={onFile} />
+          </label>
         </Card>
 
-        <Card>
-          <h2 className="text-lg font-semibold text-workshop-900">Results</h2>
-
-          {dangerWarning && (
-            <div className="mt-3 rounded-card border border-danger/30 bg-danger/10 p-4 text-danger">
-              <p className="font-semibold">⚠️ This may be a dangerous repair.</p>
-              <p className="mt-1 text-sm">
-                Based on your description, this could involve a repair we don&apos;t give DIY
-                instructions for. Please{" "}
-                <Link href="/resources" className="font-semibold underline">
-                  find a local professional
-                </Link>{" "}
-                instead.
+        <div aria-live="polite">
+          {dangers.length > 0 && (
+            <div className="mb-4 animate-pop rounded-card border border-danger/40 bg-danger/10 p-4 text-danger">
+              <p className="flex items-center gap-2 font-bold">
+                <Icon name="stop" />
+                This sounds like a job for a professional
               </p>
-            </div>
-          )}
-
-          {guessIds === null && (
-            <p className="mt-3 text-workshop-800">
-              Add a description and tap <strong>Analyze</strong> to see suggested matches.
-            </p>
-          )}
-
-          {guessIds !== null && guessIds.length === 0 && !dangerWarning && (
-            <div className="mt-3 text-workshop-800">
-              <p>No confident match yet. You can pick your item manually:</p>
-              <Button href="/choose-item" variant="secondary" className="mt-3">
-                Choose item manually
+              <p className="mt-1 text-sm">
+                Your description points at: <strong>{dangers.join(", ")}</strong>. FixIt does not
+                give do-it-yourself steps for that.
+              </p>
+              <Button href="/resources" variant="danger" className="mt-3">
+                Find a local professional
               </Button>
             </div>
           )}
 
-          {guessIds !== null && guessIds.length > 0 && (
-            <ul className="mt-3 space-y-2">
-              {guessIds.map((id) => {
-                const item = items.find((i) => i.id === id)!;
-                return (
-                  <li key={id}>
-                    <Link
-                      href={`/safety-checker?item=${id}`}
-                      className="flex items-center justify-between rounded-card border border-workshop-200 bg-workshop-50 px-4 py-3 hover:bg-workshop-100"
-                    >
-                      <span className="font-medium text-workshop-900">{item.name}</span>
-                      <span className="text-sm font-semibold text-brand-700">Check safety →</span>
+          {!typed && (
+            <Card className="text-workshop-800">
+              <p className="font-semibold text-workshop-900">Matches will show up here.</p>
+              <p className="mt-1 text-sm">
+                Mention the thing and what it is doing, like &ldquo;lamp won&apos;t turn on&rdquo; or
+                &ldquo;zipper stuck on my jacket&rdquo;.
+              </p>
+            </Card>
+          )}
+
+          {typed && matches.length === 0 && dangers.length === 0 && (
+            <Card className="text-workshop-800">
+              <p className="font-semibold text-workshop-900">That is not in our list, but you can still check it.</p>
+              <p className="mt-1 text-sm">
+                The safety check works for anything. There will be no written guide, only the
+                safety result and local help.
+              </p>
+            </Card>
+          )}
+
+          {matches.length > 0 && (
+            <>
+              <p className="eyebrow mb-2">Closest repairs</p>
+              <ul className="space-y-3">
+                {matches.map((item, i) => (
+                  <li key={item.id} className="animate-rise" style={{ animationDelay: `${i * 40}ms` }}>
+                    <Link href={`/safety-checker?item=${item.id}`} className="tile flex items-center gap-3 p-4">
+                      <div className="flex-1">
+                        <p className="font-semibold text-workshop-900">{item.name}</p>
+                        <p className="mb-2 text-sm text-workshop-800">{item.commonIssue}</p>
+                        <SafetyBadge level={item.baseSafety} />
+                      </div>
+                      <Icon name="arrow" className="text-brand-700" />
                     </Link>
                   </li>
-                );
-              })}
-            </ul>
+                ))}
+              </ul>
+            </>
           )}
-        </Card>
+
+          {typed && dangers.length === 0 && (
+            <Link
+              href={`/safety-checker?custom=${encodeURIComponent(description.trim())}`}
+              className="tile mt-3 flex items-center gap-3 border-dashed p-4"
+            >
+              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-50 text-brand-700">
+                <Icon name="plus" />
+              </span>
+              <span className="flex-1">
+                <span className="block font-semibold text-workshop-900">
+                  {matches.length > 0 ? "None of these?" : "Check it anyway"}
+                </span>
+                <span className="block text-sm text-workshop-800">
+                  Run the safety check for &ldquo;{description.trim().slice(0, 60)}&rdquo;
+                </span>
+              </span>
+              <Icon name="arrow" className="text-brand-700" />
+            </Link>
+          )}
+        </div>
       </div>
     </div>
+  );
+}
+
+export default function ScannerPage() {
+  return (
+    <Suspense fallback={<p className="text-workshop-800">Loading…</p>}>
+      <DescribeContent />
+    </Suspense>
   );
 }

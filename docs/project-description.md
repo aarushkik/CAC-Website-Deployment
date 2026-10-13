@@ -6,7 +6,7 @@ In WA-03, families are often deciding between buying new or making one more repa
 
 What the app does:
 
-- Lets users choose an item or scan a repair problem
+- Lets users choose an item or describe the problem in their own words
 - Runs a simple safety check and shows a green, yellow, or red result
 - Shares beginner-safe repair guides for common items
 - Compares repair cost versus replacement cost

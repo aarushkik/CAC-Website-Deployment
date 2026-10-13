@@ -8,7 +8,22 @@
     "guideId": "sew-seam",
     "estimatedRepairCost": 3,
     "estimatedReplacementCost": 30,
-    "estimatedWeightLbs": 1
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "rip",
+      "ripped",
+      "tear",
+      "torn",
+      "hole",
+      "seam",
+      "shirt",
+      "pants",
+      "jeans",
+      "jacket",
+      "coat",
+      "fabric",
+      "stitch"
+    ]
   },
   {
     "id": "stuck-zipper",
@@ -19,7 +34,16 @@
     "guideId": "fix-zipper",
     "estimatedRepairCost": 5,
     "estimatedReplacementCost": 45,
-    "estimatedWeightLbs": 1
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "zipper",
+      "zip",
+      "stuck",
+      "jacket",
+      "backpack",
+      "bag",
+      "pull"
+    ]
   },
   {
     "id": "lamp-cord",
@@ -30,7 +54,14 @@
     "guideId": "lamp-bulb-check",
     "estimatedRepairCost": 8,
     "estimatedReplacementCost": 40,
-    "estimatedWeightLbs": 4
+    "estimatedWeightLbs": 4,
+    "keywords": [
+      "lamp",
+      "light",
+      "bulb",
+      "won't turn on",
+      "dark"
+    ]
   },
   {
     "id": "microwave",
@@ -41,7 +72,12 @@
     "dangerous": true,
     "estimatedRepairCost": 60,
     "estimatedReplacementCost": 90,
-    "estimatedWeightLbs": 30
+    "estimatedWeightLbs": 30,
+    "keywords": [
+      "microwave",
+      "not heating",
+      "cold food"
+    ]
   },
   {
     "id": "wobbly-chair",
@@ -52,7 +88,18 @@
     "guideId": "tighten-joints",
     "estimatedRepairCost": 6,
     "estimatedReplacementCost": 120,
-    "estimatedWeightLbs": 15
+    "estimatedWeightLbs": 15,
+    "keywords": [
+      "wobbly",
+      "wobble",
+      "loose",
+      "rocking",
+      "chair",
+      "table",
+      "stool",
+      "leg",
+      "joint"
+    ]
   },
   {
     "id": "stuck-drawer",
@@ -63,7 +110,14 @@
     "guideId": "tighten-joints",
     "estimatedRepairCost": 4,
     "estimatedReplacementCost": 150,
-    "estimatedWeightLbs": 10
+    "estimatedWeightLbs": 10,
+    "keywords": [
+      "drawer",
+      "sticking",
+      "stuck",
+      "dresser",
+      "slide"
+    ]
   },
   {
     "id": "flat-tire",
@@ -74,7 +128,17 @@
     "guideId": "patch-tube",
     "estimatedRepairCost": 10,
     "estimatedReplacementCost": 35,
-    "estimatedWeightLbs": 2
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "flat",
+      "tire",
+      "tyre",
+      "tube",
+      "puncture",
+      "air",
+      "bike",
+      "bicycle"
+    ]
   },
   {
     "id": "bike-brakes",
@@ -85,7 +149,16 @@
     "guideId": "adjust-brake-pads",
     "estimatedRepairCost": 12,
     "estimatedReplacementCost": 60,
-    "estimatedWeightLbs": 2
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "brake",
+      "brakes",
+      "stopping",
+      "squeal",
+      "bike",
+      "bicycle",
+      "pads"
+    ]
   },
   {
     "id": "frayed-cable",
@@ -96,7 +169,16 @@
     "guideId": "cable-strain-relief",
     "estimatedRepairCost": 3,
     "estimatedReplacementCost": 20,
-    "estimatedWeightLbs": 1
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "cable",
+      "cord",
+      "charger",
+      "charging",
+      "frayed",
+      "usb",
+      "wire"
+    ]
   },
   {
     "id": "phone-battery",
@@ -107,7 +189,15 @@
     "dangerous": true,
     "estimatedRepairCost": 50,
     "estimatedReplacementCost": 400,
-    "estimatedWeightLbs": 1
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "phone",
+      "battery",
+      "swollen",
+      "bulging",
+      "hot",
+      "overheating"
+    ]
   },
   {
     "id": "leaky-faucet",
@@ -118,7 +208,16 @@
     "guideId": "faucet-washer",
     "estimatedRepairCost": 10,
     "estimatedReplacementCost": 120,
-    "estimatedWeightLbs": 3
+    "estimatedWeightLbs": 3,
+    "keywords": [
+      "faucet",
+      "tap",
+      "drip",
+      "dripping",
+      "leak",
+      "leaky",
+      "sink"
+    ]
   },
   {
     "id": "house-wiring",
@@ -129,7 +228,15 @@
     "dangerous": true,
     "estimatedRepairCost": 40,
     "estimatedReplacementCost": 150,
-    "estimatedWeightLbs": 1
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "outlet",
+      "switch",
+      "wiring",
+      "rewire",
+      "socket",
+      "light switch"
+    ]
   },
   {
     "id": "missing-button",
@@ -140,7 +247,13 @@
     "guideId": "sew-button",
     "estimatedRepairCost": 2,
     "estimatedReplacementCost": 25,
-    "estimatedWeightLbs": 1
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "button",
+      "shirt",
+      "coat",
+      "sew"
+    ]
   },
   {
     "id": "climbing-harness-tear",
@@ -151,7 +264,15 @@
     "dangerous": true,
     "estimatedRepairCost": 0,
     "estimatedReplacementCost": 80,
-    "estimatedWeightLbs": 1
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "harness",
+      "strap",
+      "safety vest",
+      "helmet",
+      "climbing",
+      "safety gear"
+    ]
   },
   {
     "id": "fan-not-spinning",
@@ -162,7 +283,14 @@
     "guideId": "clean-fan",
     "estimatedRepairCost": 5,
     "estimatedReplacementCost": 35,
-    "estimatedWeightLbs": 6
+    "estimatedWeightLbs": 6,
+    "keywords": [
+      "fan",
+      "blades",
+      "spinning",
+      "not spinning",
+      "hums"
+    ]
   },
   {
     "id": "toaster-lever-stuck",
@@ -173,7 +301,13 @@
     "guideId": "free-toaster-lever",
     "estimatedRepairCost": 3,
     "estimatedReplacementCost": 30,
-    "estimatedWeightLbs": 4
+    "estimatedWeightLbs": 4,
+    "keywords": [
+      "toaster",
+      "lever",
+      "won't stay down",
+      "crumbs"
+    ]
   },
   {
     "id": "scratched-wood-finish",
@@ -184,7 +318,16 @@
     "guideId": "wood-scratch-finish",
     "estimatedRepairCost": 6,
     "estimatedReplacementCost": 180,
-    "estimatedWeightLbs": 20
+    "estimatedWeightLbs": 20,
+    "keywords": [
+      "scratch",
+      "scratched",
+      "wood",
+      "finish",
+      "table",
+      "dresser",
+      "scuff"
+    ]
   },
   {
     "id": "cracked-chair-leg",
@@ -195,7 +338,14 @@
     "dangerous": true,
     "estimatedRepairCost": 0,
     "estimatedReplacementCost": 120,
-    "estimatedWeightLbs": 15
+    "estimatedWeightLbs": 15,
+    "keywords": [
+      "cracked",
+      "crack",
+      "split",
+      "broken leg",
+      "chair leg"
+    ]
   },
   {
     "id": "dry-chain",
@@ -206,7 +356,16 @@
     "guideId": "lube-chain",
     "estimatedRepairCost": 4,
     "estimatedReplacementCost": 18,
-    "estimatedWeightLbs": 2
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "chain",
+      "squeak",
+      "squeaky",
+      "rusty",
+      "noise",
+      "pedal",
+      "bike"
+    ]
   },
   {
     "id": "loose-handlebars",
@@ -217,7 +376,14 @@
     "dangerous": true,
     "estimatedRepairCost": 0,
     "estimatedReplacementCost": 60,
-    "estimatedWeightLbs": 2
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "handlebar",
+      "handlebars",
+      "steering",
+      "stem",
+      "bike"
+    ]
   },
   {
     "id": "crackling-headphone-jack",
@@ -228,7 +394,17 @@
     "guideId": "clean-headphone-jack",
     "estimatedRepairCost": 2,
     "estimatedReplacementCost": 35,
-    "estimatedWeightLbs": 1
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "headphone",
+      "headphones",
+      "jack",
+      "crackle",
+      "crackling",
+      "audio",
+      "aux",
+      "earbuds"
+    ]
   },
   {
     "id": "laptop-overheating",
@@ -239,7 +415,16 @@
     "dangerous": true,
     "estimatedRepairCost": 0,
     "estimatedReplacementCost": 700,
-    "estimatedWeightLbs": 4
+    "estimatedWeightLbs": 4,
+    "keywords": [
+      "laptop",
+      "computer",
+      "overheat",
+      "overheating",
+      "hot",
+      "fan loud",
+      "shuts down"
+    ]
   },
   {
     "id": "running-toilet",
@@ -250,7 +435,14 @@
     "guideId": "running-toilet",
     "estimatedRepairCost": 8,
     "estimatedReplacementCost": 200,
-    "estimatedWeightLbs": 25
+    "estimatedWeightLbs": 25,
+    "keywords": [
+      "toilet",
+      "running",
+      "flush",
+      "refilling",
+      "flapper"
+    ]
   },
   {
     "id": "sparking-outlet",
@@ -261,6 +453,2058 @@
     "dangerous": true,
     "estimatedRepairCost": 0,
     "estimatedReplacementCost": 150,
-    "estimatedWeightLbs": 1
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "spark",
+      "sparks",
+      "sparking",
+      "outlet",
+      "burning smell",
+      "socket"
+    ]
+  },
+  {
+    "id": "hole-in-jeans",
+    "categoryId": "clothing",
+    "name": "Hole in jeans",
+    "commonIssue": "The knee or thigh has worn through.",
+    "baseSafety": "green",
+    "guideId": "patch-jeans",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 50,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "jeans",
+      "denim",
+      "hole",
+      "knee",
+      "pants",
+      "patch"
+    ]
+  },
+  {
+    "id": "pants-too-long",
+    "categoryId": "clothing",
+    "name": "Pants too long",
+    "commonIssue": "The hem drags on the ground or has come down.",
+    "baseSafety": "green",
+    "guideId": "hem-pants",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 40,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "hem",
+      "pants",
+      "trousers",
+      "too long",
+      "length",
+      "cuff"
+    ]
+  },
+  {
+    "id": "hole-in-sock",
+    "categoryId": "clothing",
+    "name": "Hole in a sock or sweater",
+    "commonIssue": "A small hole in knitted fabric.",
+    "baseSafety": "green",
+    "guideId": "darn-sock",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 15,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "sock",
+      "socks",
+      "sweater",
+      "knit",
+      "hole",
+      "darn",
+      "moth"
+    ]
+  },
+  {
+    "id": "lost-drawstring",
+    "categoryId": "clothing",
+    "name": "Drawstring pulled out",
+    "commonIssue": "The string came out of a hoodie or sweatpants.",
+    "baseSafety": "green",
+    "guideId": "replace-drawstring",
+    "estimatedRepairCost": 1,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "drawstring",
+      "hoodie",
+      "string",
+      "sweatpants",
+      "cord"
+    ]
+  },
+  {
+    "id": "pilling-sweater",
+    "categoryId": "clothing",
+    "name": "Pilled sweater",
+    "commonIssue": "Little fuzz balls cover the fabric.",
+    "baseSafety": "green",
+    "guideId": "depill-sweater",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 45,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "pilling",
+      "pills",
+      "fuzz",
+      "bobbles",
+      "sweater",
+      "fleece"
+    ]
+  },
+  {
+    "id": "broken-snap",
+    "categoryId": "clothing",
+    "name": "Broken snap",
+    "commonIssue": "A snap fastener no longer holds.",
+    "baseSafety": "green",
+    "guideId": "fix-snap",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "snap",
+      "popper",
+      "fastener",
+      "press stud"
+    ]
+  },
+  {
+    "id": "stuffed-animal-seam",
+    "categoryId": "toys",
+    "name": "Stuffed animal coming apart",
+    "commonIssue": "A seam opened and stuffing is coming out.",
+    "baseSafety": "green",
+    "guideId": "sew-seam",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 20,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "stuffed",
+      "plush",
+      "teddy",
+      "bear",
+      "stuffing",
+      "seam",
+      "toy"
+    ]
+  },
+  {
+    "id": "shoe-sole-loose",
+    "categoryId": "shoes-bags",
+    "name": "Shoe sole coming off",
+    "commonIssue": "The sole is peeling away at the toe or heel.",
+    "baseSafety": "green",
+    "guideId": "reglue-shoe-sole",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 70,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "sole",
+      "shoe",
+      "sneaker",
+      "boot",
+      "peeling",
+      "flapping",
+      "glue"
+    ]
+  },
+  {
+    "id": "worn-shoelaces",
+    "categoryId": "shoes-bags",
+    "name": "Frayed or broken shoelaces",
+    "commonIssue": "Laces snapped or the tips have frayed.",
+    "baseSafety": "green",
+    "guideId": "replace-shoelaces",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "laces",
+      "shoelace",
+      "lace",
+      "frayed",
+      "aglet",
+      "tip"
+    ]
+  },
+  {
+    "id": "torn-bag-strap",
+    "categoryId": "shoes-bags",
+    "name": "Torn backpack or bag strap",
+    "commonIssue": "A strap has ripped away from the bag.",
+    "baseSafety": "green",
+    "guideId": "fix-bag-strap",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 50,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "strap",
+      "backpack",
+      "bag",
+      "purse",
+      "handle",
+      "ripped"
+    ]
+  },
+  {
+    "id": "backpack-zipper",
+    "categoryId": "shoes-bags",
+    "name": "Backpack zipper splits open",
+    "commonIssue": "The zipper closes but opens up behind the slider.",
+    "baseSafety": "green",
+    "guideId": "fix-zipper",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 50,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "zipper",
+      "backpack",
+      "bag",
+      "slider",
+      "splits"
+    ]
+  },
+  {
+    "id": "leaky-boots",
+    "categoryId": "shoes-bags",
+    "name": "Boots letting water in",
+    "commonIssue": "Leather or fabric boots soak through.",
+    "baseSafety": "green",
+    "guideId": "clean-waterproof-boots",
+    "estimatedRepairCost": 10,
+    "estimatedReplacementCost": 120,
+    "estimatedWeightLbs": 3,
+    "keywords": [
+      "boots",
+      "waterproof",
+      "wet",
+      "leak",
+      "leather",
+      "hiking"
+    ]
+  },
+  {
+    "id": "worn-heel",
+    "categoryId": "shoes-bags",
+    "name": "Worn down shoe heel",
+    "commonIssue": "The heel is worn at an angle.",
+    "baseSafety": "yellow",
+    "estimatedRepairCost": 20,
+    "estimatedReplacementCost": 90,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "heel",
+      "worn",
+      "cobbler",
+      "dress shoe",
+      "resole"
+    ]
+  },
+  {
+    "id": "vacuum-no-suction",
+    "categoryId": "small-appliances",
+    "name": "Vacuum lost suction",
+    "commonIssue": "The vacuum runs but does not pick up.",
+    "baseSafety": "yellow",
+    "guideId": "vacuum-clog",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 12,
+    "keywords": [
+      "vacuum",
+      "suction",
+      "hoover",
+      "clog",
+      "not picking up"
+    ]
+  },
+  {
+    "id": "coffee-maker-slow",
+    "categoryId": "small-appliances",
+    "name": "Coffee maker slow or tastes off",
+    "commonIssue": "Brewing takes much longer than it used to.",
+    "baseSafety": "green",
+    "guideId": "coffee-maker-descale",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 5,
+    "keywords": [
+      "coffee",
+      "coffee maker",
+      "keurig",
+      "slow",
+      "scale",
+      "descale"
+    ]
+  },
+  {
+    "id": "kettle-scale",
+    "categoryId": "small-appliances",
+    "name": "Kettle full of white scale",
+    "commonIssue": "White flakes float in the water.",
+    "baseSafety": "green",
+    "guideId": "coffee-maker-descale",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "kettle",
+      "scale",
+      "limescale",
+      "flakes",
+      "white"
+    ]
+  },
+  {
+    "id": "blender-leaks",
+    "categoryId": "small-appliances",
+    "name": "Blender leaking",
+    "commonIssue": "Liquid drips from the bottom of the jar.",
+    "baseSafety": "yellow",
+    "guideId": "blender-gasket",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 50,
+    "estimatedWeightLbs": 6,
+    "keywords": [
+      "blender",
+      "leak",
+      "leaking",
+      "gasket",
+      "jar"
+    ]
+  },
+  {
+    "id": "dishwasher-dirty",
+    "categoryId": "small-appliances",
+    "name": "Dishwasher leaves dishes dirty",
+    "commonIssue": "Dishes come out gritty.",
+    "baseSafety": "green",
+    "guideId": "dishwasher-filter",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 600,
+    "estimatedWeightLbs": 80,
+    "keywords": [
+      "dishwasher",
+      "dirty",
+      "gritty",
+      "not cleaning",
+      "filter"
+    ]
+  },
+  {
+    "id": "fridge-door-seal",
+    "categoryId": "small-appliances",
+    "name": "Fridge door will not seal",
+    "commonIssue": "The door pops open or the fridge runs all the time.",
+    "baseSafety": "green",
+    "guideId": "fridge-seal",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 900,
+    "estimatedWeightLbs": 200,
+    "keywords": [
+      "fridge",
+      "refrigerator",
+      "seal",
+      "gasket",
+      "door",
+      "freezer"
+    ]
+  },
+  {
+    "id": "washer-smells",
+    "categoryId": "small-appliances",
+    "name": "Washing machine smells",
+    "commonIssue": "A musty smell comes from the washer.",
+    "baseSafety": "green",
+    "guideId": "washer-smell",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 700,
+    "estimatedWeightLbs": 170,
+    "keywords": [
+      "washer",
+      "washing machine",
+      "smell",
+      "musty",
+      "mold",
+      "mildew"
+    ]
+  },
+  {
+    "id": "dryer-slow",
+    "categoryId": "small-appliances",
+    "name": "Dryer takes too long",
+    "commonIssue": "Clothes need two cycles to dry.",
+    "baseSafety": "yellow",
+    "guideId": "dryer-lint",
+    "estimatedRepairCost": 10,
+    "estimatedReplacementCost": 600,
+    "estimatedWeightLbs": 120,
+    "keywords": [
+      "dryer",
+      "slow",
+      "lint",
+      "vent",
+      "not drying"
+    ]
+  },
+  {
+    "id": "disposal-humming",
+    "categoryId": "small-appliances",
+    "name": "Garbage disposal hums but will not spin",
+    "commonIssue": "The disposal is jammed.",
+    "baseSafety": "yellow",
+    "guideId": "disposal-jam",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 180,
+    "estimatedWeightLbs": 15,
+    "keywords": [
+      "disposal",
+      "garbage disposal",
+      "jam",
+      "humming",
+      "sink"
+    ]
+  },
+  {
+    "id": "iron-sticky",
+    "categoryId": "small-appliances",
+    "name": "Iron sticks or spits brown water",
+    "commonIssue": "The soleplate drags or marks clothes.",
+    "baseSafety": "yellow",
+    "guideId": "iron-clean",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 3,
+    "keywords": [
+      "iron",
+      "sticky",
+      "spitting",
+      "steam",
+      "soleplate"
+    ]
+  },
+  {
+    "id": "hair-dryer-cuts-out",
+    "categoryId": "small-appliances",
+    "name": "Hair dryer overheats and shuts off",
+    "commonIssue": "It stops after a minute or smells hot.",
+    "baseSafety": "yellow",
+    "guideId": "hair-dryer-filter",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 40,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "hair dryer",
+      "blow dryer",
+      "overheat",
+      "cuts out",
+      "shuts off"
+    ]
+  },
+  {
+    "id": "space-heater",
+    "categoryId": "small-appliances",
+    "name": "Space heater not working right",
+    "commonIssue": "It trips, smells, or will not heat.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 8,
+    "keywords": [
+      "space heater",
+      "heater",
+      "electric heater"
+    ]
+  },
+  {
+    "id": "toaster-oven-element",
+    "categoryId": "small-appliances",
+    "name": "Toaster oven element not glowing",
+    "commonIssue": "One heating element stays dark.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 80,
+    "estimatedWeightLbs": 10,
+    "keywords": [
+      "toaster oven",
+      "element",
+      "heating element"
+    ]
+  },
+  {
+    "id": "gas-stove",
+    "categoryId": "small-appliances",
+    "name": "Gas stove burner problem",
+    "commonIssue": "A burner will not light or you smell gas.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 700,
+    "estimatedWeightLbs": 150,
+    "keywords": [
+      "gas stove",
+      "gas range",
+      "burner",
+      "pilot",
+      "gas"
+    ]
+  },
+  {
+    "id": "extension-cord",
+    "categoryId": "small-appliances",
+    "name": "Damaged extension cord or plug",
+    "commonIssue": "The cord is cut, crushed, or the plug is loose.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 20,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "extension cord",
+      "power strip",
+      "plug",
+      "cord cut"
+    ]
+  },
+  {
+    "id": "stripped-screw",
+    "categoryId": "furniture",
+    "name": "Screw will not tighten in wood",
+    "commonIssue": "The screw just spins in its hole.",
+    "baseSafety": "green",
+    "guideId": "stripped-screw-hole",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 100,
+    "estimatedWeightLbs": 10,
+    "keywords": [
+      "stripped",
+      "screw",
+      "spins",
+      "loose screw",
+      "hinge"
+    ]
+  },
+  {
+    "id": "squeaky-bed-frame",
+    "categoryId": "furniture",
+    "name": "Squeaky bed frame",
+    "commonIssue": "The bed creaks when you move.",
+    "baseSafety": "green",
+    "guideId": "squeaky-bed",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 250,
+    "estimatedWeightLbs": 60,
+    "keywords": [
+      "bed",
+      "squeak",
+      "creak",
+      "frame",
+      "noisy"
+    ]
+  },
+  {
+    "id": "crooked-cabinet-door",
+    "categoryId": "furniture",
+    "name": "Cabinet door hangs crooked",
+    "commonIssue": "The door sags or will not close flush.",
+    "baseSafety": "green",
+    "guideId": "cabinet-hinge",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 80,
+    "estimatedWeightLbs": 8,
+    "keywords": [
+      "cabinet",
+      "door",
+      "crooked",
+      "hinge",
+      "sag",
+      "cupboard"
+    ]
+  },
+  {
+    "id": "torn-couch",
+    "categoryId": "furniture",
+    "name": "Small tear in a couch or chair",
+    "commonIssue": "The fabric has a rip.",
+    "baseSafety": "yellow",
+    "guideId": "upholstery-tear",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 600,
+    "estimatedWeightLbs": 90,
+    "keywords": [
+      "couch",
+      "sofa",
+      "upholstery",
+      "tear",
+      "rip",
+      "cushion"
+    ]
+  },
+  {
+    "id": "rocking-table",
+    "categoryId": "furniture",
+    "name": "Table rocks on the floor",
+    "commonIssue": "One leg does not touch the ground.",
+    "baseSafety": "green",
+    "guideId": "level-table",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 40,
+    "keywords": [
+      "table",
+      "rocks",
+      "uneven",
+      "short leg",
+      "desk"
+    ]
+  },
+  {
+    "id": "peeling-veneer",
+    "categoryId": "furniture",
+    "name": "Veneer or laminate edge lifting",
+    "commonIssue": "A thin wood layer is peeling up.",
+    "baseSafety": "green",
+    "guideId": "reglue-veneer",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 200,
+    "estimatedWeightLbs": 40,
+    "keywords": [
+      "veneer",
+      "laminate",
+      "peeling",
+      "lifting",
+      "edge"
+    ]
+  },
+  {
+    "id": "loose-drawer-pull",
+    "categoryId": "furniture",
+    "name": "Loose drawer pull or knob",
+    "commonIssue": "The handle wobbles or came off.",
+    "baseSafety": "green",
+    "guideId": "stripped-screw-hole",
+    "estimatedRepairCost": 1,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 5,
+    "keywords": [
+      "knob",
+      "pull",
+      "handle",
+      "drawer",
+      "loose"
+    ]
+  },
+  {
+    "id": "bunk-bed-crack",
+    "categoryId": "furniture",
+    "name": "Cracked bunk bed or loft rail",
+    "commonIssue": "A rail, ladder, or support is cracked.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 300,
+    "estimatedWeightLbs": 100,
+    "keywords": [
+      "bunk bed",
+      "loft",
+      "rail",
+      "ladder"
+    ]
+  },
+  {
+    "id": "bookshelf-tipping",
+    "categoryId": "furniture",
+    "name": "Bookshelf leaning or tipping",
+    "commonIssue": "A tall shelf leans away from the wall.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 15,
+    "estimatedReplacementCost": 120,
+    "estimatedWeightLbs": 60,
+    "keywords": [
+      "bookshelf",
+      "shelf",
+      "tipping",
+      "leaning",
+      "anchor"
+    ]
+  },
+  {
+    "id": "chain-fell-off",
+    "categoryId": "bikes",
+    "name": "Bike chain fell off",
+    "commonIssue": "The chain dropped off the gears.",
+    "baseSafety": "green",
+    "guideId": "slipped-chain",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 25,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "chain",
+      "fell off",
+      "dropped",
+      "slipped",
+      "bike"
+    ]
+  },
+  {
+    "id": "seat-slipping",
+    "categoryId": "bikes",
+    "name": "Bike seat slips down or twists",
+    "commonIssue": "The saddle will not stay where you set it.",
+    "baseSafety": "green",
+    "guideId": "adjust-seat",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "seat",
+      "saddle",
+      "slips",
+      "seatpost",
+      "height",
+      "bike"
+    ]
+  },
+  {
+    "id": "gears-skipping",
+    "categoryId": "bikes",
+    "name": "Bike gears skip or will not shift",
+    "commonIssue": "The chain jumps or hesitates between gears.",
+    "baseSafety": "yellow",
+    "guideId": "adjust-shifting",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "gears",
+      "shifting",
+      "skip",
+      "derailleur",
+      "shifter",
+      "bike"
+    ]
+  },
+  {
+    "id": "worn-grips",
+    "categoryId": "bikes",
+    "name": "Worn or sticky bike grips",
+    "commonIssue": "Grips are torn, sticky, or slide.",
+    "baseSafety": "green",
+    "guideId": "replace-grips",
+    "estimatedRepairCost": 12,
+    "estimatedReplacementCost": 25,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "grips",
+      "handlebar grips",
+      "sticky",
+      "bike"
+    ]
+  },
+  {
+    "id": "soft-tire",
+    "categoryId": "bikes",
+    "name": "Bike tire soft but not flat",
+    "commonIssue": "The tire needs air.",
+    "baseSafety": "green",
+    "guideId": "inflate-tire",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "pump",
+      "air",
+      "soft",
+      "pressure",
+      "inflate",
+      "valve",
+      "bike"
+    ]
+  },
+  {
+    "id": "bent-wheel",
+    "categoryId": "bikes",
+    "name": "Bent or wobbly bike wheel",
+    "commonIssue": "The wheel rubs the brake once per turn.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 25,
+    "estimatedReplacementCost": 90,
+    "estimatedWeightLbs": 4,
+    "keywords": [
+      "wheel",
+      "bent",
+      "wobble",
+      "rim",
+      "spoke",
+      "true"
+    ]
+  },
+  {
+    "id": "cracked-frame",
+    "categoryId": "bikes",
+    "name": "Cracked bike frame or fork",
+    "commonIssue": "You can see a crack in the metal or carbon.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 400,
+    "estimatedWeightLbs": 25,
+    "keywords": [
+      "frame",
+      "fork",
+      "crack",
+      "cracked",
+      "bike"
+    ]
+  },
+  {
+    "id": "ebike-battery",
+    "categoryId": "bikes",
+    "name": "E-bike battery not holding charge",
+    "commonIssue": "The battery dies fast or will not charge.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 500,
+    "estimatedWeightLbs": 8,
+    "keywords": [
+      "e-bike",
+      "ebike",
+      "battery",
+      "electric bike",
+      "charge"
+    ]
+  },
+  {
+    "id": "phone-wont-charge",
+    "categoryId": "electronics",
+    "name": "Phone will not charge",
+    "commonIssue": "The cable is loose or charging cuts in and out.",
+    "baseSafety": "yellow",
+    "guideId": "clean-charging-port",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 400,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "phone",
+      "charge",
+      "charging",
+      "port",
+      "lint",
+      "won't charge",
+      "iphone",
+      "android"
+    ]
+  },
+  {
+    "id": "sticky-keys",
+    "categoryId": "electronics",
+    "name": "Sticky or dead keyboard keys",
+    "commonIssue": "Keys stick down or do not register.",
+    "baseSafety": "green",
+    "guideId": "clean-keyboard",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "keyboard",
+      "keys",
+      "sticky",
+      "laptop",
+      "typing"
+    ]
+  },
+  {
+    "id": "remote-battery-leak",
+    "categoryId": "electronics",
+    "name": "Battery leaked in a remote or toy",
+    "commonIssue": "White crust on the battery contacts.",
+    "baseSafety": "yellow",
+    "guideId": "battery-corrosion",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 25,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "corrosion",
+      "crust",
+      "leaked",
+      "battery acid",
+      "contacts",
+      "remote"
+    ]
+  },
+  {
+    "id": "controller-stick-drift",
+    "categoryId": "electronics",
+    "name": "Game controller stick drift",
+    "commonIssue": "The character moves without touching the stick.",
+    "baseSafety": "yellow",
+    "guideId": "controller-drift",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 65,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "controller",
+      "drift",
+      "joystick",
+      "joy-con",
+      "xbox",
+      "playstation",
+      "switch"
+    ]
+  },
+  {
+    "id": "worn-ear-pads",
+    "categoryId": "electronics",
+    "name": "Headphone ear pads flaking",
+    "commonIssue": "The cushions are cracked and shedding.",
+    "baseSafety": "green",
+    "guideId": "replace-ear-pads",
+    "estimatedRepairCost": 12,
+    "estimatedReplacementCost": 90,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "headphones",
+      "ear pads",
+      "cushions",
+      "flaking",
+      "peeling"
+    ]
+  },
+  {
+    "id": "cracked-screen-protector",
+    "categoryId": "electronics",
+    "name": "Cracked screen protector",
+    "commonIssue": "The stick-on glass is cracked, the screen under it is fine.",
+    "baseSafety": "green",
+    "guideId": "screen-protector",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 0,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "screen protector",
+      "tempered glass",
+      "cracked"
+    ]
+  },
+  {
+    "id": "tv-remote-dead",
+    "categoryId": "electronics",
+    "name": "TV remote not working",
+    "commonIssue": "Buttons do nothing.",
+    "baseSafety": "green",
+    "guideId": "remote-not-working",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 20,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "remote",
+      "tv",
+      "buttons",
+      "not working",
+      "clicker"
+    ]
+  },
+  {
+    "id": "cracked-phone-screen",
+    "categoryId": "electronics",
+    "name": "Cracked phone screen",
+    "commonIssue": "The glass of the phone itself is cracked.",
+    "baseSafety": "yellow",
+    "estimatedRepairCost": 90,
+    "estimatedReplacementCost": 400,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "screen",
+      "cracked",
+      "phone",
+      "glass",
+      "shattered",
+      "display"
+    ]
+  },
+  {
+    "id": "power-bank-swollen",
+    "categoryId": "electronics",
+    "name": "Swollen power bank or laptop battery",
+    "commonIssue": "The case is bulging or the trackpad is lifting.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "power bank",
+      "swollen",
+      "bulging",
+      "laptop battery",
+      "puffy"
+    ]
+  },
+  {
+    "id": "tv-no-picture",
+    "categoryId": "electronics",
+    "name": "TV has sound but no picture",
+    "commonIssue": "The screen stays black.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 350,
+    "estimatedWeightLbs": 30,
+    "keywords": [
+      "tv",
+      "television",
+      "no picture",
+      "black screen",
+      "backlight"
+    ]
+  },
+  {
+    "id": "charger-brick-hot",
+    "categoryId": "electronics",
+    "name": "Charger gets very hot or buzzes",
+    "commonIssue": "The power adapter is too hot to hold.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "charger",
+      "adapter",
+      "hot",
+      "buzzing",
+      "power brick"
+    ]
+  },
+  {
+    "id": "slow-sink",
+    "categoryId": "home",
+    "name": "Slow or clogged sink",
+    "commonIssue": "Water drains slowly or not at all.",
+    "baseSafety": "green",
+    "guideId": "unclog-sink",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "sink",
+      "drain",
+      "clog",
+      "clogged",
+      "slow",
+      "hair",
+      "bathroom"
+    ]
+  },
+  {
+    "id": "clogged-toilet",
+    "categoryId": "home",
+    "name": "Clogged toilet",
+    "commonIssue": "The bowl fills and will not drain.",
+    "baseSafety": "green",
+    "guideId": "unclog-toilet",
+    "estimatedRepairCost": 10,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "toilet",
+      "clog",
+      "clogged",
+      "plunger",
+      "overflow"
+    ]
+  },
+  {
+    "id": "hole-in-wall",
+    "categoryId": "home",
+    "name": "Small hole in drywall",
+    "commonIssue": "A doorknob or anchor left a hole.",
+    "baseSafety": "green",
+    "guideId": "patch-drywall",
+    "estimatedRepairCost": 12,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "drywall",
+      "hole",
+      "wall",
+      "dent",
+      "patch"
+    ]
+  },
+  {
+    "id": "squeaky-door",
+    "categoryId": "home",
+    "name": "Squeaky door",
+    "commonIssue": "A hinge squeals every time the door moves.",
+    "baseSafety": "green",
+    "guideId": "squeaky-hinge",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 0,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "squeak",
+      "squeaky",
+      "door",
+      "hinge",
+      "creak"
+    ]
+  },
+  {
+    "id": "loose-doorknob",
+    "categoryId": "home",
+    "name": "Loose door handle",
+    "commonIssue": "The knob or lever wobbles.",
+    "baseSafety": "green",
+    "guideId": "loose-door-handle",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "doorknob",
+      "handle",
+      "loose",
+      "lever",
+      "wobbly"
+    ]
+  },
+  {
+    "id": "mouldy-caulk",
+    "categoryId": "home",
+    "name": "Cracked or mouldy tub caulk",
+    "commonIssue": "The seal around the tub is black or peeling.",
+    "baseSafety": "yellow",
+    "guideId": "recaulk-tub",
+    "estimatedRepairCost": 12,
+    "estimatedReplacementCost": 200,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "caulk",
+      "mold",
+      "mould",
+      "tub",
+      "shower",
+      "seal",
+      "silicone"
+    ]
+  },
+  {
+    "id": "weak-showerhead",
+    "categoryId": "home",
+    "name": "Weak or leaking showerhead",
+    "commonIssue": "Poor spray or drips at the joint.",
+    "baseSafety": "green",
+    "guideId": "replace-showerhead",
+    "estimatedRepairCost": 20,
+    "estimatedReplacementCost": 120,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "shower",
+      "showerhead",
+      "pressure",
+      "drip",
+      "spray"
+    ]
+  },
+  {
+    "id": "drafty-door",
+    "categoryId": "home",
+    "name": "Drafty door",
+    "commonIssue": "Cold air comes in around the door.",
+    "baseSafety": "green",
+    "guideId": "weatherstrip-door",
+    "estimatedRepairCost": 10,
+    "estimatedReplacementCost": 0,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "draft",
+      "drafty",
+      "cold",
+      "weatherstrip",
+      "door",
+      "gap"
+    ]
+  },
+  {
+    "id": "torn-window-screen",
+    "categoryId": "home",
+    "name": "Torn window screen",
+    "commonIssue": "Bugs get in through a hole.",
+    "baseSafety": "green",
+    "guideId": "window-screen",
+    "estimatedRepairCost": 12,
+    "estimatedReplacementCost": 45,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "screen",
+      "window",
+      "torn",
+      "hole",
+      "bugs",
+      "mesh"
+    ]
+  },
+  {
+    "id": "chirping-smoke-alarm",
+    "categoryId": "home",
+    "name": "Smoke alarm chirping",
+    "commonIssue": "It beeps about once a minute.",
+    "baseSafety": "green",
+    "guideId": "smoke-alarm-chirp",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 25,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "smoke alarm",
+      "smoke detector",
+      "chirp",
+      "beep",
+      "beeping"
+    ]
+  },
+  {
+    "id": "dirty-furnace-filter",
+    "categoryId": "home",
+    "name": "Weak airflow from vents",
+    "commonIssue": "The furnace filter is overdue.",
+    "baseSafety": "green",
+    "guideId": "furnace-filter",
+    "estimatedRepairCost": 12,
+    "estimatedReplacementCost": 0,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "furnace",
+      "filter",
+      "airflow",
+      "vents",
+      "heat pump",
+      "hvac",
+      "dusty"
+    ]
+  },
+  {
+    "id": "loose-toilet-seat",
+    "categoryId": "home",
+    "name": "Loose or broken toilet seat",
+    "commonIssue": "The seat slides or a hinge snapped.",
+    "baseSafety": "green",
+    "guideId": "toilet-seat",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 4,
+    "keywords": [
+      "toilet seat",
+      "loose",
+      "slides",
+      "hinge"
+    ]
+  },
+  {
+    "id": "nail-holes-wall",
+    "categoryId": "home",
+    "name": "Nail holes in the wall",
+    "commonIssue": "Small holes left from pictures.",
+    "baseSafety": "green",
+    "guideId": "nail-holes",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 0,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "nail holes",
+      "wall",
+      "pictures",
+      "moving out",
+      "spackle"
+    ]
+  },
+  {
+    "id": "water-heater",
+    "categoryId": "home",
+    "name": "Water heater problem",
+    "commonIssue": "No hot water, leaks, or rumbling.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 1200,
+    "estimatedWeightLbs": 120,
+    "keywords": [
+      "water heater",
+      "hot water",
+      "pilot",
+      "tank"
+    ]
+  },
+  {
+    "id": "tripping-breaker",
+    "categoryId": "home",
+    "name": "Breaker keeps tripping",
+    "commonIssue": "A circuit shuts off again and again.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 250,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "breaker",
+      "tripping",
+      "fuse",
+      "panel",
+      "circuit",
+      "power out"
+    ]
+  },
+  {
+    "id": "ceiling-fan-wobble",
+    "categoryId": "home",
+    "name": "Ceiling fan wobbling badly",
+    "commonIssue": "The fan shakes or the mount moves.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 20,
+    "keywords": [
+      "ceiling fan",
+      "wobble",
+      "shaking"
+    ]
+  },
+  {
+    "id": "stair-railing",
+    "categoryId": "home",
+    "name": "Loose stair railing",
+    "commonIssue": "The handrail moves when you lean on it.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 300,
+    "estimatedWeightLbs": 20,
+    "keywords": [
+      "railing",
+      "handrail",
+      "stairs",
+      "banister",
+      "loose"
+    ]
+  },
+  {
+    "id": "burst-pipe",
+    "categoryId": "home",
+    "name": "Leaking or burst pipe",
+    "commonIssue": "Water is spraying or pooling from a pipe.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 400,
+    "estimatedWeightLbs": 5,
+    "keywords": [
+      "pipe",
+      "burst",
+      "leak",
+      "flood",
+      "water everywhere"
+    ]
+  },
+  {
+    "id": "dull-knife",
+    "categoryId": "kitchen",
+    "name": "Dull kitchen knife",
+    "commonIssue": "The knife squashes tomatoes.",
+    "baseSafety": "yellow",
+    "guideId": "sharpen-knife",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 40,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "knife",
+      "dull",
+      "blunt",
+      "sharpen"
+    ]
+  },
+  {
+    "id": "rusty-cast-iron",
+    "categoryId": "kitchen",
+    "name": "Rusty cast iron pan",
+    "commonIssue": "Orange rust on a skillet.",
+    "baseSafety": "green",
+    "guideId": "season-cast-iron",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 6,
+    "keywords": [
+      "cast iron",
+      "rust",
+      "rusty",
+      "skillet",
+      "pan",
+      "season"
+    ]
+  },
+  {
+    "id": "pot-handle-loose",
+    "categoryId": "kitchen",
+    "name": "Loose pot or pan handle",
+    "commonIssue": "The handle wiggles.",
+    "baseSafety": "green",
+    "guideId": "loose-pot-handle",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 3,
+    "keywords": [
+      "pot",
+      "pan",
+      "handle",
+      "loose",
+      "wobbly"
+    ]
+  },
+  {
+    "id": "dry-cutting-board",
+    "categoryId": "kitchen",
+    "name": "Dry, stained cutting board",
+    "commonIssue": "The wood looks grey and smells.",
+    "baseSafety": "green",
+    "guideId": "oil-cutting-board",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 4,
+    "keywords": [
+      "cutting board",
+      "wood",
+      "dry",
+      "stain",
+      "smell",
+      "butcher block"
+    ]
+  },
+  {
+    "id": "nonstick-flaking",
+    "categoryId": "kitchen",
+    "name": "Non-stick coating flaking",
+    "commonIssue": "The coating is peeling into food.",
+    "baseSafety": "yellow",
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "non-stick",
+      "nonstick",
+      "teflon",
+      "flaking",
+      "peeling",
+      "pan"
+    ]
+  },
+  {
+    "id": "pressure-cooker-seal",
+    "categoryId": "kitchen",
+    "name": "Pressure cooker not sealing",
+    "commonIssue": "Steam escapes from the lid or the valve is damaged.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 12,
+    "estimatedReplacementCost": 100,
+    "estimatedWeightLbs": 12,
+    "keywords": [
+      "pressure cooker",
+      "instant pot",
+      "seal",
+      "steam",
+      "lid"
+    ]
+  },
+  {
+    "id": "dull-pruners",
+    "categoryId": "outdoor",
+    "name": "Dull or sticky pruners",
+    "commonIssue": "They crush stems and are hard to close.",
+    "baseSafety": "yellow",
+    "guideId": "sharpen-pruners",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "pruners",
+      "shears",
+      "clippers",
+      "dull",
+      "sticky",
+      "garden"
+    ]
+  },
+  {
+    "id": "leaky-hose",
+    "categoryId": "outdoor",
+    "name": "Leaking garden hose",
+    "commonIssue": "Water sprays from the hose or the tap end.",
+    "baseSafety": "green",
+    "guideId": "patch-hose",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 35,
+    "estimatedWeightLbs": 6,
+    "keywords": [
+      "hose",
+      "leak",
+      "garden",
+      "spray",
+      "spigot",
+      "washer"
+    ]
+  },
+  {
+    "id": "torn-tent",
+    "categoryId": "outdoor",
+    "name": "Torn tent or rain jacket",
+    "commonIssue": "A rip in nylon or a rain shell.",
+    "baseSafety": "green",
+    "guideId": "patch-tent",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 5,
+    "keywords": [
+      "tent",
+      "rain jacket",
+      "rip",
+      "tear",
+      "nylon",
+      "tarp",
+      "sleeping bag"
+    ]
+  },
+  {
+    "id": "leaking-air-mattress",
+    "categoryId": "outdoor",
+    "name": "Air mattress goes flat overnight",
+    "commonIssue": "A slow leak.",
+    "baseSafety": "green",
+    "guideId": "patch-inflatable",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 50,
+    "estimatedWeightLbs": 8,
+    "keywords": [
+      "air mattress",
+      "airbed",
+      "leak",
+      "flat",
+      "deflate",
+      "inflatable"
+    ]
+  },
+  {
+    "id": "trimmer-out-of-line",
+    "categoryId": "outdoor",
+    "name": "String trimmer out of line",
+    "commonIssue": "The line broke off inside the head.",
+    "baseSafety": "yellow",
+    "guideId": "trimmer-line",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 90,
+    "estimatedWeightLbs": 8,
+    "keywords": [
+      "trimmer",
+      "weed eater",
+      "weed whacker",
+      "line",
+      "string"
+    ]
+  },
+  {
+    "id": "rusty-grill",
+    "categoryId": "outdoor",
+    "name": "Rusty or greasy grill grates",
+    "commonIssue": "The grates are crusted.",
+    "baseSafety": "green",
+    "guideId": "clean-grill-grates",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 40,
+    "estimatedWeightLbs": 8,
+    "keywords": [
+      "grill",
+      "bbq",
+      "grates",
+      "rusty",
+      "barbecue"
+    ]
+  },
+  {
+    "id": "wheelbarrow-flat",
+    "categoryId": "outdoor",
+    "name": "Flat wheelbarrow tire",
+    "commonIssue": "The tire will not hold air.",
+    "baseSafety": "green",
+    "guideId": "patch-tube",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 40,
+    "estimatedWeightLbs": 3,
+    "keywords": [
+      "wheelbarrow",
+      "flat",
+      "tire",
+      "cart"
+    ]
+  },
+  {
+    "id": "mower-wont-start",
+    "categoryId": "outdoor",
+    "name": "Gas mower will not start",
+    "commonIssue": "The engine does not turn over or fuel is leaking.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 350,
+    "estimatedWeightLbs": 60,
+    "keywords": [
+      "mower",
+      "lawn mower",
+      "won't start",
+      "gas",
+      "engine"
+    ]
+  },
+  {
+    "id": "gas-grill-leak",
+    "categoryId": "outdoor",
+    "name": "Gas grill hose or regulator",
+    "commonIssue": "You smell propane or the flame is weak.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 250,
+    "estimatedWeightLbs": 80,
+    "keywords": [
+      "propane",
+      "gas grill",
+      "regulator",
+      "hose",
+      "smell gas"
+    ]
+  },
+  {
+    "id": "ladder-damaged",
+    "categoryId": "outdoor",
+    "name": "Bent or cracked ladder",
+    "commonIssue": "A rung or rail is damaged.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 120,
+    "estimatedWeightLbs": 25,
+    "keywords": [
+      "ladder",
+      "rung",
+      "bent",
+      "cracked",
+      "step ladder"
+    ]
+  },
+  {
+    "id": "chainsaw",
+    "categoryId": "outdoor",
+    "name": "Chainsaw or power tool motor",
+    "commonIssue": "The motor smokes, sparks, or will not run.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 200,
+    "estimatedWeightLbs": 12,
+    "keywords": [
+      "chainsaw",
+      "drill",
+      "saw",
+      "motor",
+      "power tool",
+      "sparks"
+    ]
+  },
+  {
+    "id": "toy-stopped",
+    "categoryId": "toys",
+    "name": "Battery toy stopped working",
+    "commonIssue": "No lights or sound.",
+    "baseSafety": "green",
+    "guideId": "toy-batteries",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 25,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "toy",
+      "batteries",
+      "stopped",
+      "lights",
+      "sound",
+      "dead"
+    ]
+  },
+  {
+    "id": "broken-plastic-toy",
+    "categoryId": "toys",
+    "name": "Snapped plastic toy",
+    "commonIssue": "A piece broke off.",
+    "baseSafety": "green",
+    "guideId": "glue-plastic",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 20,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "plastic",
+      "toy",
+      "snapped",
+      "broke",
+      "glue",
+      "lego",
+      "figure"
+    ]
+  },
+  {
+    "id": "pool-float-leak",
+    "categoryId": "toys",
+    "name": "Leaking pool float or ball",
+    "commonIssue": "It will not stay inflated.",
+    "baseSafety": "green",
+    "guideId": "patch-inflatable",
+    "estimatedRepairCost": 6,
+    "estimatedReplacementCost": 20,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "pool float",
+      "inflatable",
+      "ball",
+      "leak",
+      "beach"
+    ]
+  },
+  {
+    "id": "toy-battery-leak",
+    "categoryId": "toys",
+    "name": "Leaked batteries in a toy",
+    "commonIssue": "Crust in the battery box.",
+    "baseSafety": "yellow",
+    "guideId": "battery-corrosion",
+    "estimatedRepairCost": 3,
+    "estimatedReplacementCost": 25,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "toy",
+      "battery leaked",
+      "corrosion",
+      "crust"
+    ]
+  },
+  {
+    "id": "scooter-flat",
+    "categoryId": "toys",
+    "name": "Flat tire on a kids' bike or wagon",
+    "commonIssue": "An air tire lost pressure.",
+    "baseSafety": "green",
+    "guideId": "patch-tube",
+    "estimatedRepairCost": 8,
+    "estimatedReplacementCost": 30,
+    "estimatedWeightLbs": 2,
+    "keywords": [
+      "kids bike",
+      "wagon",
+      "stroller tire",
+      "flat",
+      "tricycle"
+    ]
+  },
+  {
+    "id": "car-seat",
+    "categoryId": "toys",
+    "name": "Damaged car seat or stroller harness",
+    "commonIssue": "A strap, buckle, or shell is damaged.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 15,
+    "keywords": [
+      "car seat",
+      "booster",
+      "stroller",
+      "harness",
+      "buckle",
+      "strap"
+    ]
+  },
+  {
+    "id": "crib-loose",
+    "categoryId": "toys",
+    "name": "Loose or broken crib part",
+    "commonIssue": "A rail, slat, or bolt is loose or missing.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 200,
+    "estimatedWeightLbs": 50,
+    "keywords": [
+      "crib",
+      "slat",
+      "rail",
+      "bassinet",
+      "baby bed"
+    ]
+  },
+  {
+    "id": "bike-helmet",
+    "categoryId": "toys",
+    "name": "Cracked or crashed helmet",
+    "commonIssue": "The shell or foam is dented.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 40,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "helmet",
+      "cracked",
+      "crash",
+      "foam"
+    ]
+  },
+  {
+    "id": "ride-on-battery",
+    "categoryId": "toys",
+    "name": "Ride-on car battery or hoverboard",
+    "commonIssue": "It will not charge or the battery is hot.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 120,
+    "estimatedWeightLbs": 10,
+    "keywords": [
+      "ride-on",
+      "power wheels",
+      "hoverboard",
+      "battery",
+      "charge"
+    ]
+  },
+  {
+    "id": "streaky-wipers",
+    "categoryId": "auto",
+    "name": "Streaky or squeaky wipers",
+    "commonIssue": "The blades smear instead of clearing.",
+    "baseSafety": "green",
+    "guideId": "wiper-blades",
+    "estimatedRepairCost": 25,
+    "estimatedReplacementCost": 60,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "wipers",
+      "wiper",
+      "streak",
+      "smear",
+      "squeak",
+      "windshield"
+    ]
+  },
+  {
+    "id": "musty-car-vents",
+    "categoryId": "auto",
+    "name": "Musty smell from car vents",
+    "commonIssue": "The cabin filter is clogged.",
+    "baseSafety": "green",
+    "guideId": "cabin-air-filter",
+    "estimatedRepairCost": 18,
+    "estimatedReplacementCost": 70,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "cabin filter",
+      "musty",
+      "vents",
+      "ac smell",
+      "car"
+    ]
+  },
+  {
+    "id": "low-tire-pressure",
+    "categoryId": "auto",
+    "name": "Low tire pressure light",
+    "commonIssue": "A tire needs air.",
+    "baseSafety": "green",
+    "guideId": "tire-pressure",
+    "estimatedRepairCost": 2,
+    "estimatedReplacementCost": 0,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "tire pressure",
+      "tpms",
+      "low tire",
+      "air",
+      "car"
+    ]
+  },
+  {
+    "id": "key-fob-dead",
+    "categoryId": "auto",
+    "name": "Key fob stopped working",
+    "commonIssue": "The buttons do nothing.",
+    "baseSafety": "green",
+    "guideId": "key-fob-battery",
+    "estimatedRepairCost": 5,
+    "estimatedReplacementCost": 150,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "key fob",
+      "remote",
+      "key",
+      "battery",
+      "unlock"
+    ]
+  },
+  {
+    "id": "washer-fluid-empty",
+    "categoryId": "auto",
+    "name": "No washer fluid",
+    "commonIssue": "Nothing sprays on the windshield.",
+    "baseSafety": "green",
+    "guideId": "washer-fluid",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 0,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "washer fluid",
+      "spray",
+      "windshield",
+      "empty"
+    ]
+  },
+  {
+    "id": "headlight-out",
+    "categoryId": "auto",
+    "name": "Headlight burned out",
+    "commonIssue": "One headlight is dark.",
+    "baseSafety": "yellow",
+    "guideId": "headlight-bulb",
+    "estimatedRepairCost": 20,
+    "estimatedReplacementCost": 90,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "headlight",
+      "bulb",
+      "burned out",
+      "light out",
+      "car"
+    ]
+  },
+  {
+    "id": "squeaky-car-door",
+    "categoryId": "auto",
+    "name": "Squeaky car door",
+    "commonIssue": "The hinge groans.",
+    "baseSafety": "green",
+    "guideId": "squeaky-hinge",
+    "estimatedRepairCost": 4,
+    "estimatedReplacementCost": 0,
+    "estimatedWeightLbs": 1,
+    "keywords": [
+      "car door",
+      "squeak",
+      "hinge",
+      "creak"
+    ]
+  },
+  {
+    "id": "car-brakes",
+    "categoryId": "auto",
+    "name": "Car brakes grinding or soft",
+    "commonIssue": "Brakes squeal, grind, or the pedal sinks.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 400,
+    "estimatedWeightLbs": 20,
+    "keywords": [
+      "brakes",
+      "brake",
+      "grinding",
+      "pedal",
+      "rotors",
+      "car"
+    ]
+  },
+  {
+    "id": "airbag-light",
+    "categoryId": "auto",
+    "name": "Airbag warning light",
+    "commonIssue": "The airbag or SRS light is on.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 300,
+    "estimatedWeightLbs": 5,
+    "keywords": [
+      "airbag",
+      "srs",
+      "warning light"
+    ]
+  },
+  {
+    "id": "fuel-smell",
+    "categoryId": "auto",
+    "name": "Fuel smell or leak",
+    "commonIssue": "You smell gasoline or see drips.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 300,
+    "estimatedWeightLbs": 5,
+    "keywords": [
+      "fuel",
+      "gasoline",
+      "gas leak",
+      "smell gas",
+      "drip"
+    ]
+  },
+  {
+    "id": "car-overheating",
+    "categoryId": "auto",
+    "name": "Engine overheating",
+    "commonIssue": "The temperature gauge is in the red or steam is coming out.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 500,
+    "estimatedWeightLbs": 10,
+    "keywords": [
+      "overheating",
+      "coolant",
+      "radiator",
+      "steam",
+      "temperature"
+    ]
+  },
+  {
+    "id": "steering-loose",
+    "categoryId": "auto",
+    "name": "Loose steering or pulling",
+    "commonIssue": "The wheel shakes or the car pulls hard.",
+    "baseSafety": "red",
+    "dangerous": true,
+    "estimatedRepairCost": 0,
+    "estimatedReplacementCost": 400,
+    "estimatedWeightLbs": 10,
+    "keywords": [
+      "steering",
+      "pulling",
+      "shaking",
+      "alignment",
+      "tie rod"
+    ]
   }
 ]
