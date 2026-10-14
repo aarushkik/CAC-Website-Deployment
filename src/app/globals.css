@@ -2,31 +2,121 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  body {
+    @apply bg-concrete-100 font-sans text-ink antialiased;
+  }
 
-body {
-  @apply bg-workshop-50 text-workshop-900 antialiased;
-}
+  /* Numbers line up in prices, totals, and tables. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
 
-@layer components {
-  /* Shared form control styling used by the repair log and other forms. */
-  .input {
-    @apply w-full rounded-card border border-workshop-200 bg-white px-4 py-3 text-workshop-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100;
+  :focus-visible {
+    outline: 3px solid theme("colors.brand.500");
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: theme("colors.manila.200");
+    color: theme("colors.ink.DEFAULT");
   }
 }
 
-/* Subtle workshop grid texture behind the app. */
-.workshop-texture {
-  background-image: radial-gradient(
-    theme("colors.workshop.200") 1px,
-    transparent 1px
+@layer components {
+  /* Shared form control styling. */
+  .input {
+    @apply block w-full rounded-lg border border-concrete-300 bg-white px-3.5 py-2.5 text-base text-ink placeholder:text-ink-muted/85 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100;
+  }
+
+  .input[aria-invalid="true"] {
+    @apply border-danger focus:ring-danger-soft;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-ink;
+  }
+
+  .eyebrow {
+    @apply font-display text-sm font-bold uppercase tracking-[0.14em] text-ink-muted;
+  }
+
+  .link {
+    @apply font-semibold text-brand-700 underline decoration-brand-200 decoration-2 underline-offset-2 hover:decoration-brand-600;
+  }
+}
+
+/*
+ * Pegboard: the dotted hardboard every workshop hangs its tools on. The dots
+ * fade out behind text and show where the example signs hang — below the
+ * text on phones, to the right on wide screens.
+ */
+.pegboard {
+  background-image: radial-gradient(theme("colors.concrete.300") 1.5px, transparent 1.6px);
+  background-size: 22px 22px;
+  background-position: 11px 11px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 56%, #000 68%);
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 56%, #000 68%);
+}
+
+@media (min-width: 1024px) {
+  .pegboard {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 48%, #000 64%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent 48%, #000 64%);
+  }
+}
+
+/* Diagonal hazard stripes, used sparingly on danger notices. */
+.hazard-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    theme("colors.danger.DEFAULT") 0 10px,
+    theme("colors.white") 10px 20px
   );
-  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Printing a guide or a problem report: drop the app chrome. */
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+
+  body {
+    background: white;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-plain {
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-weight: normal;
+  }
 }

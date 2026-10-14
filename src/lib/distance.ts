@@ -1,5 +1,3 @@
-import type { Resource } from "./types";
-
 /** Coordinates used for distance calculations. */
 export interface Coordinates {
   lat: number;
@@ -23,42 +21,4 @@ export function haversineDistanceMiles(a: Coordinates, b: Coordinates): number {
     Math.cos(lat1) * Math.cos(lat2) * sinLng * sinLng;
 
   return 2 * earthRadiusMiles * Math.asin(Math.min(1, Math.sqrt(arc)));
-}
-
-/** Sorts resources by distance from the user, nearest first. */
-export function sortByDistance(resources: Resource[], userLocation: Coordinates): Resource[] {
-  return [...resources].sort((first, second) => {
-    const firstLat = first.lat;
-    const firstLng = first.lng;
-    const secondLat = second.lat;
-    const secondLng = second.lng;
-    const firstHasCoords = typeof firstLat === "number" && typeof firstLng === "number";
-    const secondHasCoords = typeof secondLat === "number" && typeof secondLng === "number";
-
-    if (!firstHasCoords && !secondHasCoords) {
-      return 0;
-    }
-
-    if (!firstHasCoords) {
-      return 1;
-    }
-
-    if (!secondHasCoords) {
-      return -1;
-    }
-
-    const firstLocation = { lat: firstLat, lng: firstLng };
-    const secondLocation = { lat: secondLat, lng: secondLng };
-
-    const firstDistance = haversineDistanceMiles(
-      firstLocation,
-      userLocation,
-    );
-    const secondDistance = haversineDistanceMiles(
-      secondLocation,
-      userLocation,
-    );
-
-    return firstDistance - secondDistance;
-  });
 }

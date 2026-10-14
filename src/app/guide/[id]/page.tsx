@@ -1,13 +1,30 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Button } from "@/components/Button";
+import { Suspense } from "react";
+import { Clock, Gauge, ListChecks, OctagonX, Wrench } from "lucide-react";
 import { Card } from "@/components/Card";
+import { GuideNextSteps } from "@/components/GuideNextSteps";
+import { GuideSteps } from "@/components/GuideSteps";
 import { PageHeader } from "@/components/PageHeader";
-import { getGuide, guides } from "@/lib/data";
+import { SafetySign } from "@/components/SafetySign";
+import { getGuide, getItemsForGuide, guides } from "@/lib/data";
 
 /** Pre-render a page for every known guide. */
 export function generateStaticParams() {
   return guides.map((g) => ({ id: g.id }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const guide = getGuide(id);
+  if (!guide) return {};
+  return {
+    title: guide.title,
+    description: `${guide.difficulty} repair guide · ${guide.time} · ${guide.steps.length} steps, with safety tips first.`,
+  };
 }
 
 export default async function GuidePage({
@@ -19,70 +36,108 @@ export default async function GuidePage({
   const guide = getGuide(id);
   if (!guide) notFound();
 
+  const usedFor = getItemsForGuide(guide.id);
+
   return (
-    <div>
-      <PageHeader title={guide.title}>
-        <div className="flex flex-wrap gap-2 text-sm">
-          <span className="rounded-full bg-workshop-100 px-3 py-1 font-medium text-workshop-900">
-            ⏱ {guide.time}
-          </span>
-          <span className="rounded-full bg-workshop-100 px-3 py-1 font-medium text-workshop-900">
-            🧠 {guide.difficulty}
-          </span>
-        </div>
+    <div className="mx-auto max-w-5xl">
+      <PageHeader eyebrow="Repair guide" title={guide.title}>
+        <ul className="flex flex-wrap gap-2 text-sm">
+          <li className="inline-flex items-center gap-1.5 rounded-full border border-concrete-300 bg-white px-3 py-1 font-semibold text-ink">
+            <Clock className="h-4 w-4 text-ink-muted" aria-hidden="true" />
+            {guide.time}
+          </li>
+          <li className="inline-flex items-center gap-1.5 rounded-full border border-concrete-300 bg-white px-3 py-1 font-semibold text-ink">
+            <Gauge className="h-4 w-4 text-ink-muted" aria-hidden="true" />
+            {guide.difficulty}
+          </li>
+          <li className="inline-flex items-center gap-1.5 rounded-full border border-concrete-300 bg-white px-3 py-1 font-semibold text-ink">
+            <ListChecks className="h-4 w-4 text-ink-muted" aria-hidden="true" />
+            {guide.steps.length} steps
+          </li>
+        </ul>
+        {usedFor.length > 0 && (
+          <p className="no-print mt-3 text-sm text-ink-muted">
+            Used for:{" "}
+            {usedFor.map((item, index) => (
+              <span key={item.id}>
+                {index > 0 && ", "}
+                <Link href={`/safety-checker?item=${item.id}`} className="link font-medium">
+                  {item.name}
+                </Link>
+              </span>
+            ))}
+          </p>
+        )}
       </PageHeader>
 
       {/* Safety tips first — always. */}
-      <Card className="border-caution/40 bg-caution/5">
-        <h2 className="text-lg font-semibold text-workshop-900">⚠️ Read before you start</h2>
-        <ul className="mt-2 list-inside list-disc space-y-1 text-workshop-800">
-          {guide.safetyTips.map((tip, i) => (
-            <li key={i}>{tip}</li>
+      <SafetySign level="yellow" title="Read before you start">
+        <ul className="mt-3 space-y-2 text-ink">
+          {guide.safetyTips.map((tip) => (
+            <li key={tip} className="flex gap-2.5">
+              <span className="mt-2 h-2 w-2 flex-none rounded-full bg-caution ring-1 ring-caution-ink/40" aria-hidden="true" />
+              {tip}
+            </li>
           ))}
         </ul>
-        <p className="mt-3 text-sm text-workshop-800">
+        <p className="mt-4 text-sm text-ink-soft">
           If anything feels unsafe or looks different from these steps, stop and{" "}
-          <Link href="/resources" className="font-semibold text-brand-700 underline">
+          <Link href="/resources" className="link">
             find local help
           </Link>
           .
         </p>
-      </Card>
+      </SafetySign>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr,2fr]">
+      <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <div className="space-y-6">
+          <Card className="lg:sticky lg:top-24">
+            <h2 className="flex items-center gap-2 font-display text-2xl font-extrabold text-ink">
+              <Wrench className="h-5 w-5 text-brand-600" aria-hidden="true" />
+              What you&apos;ll need
+            </h2>
+            <ul className="mt-3 space-y-2">
+              {guide.tools.map((tool) => (
+                <li key={tool} className="flex gap-2.5 text-ink-soft">
+                  <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-ink-muted" aria-hidden="true" />
+                  {tool}
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </div>
+
         <Card>
-          <h2 className="text-lg font-semibold text-workshop-900">🧰 What you&apos;ll need</h2>
-          <ul className="mt-2 list-inside list-disc space-y-1 text-workshop-800">
-            {guide.tools.map((tool, i) => (
-              <li key={i}>{tool}</li>
-            ))}
-          </ul>
+          <h2 className="mb-3 font-display text-2xl font-extrabold text-ink">Steps</h2>
+          <GuideSteps guideId={guide.id} steps={guide.steps} />
         </Card>
+      </div>
 
-        <Card>
-          <h2 className="text-lg font-semibold text-workshop-900">Steps</h2>
-          <ol className="mt-3 space-y-4">
-            {guide.steps.map((step, i) => (
-              <li key={i} className="flex gap-3">
-                <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-brand-600 font-bold text-white">
-                  {i + 1}
-                </span>
-                <div>
-                  <p className="font-semibold text-workshop-900">{step.title}</p>
-                  <p className="text-workshop-800">{step.detail}</p>
-                </div>
+      {guide.stopIf && guide.stopIf.length > 0 && (
+        <section className="mt-6 rounded-card border-2 border-danger/40 bg-danger-soft p-5 sm:p-6" aria-labelledby="stop-heading">
+          <h2 id="stop-heading" className="flex items-center gap-2 font-display text-2xl font-extrabold text-danger-ink">
+            <OctagonX className="h-6 w-6" aria-hidden="true" />
+            Stop and get help if…
+          </h2>
+          <ul className="mt-3 space-y-1.5 text-ink">
+            {guide.stopIf.map((reason) => (
+              <li key={reason} className="flex gap-2.5">
+                <span className="mt-2 h-2 w-2 flex-none rounded-full bg-danger" aria-hidden="true" />
+                {reason}
               </li>
             ))}
-          </ol>
-        </Card>
-      </div>
+          </ul>
+        </section>
+      )}
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Button href="/log">✅ I did it — log this repair</Button>
-        <Button href="/calculator" variant="secondary">
-          Compare fix vs. replace
-        </Button>
-      </div>
+      <section className="mt-10" aria-labelledby="done-heading">
+        <h2 id="done-heading" className="no-print mb-4 font-display text-3xl font-extrabold text-ink">
+          When you&apos;re done
+        </h2>
+        <Suspense fallback={null}>
+          <GuideNextSteps items={usedFor} />
+        </Suspense>
+      </section>
     </div>
   );
 }

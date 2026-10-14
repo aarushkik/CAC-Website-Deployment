@@ -3,36 +3,48 @@
     "id": "clothing",
     "name": "Clothing & Textiles",
     "description": "Rips, buttons, hems, zippers, and worn seams.",
-    "icon": "🧵"
+    "icon": "🧵",
+    "proSearch": "tailor",
+    "keywords": ["clothes", "shirt", "pants", "jeans", "jacket", "coat", "dress", "skirt", "sweater", "sock", "fabric", "sew", "sewing", "stitch", "backpack", "bag", "shoe"]
   },
   {
     "id": "small-appliances",
     "name": "Small Appliances",
     "description": "Toasters, lamps, fans, and everyday plug-in items.",
-    "icon": "🔌"
+    "icon": "🔌",
+    "proSearch": "appliance repair",
+    "keywords": ["appliance", "toaster", "lamp", "fan", "blender", "kettle", "vacuum", "coffee", "microwave", "heater", "plug", "kitchen"]
   },
   {
     "id": "furniture",
     "name": "Furniture",
     "description": "Wobbly chairs, loose joints, drawers, and hardware.",
-    "icon": "🪑"
+    "icon": "🪑",
+    "proSearch": "furniture repair",
+    "keywords": ["chair", "table", "drawer", "dresser", "desk", "cabinet", "shelf", "bookcase", "bed", "sofa", "wood", "wooden"]
   },
   {
     "id": "bikes",
     "name": "Bikes",
-    "description": "Flat tires, chains, brakes pads, and tune-ups.",
-    "icon": "🚲"
+    "description": "Flat tires, chains, brake pads, and tune-ups.",
+    "icon": "🚲",
+    "proSearch": "bike shop",
+    "keywords": ["bike", "tire", "tube", "chain", "brake", "pedal", "seat", "saddle", "handlebar", "gear", "wheel", "spoke"]
   },
   {
     "id": "electronics",
     "name": "Electronics",
     "description": "Phones, cables, headphones, and battery devices.",
-    "icon": "📱"
+    "icon": "📱",
+    "proSearch": "phone and electronics repair",
+    "keywords": ["phone", "cable", "charging", "headphone", "laptop", "computer", "tablet", "port", "screen", "battery", "keyboard", "speaker"]
   },
   {
     "id": "home",
     "name": "Home & Fixtures",
-    "description": "Leaky faucets, doors, and simple household fixes.",
-    "icon": "🏠"
+    "description": "Leaky faucets, doors, drains, and simple household fixes.",
+    "icon": "🏠",
+    "proSearch": "handyman",
+    "keywords": ["house", "faucet", "sink", "toilet", "door", "drain", "wall", "hinge", "knob", "window", "plumbing", "bathroom"]
   }
 ]

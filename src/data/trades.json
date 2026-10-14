@@ -1,0 +1,15 @@
+[
+  { "id": "tailor", "label": "Tailors & alterations", "search": "tailor alterations", "osm": ["craft=tailor", "shop=tailor", "craft=dressmaker"] },
+  { "id": "appliance", "label": "Appliance & electronics repair", "search": "appliance repair", "osm": ["shop=appliance", "craft=electronics_repair", "craft=appliance_repair"] },
+  { "id": "electronics", "label": "Phone & computer repair", "search": "phone computer repair", "osm": ["craft=electronics_repair", "shop=mobile_phone", "shop=computer"] },
+  { "id": "bike", "label": "Bike shops", "search": "bike shop repair", "osm": ["shop=bicycle"] },
+  { "id": "furniture", "label": "Furniture repair & upholstery", "search": "furniture repair", "osm": ["craft=upholsterer", "craft=cabinet_maker", "craft=carpenter"] },
+  { "id": "hardware", "label": "Hardware stores (parts today)", "search": "hardware store", "osm": ["shop=hardware", "shop=doityourself"] },
+  { "id": "handyman", "label": "Handyman & carpentry", "search": "handyman", "osm": ["craft=handyman", "craft=carpenter", "craft=builder"] },
+  { "id": "plumber", "label": "Plumbers", "search": "plumber", "osm": ["craft=plumber"] },
+  { "id": "electrician", "label": "Licensed electricians", "search": "licensed electrician", "osm": ["craft=electrician"] },
+  { "id": "hvac", "label": "Gas appliance & HVAC techs", "search": "gas appliance repair hvac", "osm": ["craft=hvac", "craft=heating_engineer"] },
+  { "id": "roofer", "label": "Roofers", "search": "roofing contractor", "osm": ["craft=roofer"] },
+  { "id": "garage", "label": "Garage door repair", "search": "garage door repair", "osm": ["name~garage door"] },
+  { "id": "outdoor", "label": "Outdoor & climbing gear", "search": "outdoor gear store", "osm": ["shop=outdoor"] }
+]

@@ -1,24 +1,38 @@
 import type { SafetyLevel } from "@/lib/types";
 
-const styles: Record<SafetyLevel, { bg: string; label: string; dot: string }> = {
-  green: { bg: "bg-safe/10 text-safe border-safe/30", label: "Green — beginner safe", dot: "bg-safe" },
-  yellow: {
-    bg: "bg-caution/10 text-caution border-caution/30",
-    label: "Yellow — caution",
-    dot: "bg-caution",
+const styles: Record<SafetyLevel, { classes: string; dot: string; label: string; typical: string }> = {
+  green: {
+    classes: "bg-safe-soft text-safe-ink border-safe/30",
+    dot: "bg-safe",
+    label: "Green · beginner safe",
+    typical: "Usually beginner safe",
   },
-  red: { bg: "bg-danger/10 text-danger border-danger/30", label: "Red — get a pro", dot: "bg-danger" },
+  yellow: {
+    classes: "bg-caution-soft text-caution-ink border-caution/60",
+    dot: "bg-caution ring-1 ring-caution-ink/40",
+    label: "Yellow · use caution",
+    typical: "Usually needs caution",
+  },
+  red: {
+    classes: "bg-danger-soft text-danger-ink border-danger/30",
+    dot: "bg-danger",
+    label: "Red · get a pro",
+    typical: "Get a pro",
+  },
 };
 
-/** Colored pill that communicates a safety level. Includes text, not color alone (accessibility). */
-export function SafetyBadge({ level }: { level: SafetyLevel }) {
-  const s = styles[level];
+/**
+ * Colored pill that communicates a safety level. Always includes text, not
+ * color alone. `typical` labels an item's baseline before the safety check.
+ */
+export function SafetyBadge({ level, typical = false }: { level: SafetyLevel; typical?: boolean }) {
+  const style = styles[level];
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm font-semibold ${s.bg}`}
+      className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-bold ${style.classes}`}
     >
-      <span className={`h-2.5 w-2.5 rounded-full ${s.dot}`} aria-hidden="true" />
-      {s.label}
+      <span className={`h-2 w-2 rounded-full ${style.dot}`} aria-hidden="true" />
+      {typical ? style.typical : style.label}
     </span>
   );
 }

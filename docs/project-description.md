@@ -6,12 +6,12 @@ In WA-03, families are often deciding between buying new or making one more repa
 
 What the app does:
 
-- Lets users choose an item or scan a repair problem
-- Runs a simple safety check and shows a green, yellow, or red result
-- Shares beginner-safe repair guides for common items
-- Compares repair cost versus replacement cost
-- Tracks money saved and waste avoided
-- Points to local repair help when a DIY fix is not the right call
+- Lets users choose from 47 common repairs, or describe the problem (and add a photo) in the scanner
+- Runs a safety check made for that kind of item and shows a green, yellow, or red result, with reasons
+- Shares 32 beginner-safe repair guides with safety tips first and steps you can check off
+- Compares repair cost versus replacement cost, and shows the waste a repair keeps out of the landfill
+- Tracks money saved and waste avoided in a repair log and impact dashboard
+- Points to verified local repair help, sorted by distance, when a DIY fix is not the right call
 
 Why it is local:
 
@@ -28,3 +28,5 @@ Tech stack:
 - Tailwind CSS
 - Local JSON data files
 - Browser localStorage for repair logs and dashboard totals
+- Vitest tests that lock in the safety rules
+- Optional AI photo recognition with Claude (Anthropic)
